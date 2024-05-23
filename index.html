@@ -3,31 +3,87 @@
 <head><!--Tempat disimpannya informasi dari dokumen HTML-->
     <meta charset="UTF-8"><!--Digunakan untuk menentukan kumpulan karakter yang digunakan-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Digunakan untuk mengatur area pandang-->
-    <title>Catatan Seputar HTML</title><!--Mendefinisikan Juudl Halaman-->
+    <title>Catatan Seputar HTML</title><!--Mendefinisikan Judul Halaman-->
     <style>
         body {
-            margin: 10px;
+            margin: 10px; /*Mengatur jarak antar elemen*/
         }
         h1 {
-            text-align: center;
+            text-align: center; /**/
         }
     </style><!--Digunakan untuk styling pada satu halaman web-->
     <base>
     <link rel="stylesheet" href="Style.css"><!--Mendefinisikan hubungan antara dokumen dengan dokumen lainnya-->
-    <Link rel="Website Icon" href="zWeb logo.jpg">
+    <Link rel="Website Icon" href="Web logo.jpg">
     <base href="Assets/"><!--Digunakan untuk menentukan Document Base HTML-->
     <noscript></noscript>
     <Script></Script><!--Digunakan untuk mendefinisikan JavaScript-->
 </head>
 <body><!--Badan Web (berisi konten dari web tersebut)-->
-    <h1>HyperText Markup Language</h1><!--Elemen Judul-->
-    <p><!--Elemen Paragraf-->
-        <strong>Cetak Tebal</strong><br>
-        <i>Cetak Miring</i><br>
-        <u>Garis Bawah</u><br>
-    </p>
+    <h1>HyperText Markup Language</h1><!--Elemen Header/Judul-->
+    <a href="https://github.com/Zafranaqeel/HyperText-Markup-Language/blob/main/index.html">Penjelasan (buka file index.html)</a>
     <h2>Elemen HTML</h2>
-    <h2>Atribut HTML</h2>
+        <h3>h1 h2 dan seterusnya</h3><!--Mengindikasi Judul dan Subjudul pada kontennya-->
+        <h3>p</h3><!--Menunjukkan sebuah paragraf-->
+            <p>
+                <strong>Cetak Tebal</strong><br>
+                <i>Cetak Miring</i><br>
+                <u>Garis Bawah</u><br>
+            </p>
+        <h3>Unordered Lists</h3><!--Daftar yang ditampilkan tidak berurutan-->
+            <ul><!--Menampilkan bullet pada tiap item list nya (bisa diubah dengan styling)-->
+                <li>Item 1</li><!--Bisa disisipkan konten apapun termasuk elemen HTML seperti h1 h2 dan p-->
+                <li>Item 2</li><!--Bisa juga disisipkan elemen ul lagi ke dalam li/list item-->
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        <h3>Ordered Lists</h3><!--Daftar yang ditampilkan berurutan-->
+        <ol type="1"><!--Menampilkan nomor pada item list nya (bisa diubah dengan styling)-->
+            <li>Type</li>
+            <ol type="A"><!--Tipe urutan angkanya dapat diatur melalui atribut "type"-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+            <li>Start</li>
+            <ol start="10"><!--Nilai awal urutannya dapat diatur dengan atribut "start"-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>  
+            </ol>        
+            <li>Reversed</li>
+            <ol reversed><!--Digunakan untuk membalik list item-->
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ol>
+        </ol>
+        <h3>img</h3>
+        <img src="HTML logo.jpg"><!--Atribut Gambar, "src" adalah lokasi dimana gambar tersebut disimpan-->
+        <h4>Format Gambar</h4>
+        <ul>
+            <li>gif</li>
+            <li>jpg</li>
+            <li>jpeg</li>
+            <li>jfif</li>
+            <li>pjpeg</li>
+            <li>pjp</li>
+            <li>png</li>
+            <li>webp</li>
+            <li>svg</li>
+        </ul>
+        <h4>Atribut Gambar</h4>
+        <p>
+            src<br><!--Menentukan jalur ke gambar yang akan ditampilkan-->
+            width<br><!--Menentukan lebar gambar (dalam pixel)-->
+            height<br><!--Menentukan tinggi gambar (dalam pixel)-->
+            alt<br><!--Menentukan teks alternatif jika gambar tidak dapat ditampilkan (error)-->
+        </p>
+        <h3>blockquote</h3><!--Mengandung konten yang dikutip dari sumber lain, jika sumber berasal dari situs web dapat menggunakan atribut "cite"-->
+        <h3>pre</h3><!--Digunakan untuk menampilkan teks sesuai yang ditulis pada text editor-->
+        <h3>figure</h3><!--Menentukan konten mandiri seperti ilustrasi, foto, daftar kode, dll-->
+        <h3>figcaption</h3><!--Menambahkan keterangan pada elemen "figure"-->
+    <h2>Atribut HTML</h2><!--Elemen Subjudul-->
         <h3>accesskey</h3><!--Menentukan tombol shortcut untuk mengaktifkan/memfokuskan pada sebuah element-->
         <h3>class</h3><!--Menentukan satu atau lebih classname untuk sebuah elemen-->
         <h3>contenteditable</h3><!--Menentukan konten dari elemen merupakan konten yang dapat diubah atau tidak-->
@@ -39,11 +95,13 @@
         <h3>id</h3><!--Menetapkan id pada elemen-->
         <h3>lang</h3><!--Menentukan bahasa pada konten elemen-->
         <h3>spellcheck</h3><!--Menentukan elemen harus diperiksa ejaannya dan tata bahasanya atau tidak-->
-        <h3>style</h3><!--Menentukan styling secara satu baris untuk suatu elemen-->
+        <h3>style</h3><!--Menentukan styling pada satu baris untuk suatu elemen-->
         <h3>tabindex</h3><!--Menentukan urutan dari suatu elemen-->
         <h3>title</h3><!--Menentukan informasi tambahan tentang suaatu elemen-->
         <h3>translate</h3><!--Menentukan konten elemen harus diterjemahkan atau tidak-->
+        <h3>href</h3><!--Menentukan URL halaman yang dituju-->
+        <h3></h3>
     </p>
-    <img src="HTML logo.jpg"><!--Atribut Gambar, "src" adalah lokasi dimana gambar tersebut disimpan-->
+    
 </body>
 </html>
