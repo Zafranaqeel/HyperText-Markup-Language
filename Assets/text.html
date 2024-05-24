@@ -17,7 +17,11 @@
     </style>
 </head>
 <body>
-    <a href="../"><h1>HyperText Markup Language</h1></a>
+    <nav class="navbar">
+        <a href="../">Kembali</a>
+    </nav>
+    <h1>Elemen dan Atribut Untuk Konten Berupa Teks</h1>
+    <a href="https://github.com/Zafranaqeel/HyperText-Markup-Language/blob/main/Assets/text.html">file html</a>
     <h2>Judul dan Subjudul</h2>
     <p>
         &lt;h1&gt; Biasa digunakan untuk judul utama<br>
@@ -68,13 +72,20 @@
    </ul>
     <h2>Elemen Pendukung Penulisan Paragraf</h2>
     <p>
-        &lt;blockquote&gt; Long Quotations. Mengandung konten yang dikutip dari sumber lain<br>
-        &lt;pre&gt; Preformatted Text. Digunakan untuk menampilkan teks sesuai dengan yang ditulis pada text editor. Sangat berguna dalam pengetikan puisi.<br>
-        &lt;figure&gt; Menentukan konten mandiri seperti ilustrasi, foto, daftar kode, dll. Elemen ini digunakan untuk mengelompokkan blok konten yang dapat dipindahkan posisinya dari blok utama sebuah dokumen tanpa mempengaruhi arti dari induk dokumen.<br>
+        &lt;blockquote&gt; Long Quotations, mengandung konten berupa sebuah kutipan.<br>
+        &lt;pre&gt; Preformatted Text, digunakan untuk menampilkan teks sesuai dengan yang ditulis pada text editor. Sangat berguna dalam pengetikan puisi.<br>
+        &lt;figure&gt; Figure, menentukan konten mandiri seperti ilustrasi, foto, daftar kode, dll. Elemen ini digunakan untuk mengelompokkan blok konten yang dapat dipindahkan posisinya dari blok utama sebuah dokumen tanpa mempengaruhi arti dari induk dokumen.<br>
         &lt;figcaption&gt; Digunakan untuk menuliskan sebuah caption (judul) atau keterangan.<br>
-        &lt;a&gt; Anchor. Digunakan untuk membuat sebuah hyperlink ke halaman atau website lain, file, alamat email, atau URL lainnya. Elemen ini juga memerlukan atribut agar dapat bekerj dengan baik.
+        <a href="#anchor">&lt;a&gt;</a>  Anchor. Digunakan untuk membuat sebuah hyperlink ke halaman atau website lain, file, alamat email, atau URL lainnya. Elemen ini juga memerlukan atribut agar dapat bekerj dengan baik.<br>
+        &lt;cite&gt; Citation, merupakan sebuah elemen yang digunakan untuk sebuah rujukan pada sebuah dokumen, contohnya pada sebuah buku, majalah, artikel, dan lainnya.<br>
+        &lt;dfn&gt; Defining Terms, digunakan untuk mendefinisikan sebuah istilah. Elemen ini harus terletak pada elemen lain seperti &lt;p&gt; atau &lt;section&gt;, teks yang diberi markup &lt;dfn&gt; akan ditampilkan dengan huruf miring.<br>
+        &lt;sup&gt; Superscript, elemen yang dapat membuat teks yang ditampilkan tampak kecil dengan posisi di atas teks biasanya.<br>
+        &lt;sub&gt; Subscript, elemen yang dapat membuat teks yang ditampilkan tampak kecil dengan posisi di bawah teks biasanya.<br>
+        &lt;mark&gt; Highlighted Text, digunakan untuk menandai atau menyoroti sebuah teks yang memiliki peran penting.<br>
+        &lt;br&gt; Line Break, digunakan untuk memberitahu browser untuk memberikan sebuah garis baru pada sebuah teks.<br>
+        
     </p>
-    <h3>Atribut Anchor &lt;a&gt;</h3>
+    <h3 id="anchor">Atribut Anchor &lt;a&gt;</h3>
     <ul>
         <li>download</li>
         <ul>
@@ -92,7 +103,7 @@
             <li>Atribut</li>
             <p>href="URL"</p>
             <li>Contoh</li>
-            <a href="https://github.com/Zafranaqeel">GitHub</a>
+            <a href="https://www.w3schools.com/tags/att_a_href.asp">GitHub</a>
         </ul>
         <li>hreflang</li>
         <ul>
@@ -110,35 +121,75 @@
             <li>Atribut</li>
             <p>href="URL" ping="URL"</p>
             <li>Contoh</li>
-            <a href="https://github.com/Zafranaqeel" ping="https://github.com/Zafranaqeel">GitHub</a>
+            <a href="https://www.w3schools.com/tags/att_a_ping.asp" ping="https://github.com/Zafranaqeel">W3ping</a>
         </ul>
         <li>referrerpolicy</li>
         <ul>
             <li>Penjelasan</li>
-            <p></p>
+            <p>Menetapkan referensi untuk dikirim pada target.</p>
             <li>Atribut</li>
-            <p></p>
+            <p>href="URL" referrerpolicy="value"</p>
+            <li>Attribute Values</li>
+            <ul>
+                <li>no-referrer,</li>
+                <li>no-referrer-when-downgrade</li>
+                <li>origin</li>
+                <li>origin-when-cross-origin</li>
+                <li>unsafe-url</li>
+            </ul>
+            <li>Contoh</li>
+            <a href="https://www.w3schools.com/tags/att_a_referrepolicy.asp" referrerpolicy="origin">W3referrerpolicy</a>
         </ul>
         <li>rel</li>
         <ul>
             <li>Penjelasan</li>
-            <p></p>
+            <p>Menetapkan hubungan antara halaman yang ditampilkan dengan target.</p>
             <li>Atribut</li>
-            <p></p>
+            <p>rel="value" href="URL"</p>
+            <li>Attribute Values</li>
+            <ul>
+                <li>alternate</li>
+                <li>author</li>
+                <li>bookmark</li>
+                <li>external</li>
+                <li>help</li>
+                <li>license</li>
+                <li>next</li>
+                <li>nofollow</li>
+                <li>noreferrer</li>
+                <li>noopener</li>
+                <li>prev</li>
+                <li>search</li>
+                <li>tag</li>
+            </ul>
+            <li>Contoh</li>
+            <a rel="nofollow" href="https://www.w3schools.com/tags/att_a_rel.asp">W3 rel attribute</a>
         </ul>
         <li>target</li>
         <ul>
             <li>Penjelasan</li>
-            <p></p>
+            <p>Menetapkan lokasi ketika membuka target contohnya pada sebuah tab, window, atau tab itu sendiri.</p>
             <li>Atribut</li>
-            <p></p>
+            <p>href="URL" target="value"</p>
+            <li>Attribute Values</li>
+            <ul>
+                <li>_blank</li>
+                <li>_parent</li>
+                <li>_self</li>
+                <li>_top</li>
+            </ul>
+            <li>Contoh</li>
+            <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">W3 target attribute</a>
         </ul>
         <li>media</li>
         <ul>
             <li>Penjelasan</li>
-            <p></p>
+            <p>Menetapkan tipe media yang digunakan pada target.</p>
             <li>Atribut</li>
-            <p></p>
+            <p>href="URL atau file" media="value"</p>
+            <li>Attribute Values</li>
+            <li>Contoh</li>
+            <a href="Pass.jpg" media="print">media</a>
         </ul>
     </ul>
 </body>
