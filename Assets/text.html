@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konten berupa teks</title>
+    <style>
+        body {
+            margin: 10px; /*Mengatur jarak antar elemen*/
+        }
+        h1 {
+            text-align: center; /**/
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../"><h1>HyperText Markup Language</h1></a>
+    <h2>Judul dan Subjudul</h2>
+    <p>
+        &lt;h1&gt; Biasa digunakan untuk judul utama<br>
+        &lt;h2&gt; Biasa digunakan untuk subjudul level 1<br>
+        &lt;h3&gt; Biasa digunakan untuk subjudul level 2<br>
+        &lt;h4&gt; Biasa digunakan untuk subjudul level 3<br>
+        dst.
+    </p>
+    <h2>Isi Pargraf dan Format Karakter Teks</h2>
+    <p>
+        &lt;p&gt; Digunakan untuk menunjukkan sebuah paragraf<br>
+        &lt;em&gt; Digunakan untuk menunjukkan bagian kata yang perlu mendapatkan penekanan atau perhatian khusus<br>
+        &lt;strong&gt; Digunakan untuk menunjukkan sebuah kata yang sangat penting atau mendesak<br>
+        &lt;q&gt; Digunakan untuk menandai sebuah kutipan dalam sebuah teks<br>
+   <h3>Lists</h3>
+   <ul>
+    <li>Unordered Lists</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Unordered Lists digunakan untuk menampilkan daftar dan menampilkan bullet pada tiap item list nya.</p>
+            <li>Kode</li>
+            <p>
+                &lt;ul&gt; untuk membuat daftar yang berjenis Unordered Lists<br>
+                &lt;li&gt; untuk menuliskan item dari daftar tersebut
+            </p>
+        </ul>
+    <li>Ordered Lists</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Ordered Lists digunakan untuk menampilkan daftar dan menampilkan nomor atau karakter lain pada tiap item list nya sebagai penanda urutan.</p>
+            <li>Kode</li>
+            <p>
+                &lt;ol&gt; untuk membuat daftar yang berjenis Ordered Lists<br>
+                &lt;li&gt; untuk menuliskan item dari daftar tersebut
+            </p>
+        </ul>
+    <li>Description Lists</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Description Lists digunakan untuk menampilkan daftar dengan penjelasan pada masing-masing itemnya</p>
+            <li>Kode</li>
+            <p>
+                &lt;dl&gt; untuk membuat daftar yang berjenis Description Lists<br>
+                &lt;dt&gt; untuk mendefinisikan item pada daftar<br>
+                &lt;dd&gt; untuk mendeskripsikan setiap item
+            </p>
+        </ul>
+   </ul>
+    <h2>Elemen Pendukung Penulisan Paragraf</h2>
+    <p>
+        &lt;blockquote&gt; Long Quotations. Mengandung konten yang dikutip dari sumber lain<br>
+        &lt;pre&gt; Preformatted Text. Digunakan untuk menampilkan teks sesuai dengan yang ditulis pada text editor. Sangat berguna dalam pengetikan puisi.<br>
+        &lt;figure&gt; Menentukan konten mandiri seperti ilustrasi, foto, daftar kode, dll. Elemen ini digunakan untuk mengelompokkan blok konten yang dapat dipindahkan posisinya dari blok utama sebuah dokumen tanpa mempengaruhi arti dari induk dokumen.<br>
+        &lt;figcaption&gt; Digunakan untuk menuliskan sebuah caption (judul) atau keterangan.<br>
+        &lt;a&gt; Anchor. Digunakan untuk membuat sebuah hyperlink ke halaman atau website lain, file, alamat email, atau URL lainnya. Elemen ini juga memerlukan atribut agar dapat bekerj dengan baik.
+    </p>
+    <h3>Atribut Anchor &lt;a&gt;</h3>
+    <ul>
+        <li>download</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Menginstruksikan browser untuk mengunduh pada URL yang ditetapkan daripada mengarahkannya.</p>
+            <li>Atribut</li>
+            <p>href="/lokasi/media" download</p>
+            <li>Contoh</li>
+            <a href="/Assets/Pass.jpg" download>Download</a>
+        </ul>
+        <li>href</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Menetapkan target yang akan diarahkan/unduh ketika pengguna menekan hyperlink.</p>
+            <li>Atribut</li>
+            <p>href="URL"</p>
+            <li>Contoh</li>
+            <a href="https://github.com/Zafranaqeel">GitHub</a>
+        </ul>
+        <li>hreflang</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Menetapkan bahasa dari dokumen target.</p>
+            <li>Atribut</li>
+            <p>href="URL" hreflang="kode_bahasa"</p>
+            <li>Contoh</li>
+            <a href="https://www.w3schools.com/TAGs/ref_language_codes.asp" hreflang="en">Kode Bahasa</a>
+        </ul>
+        <li>ping</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p>Menetapkan URL yang akan diberitahu dengan mengirimkan post request ping pada body oleh browser (berjalan di belakang layar) ketika target URL pada hyperlink ditekan. Biasanya atribut ini digunakan untuk pelacakan.</p>
+            <li>Atribut</li>
+            <p>href="URL" ping="URL"</p>
+            <li>Contoh</li>
+            <a href="https://github.com/Zafranaqeel" ping="https://github.com/Zafranaqeel">GitHub</a>
+        </ul>
+        <li>referrerpolicy</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p></p>
+            <li>Atribut</li>
+            <p></p>
+        </ul>
+        <li>rel</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p></p>
+            <li>Atribut</li>
+            <p></p>
+        </ul>
+        <li>target</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p></p>
+            <li>Atribut</li>
+            <p></p>
+        </ul>
+        <li>media</li>
+        <ul>
+            <li>Penjelasan</li>
+            <p></p>
+            <li>Atribut</li>
+            <p></p>
+        </ul>
+    </ul>
+</body>
+</html>
