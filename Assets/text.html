@@ -192,5 +192,303 @@
             <a href="Pass.jpg" media="print">media</a>
         </ul>
     </ul>
+    <h3>Tabel</h3>
+    <p>
+        Elemen &lt;table&gt; merepresentasikan data tabular, yaitu informasi yang disajikan dalam bentuk tabel. Tabel disajikan dalam dua dimensi terdiri dari baris dan kolom (cell) yang berisi data.
+        <img src="table.png" width="600px"><br>
+        <caption>contoh tabel pada HTML</caption>
+    </p>
+    <h4>Struktur Dasar Tabel</h4>
+    <p>
+        Tabel tersusun dari 3 elemen, yaitu &lt;table&gt;, &lt;tr&gt;, dan &lt;td&gt; atau &lt;th&gt;
+        <ul>
+            <li>&lt;table&gt;</li>
+            <p>
+                Elemen &lt;table&gt; digunakan untuk menandakan dimulai dan diakhirinya sebuah konten tabel dan sebagai wadah untuk tabel itu sendiri.
+            </p>
+            <li>&lt;tr&gt;</li>
+            <p>
+                Elemen &lt;tr&gt; digunakan untuk membuat sebuah baris baru yang didalamnya terdapat elemen &lt;td&gt; atau &lt;th&gt;
+            </p>
+            <li>&lt; td&gt; atau &lt;th&gt;</li>
+            <p>
+                Elemen &lt;td&gt; berarti <em>table data</em>, selain membuat sel, elemen ini juga berfungsi sebagai tempat menampung data pada tabel.<br>
+                Elemen &lt;th&gt; berarti <em>table header</em>, digunakan untuk menentukan sebuah headerpada kolom  data.
+            </p>
+            <p>Catatan: Gunakan atribut border untuk menampilkan garis pada tepi sel</p>
+        </ul>
+    </p>
+    <h3>Spanning Cell</h3>
+    <p>
+        Spanning Cell digunakan untuk menjangkau atau merentangkan sebuah ukuran sel lebih dari biasanya (dalam microsoft word lebih dikenal sebagai merging cell).
+    </p>
+    <h4>Column Spans</h4>
+    <p>
+        Untuk merentangkan sebuah kolom (column spanning) kita bisa menggunakan atribut colspan pada elemen &lt;td&gt; atau &lt;th&gt;.
+    </p>
+    <h4>Row spanning</h4>
+    <p>
+        Untuk merentangkan sebuah baris (row spanning) kita bisa menggunakan atribut rowspan pada elemen &lt;td&gt; atau &lt;th&gt;.
+    </p>
+    <br>
+    <div class="Tabel">
+    <caption><strong>Elemen dan Atribut Tabel</strong></caption>
+    <table border="1">
+        <tr>
+            <th>Elemen atau Atribut</th>
+            <th>Deskripsi</th>
+            <th>Cara Penggunaan</th>
+        </tr>
+        <tr>
+            <td>&lt;table&gt;</td>
+            <td>Menetapkan elemen tabel.</td>
+            <td>&lt;table&gt; &lt;/table&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;td&gt;</td>
+            <td>Menetapkan sebuah sel dalam baris tabel.</td>
+            <td>&lt;td&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>colspan="number"</td>
+            <td>Jumlah kolom yang dicakup oleh sel.</td>
+            <td>&lt;td colspan="number"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>rowspan="number"</td>
+            <td>Jumlah baris yang dicakup oleh sel.</td>
+            <td>&lt;td rowspan="number"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>headers="nama_header"</td>
+            <td>Mengasosiasikan data sel dengan header.</td>
+            <td>&lt;td headers="nama_header"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;th&gt;</td>
+            <td>Menetapkan header yang terkait dengan baris atau kolom.</td>
+            <td>&lt;th&gt; &lt;/th&gt;</td>
+        </tr>
+        <tr>
+            <td>colspan="number"</td>
+            <td>Jumlah kolom yang dicakup oleh header.</td>
+            <td>&lt;td colspan="number"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>rowspan="number"</td>
+            <td>Jumlah baris yang dicakup oleh header.</td>
+            <td>&lt;td rowspan="number"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>headers="nama_header"</td>
+            <td>Mengasosiasikan header dengan header lainnya.</td>
+            <td>&lt;td headers="nama_header"&gt; &lt;/td&gt;</td>
+        </tr>
+        <tr>
+            <td>scope="row|col|rowgroup|colgroup|</td>
+            <td>Mengasosiasikan header dengan baris, kelompok baris, kolom, atau kelompok kolom.</td>
+            <td>&lt;td scope="row"&gt; &lt;/th&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;tr&gt;</td>
+            <td>Menetapkan sebuah baris pada tabel</td>
+            <td>&lt;tr&gt; &lt;/tr&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;caption&gt;</td>
+            <td>Memberikan judul pada sebuah tabel</td>
+            <td>&lt;caption&gt; &lt;/caption&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;col&gt;</td>
+            <td>Menetapkan sebuah kolom</td>
+            <td>&lt;col&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;colgroup&gt;</td>
+            <td>Menetapkan sebuah kelompok kolom</td>
+            <td>&lt;colgroup&gt; &lt;/colgroup&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;tbody&gt;</td>
+            <td>Mengidentifikasi sebuah body dalam tabel</td>
+            <td>&lt;tbody&gt; &lt;/tbody&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;tfoot&gt;</td>
+            <td>Mengidentifikasi sebuah footer dalam tabel</td>
+            <td>&lt;tfoot&gt; &lt;/tfoot&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;thead&gt;</td>
+            <td>Mengidentifikasi sebuah header dalam tabel</td>
+            <td>&lt;thead&gt; &lt;/thead&gt;</td>
+        </tr>
+    </table>
+    <br>
+        <table border="3">
+            <tr>
+                <th>Elemen Dasar Tabel</th>
+                <th>Atribut &lt;td&gt;</th>
+            </tr>
+            <tr>
+                <!--Dasar-->
+                <td>
+                    <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Header&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;data&lt;/td&gt;
+      &lt;td&gt;yang&lt;/td&gt;
+      &lt;td&gt;dijadikan&lt;/td&gt;
+      &lt;td&gt;tabel&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </pre>
+                </td>
+                <!--Table Data attribute-->
+                <td>
+                    <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+      &lt;td colspan="number"&gt;colspan&lt;/td&gt;
+      &lt;td rowspan="number"&gt;rowspan&lt;/td&gt;
+      &lt;td headers="nama_header"&gt;header&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </pre>
+                </td>
+                <!--Atribut <th>-->
+            <tr>
+                <th>Atribut &lt;th&gt;</th>
+            </tr>
+
+            <tr>
+                <td>
+                    <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+      &lt;th colspan="number"&gt;colspan&lt;/td&gt;
+      &lt;th rowspan="number"&gt;rowspan&lt;/td&gt;
+      &lt;th headers="nama_header"&gt;header&lt;/td&gt;
+      &lt;th scope="row|col|rowgroup|colgroup"&gt;scope&lt;/th&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>Input User</h3>
+    <h4>Input Element</h4>
+    <p>Elemen &lt;input&gt; merupakan elemen yang sangat sering dipakai untuk mendapatkan data dari user. Elemen input memiliki banyak tipe, selengkapnya bisa dilihat pada tabel berikut:</p>
+    <table border="2">
+        <tr>
+            <th>Input Type</th>
+            <th>Deskripsi</th>
+            <th>Cara Penggunaan</th>
+        </tr>
+        <tr>
+            <td>&lt;input type="text"&gt;</td>
+            <td>Input teks yang berisi satu baris. Tipe default dari inpu elemen.</td>
+            <td>&lt;input type="text"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="number"&gt;</td>
+            <td>Input teks yang hanya mengizinkan format angka.</td>
+            <td>&lt;input type="number"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="password"&gt;</td>
+            <td>Sama seperti input text, namun setiap karakter akan ditampilkan sebagai bintang.</td>
+            <td>&lt;input type="password"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="email"&gt;</td>
+            <td>Sama seperti teks biasa, namun dikhususkan untuk format email.</td>
+            <td>&lt;input type="email"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="search"&gt;</td>
+            <td>Input untuk melakukan pencarian berdasarkan kata kunci.</td>
+            <td>&lt;input type="search"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="date"&gt;</td>
+            <td>Input untuk mengambil data tanggal. Tipe ini akan menyediakan popup penanaggalan untuk memudahkan pengisian.</td>
+            <td>&lt;input type="date"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="time"&gt;</td>
+            <td>Menentukan waktu yang ingin user isi. Tipe ini juga akan menampilkan visual dari jam.</td>
+            <td>&lt;input type="time"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="datetime-local"&gt;</td>
+            <td>Sama seperti tipe <em>date</em>, tetapi ia menambahkan data waktu.</td>
+            <td>&lt;input type=""&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="checkbox"&gt;</td>
+            <td>Sebuah kotak yang dapat dicek untuk active dan non active</td>
+            <td>&lt;input type="checkbox"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="radio"&gt;</td>
+            <td>Pada umumnya, tipe ini digunakan untuk melakukan pemilihan dari sekian opsi radio button yang ada. Input ini akan dikelompokkan dalam sebuah radio group.</td>
+            <td>&lt;input type="radio"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="range"&gt;</td>
+            <td>Menentukan nilai angka berdasarkan jangkauan nilai yang ditentukan. User tidak akan bisa mengambil nilai diluar yang ditentukan.</td>
+            <td>&lt;input type="range"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="color"&gt;</td>
+            <td>User dapat menentukan warna dengan tipe ini baik menggunakan color picker atau memasukkan format nilai warna secara manual.</td>
+            <td>&lt;input type="color"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="file"&gt;</td>
+            <td>Melakukan input satu atau lebih berkas dari penyimpanan data perangkatnya.</td>
+            <td>&lt;input type="file"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="submit"&gt;</td>
+            <td>Input yang di render sebagai tombol <em>submit</em></td>
+            <td>&lt;input type="submit"&gt; &lt;/input&gt;</td>
+        </tr>
+        <tr>
+            <td>&lt;input type="hidden"&gt;</td>
+            <td>Biasanya, tipe ini tidak terlihat oleh user. Namun, input ini akan sangat berguna bagi developer untuk memasukkan suatu data.</td>
+            <td>&lt;input type="hidden"&gt; &lt;/input&gt;</td>
+        </tr>
+    </table>
+    <h4>Non-Single Line Input Elemen</h4>
+        <p>
+            Non-Single Line Input Element biasanya dibutuhkan pada beberapa kasus, seperti membuat komentar, catatan, deskripsi, dsb.<br>
+            Output (hasil) dari input jenis ini hanya akan memberikan teks dalam satu baris saja.<br>
+            Catatan: <em>Atribut value berfungsi untuk memberikan nilai default pada elemen input.</em><br>
+            <br>
+            HTML memiliki elemen khusus yang memungkinkan user menuliskan teks dalam banyak baris. Elemen &lt;textarea&gt; berbeda dengan elemen input sebelumnya. Selain nama elemen yang berbeda, elemen ini memiliki tag penutup agar dapat berfungsi dengan baik.
+        </p>
+    <h4>Label Element</h4>
+    <p>
+        Pembuatan elemen input dan elemen lainnya seperti textarea perlu disandingkan dengan elemen label untuk memberikan keterangan atau caption pada masing-masing elemen input.<br>
+        <h5>Keuntungan penerapan label untuk elemen input sebagai berikut:</h5>
+        <ul>
+            <li>Elemen input yang berasosiasi dengan elemen label akan memberikan kemampuan bagi screen reader untuk menjelaskan fungsi dari elemen input tersebut yang akan sangat bermanfaat bagi penyandang disabilitas.</li>
+            <li>Memberikan kemampuan bagi browser untuk mengalihkan langsung pada elemen input saat elemen label yang berasosiasi dengannya ditekan atau klik.</li>
+        </ul>
+        Ada dua langkah untuk menghubungkan elemen label dan input:
+        <ol>
+            <li>Menambahkan atribut <em>id</em> pada elemen <em>input</em> beserta <em>value</em>-nya.</li>
+            <li>Menambahkan atribut <em>for</em> pada elemen <em>label</em> dan <em>value</em>-nya.</li>
+            <p>Lalu kita perlu memberikan <em>value</em> yang sama pada kedua atribut <em>id</em> dan <em>for</em>. Dengan cara ini, elemen <em>label</em> akan berasosiasi dengan elemen input dan kita akan mendapatkan dua keuntungan di  atas.</p>
+        </ol>
+    </p>
 </body>
 </html>

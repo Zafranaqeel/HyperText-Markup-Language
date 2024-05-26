@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semantic HTML</title>
+    <title>Mengorganisasi Halaman Web</title>
     <style>
         body {
             margin: 10px; /*Mengatur jarak antar elemen*/
@@ -23,7 +23,7 @@
     <h1>Mengorganisasi Halaman Konten</h1>
     <a href="https://github.com/Zafranaqeel/HyperText-Markup-Language/blob/main/Assets/org.html">file html</a>
     <h2>Pengelompokan Elemen HTML</h2>
-    <img src="/Assets/Bagian-bagian.png" width="500px">
+    <img src="Bagian-bagian.png" width="500px">
     <h2>Header, Footer, Main, dan Nav.</h2>
     <h3>Header dan Footer</h3>
     <p>
@@ -37,10 +37,59 @@
             <li>Footer</li>
             <p>
                 Header adalah catatan kaki dalam sebuah elemen &lt;article&gt; atau &lt;section&gt;<br>
-                Header biasanya memuat hak cipta dan dapat menampung link untuk membagikan artikel ke sosial media &lt;nav&gt;<br>
+                Header biasanya memuat hak cipta dan dapat menampung link untuk membagikan artikel ke sosial media.<br>
                 Elemen yang digunakan: &lt;footer&gt; &lt;/footer&gt;
-            </p>
+            </p><br>
+            <p>Catatan: elemen &lt;header&gt; dan &lt;footer&gt; tidak boleh ditulis di dalam elemen &lt;header&gt; dan &lt;footer&gt; lainnya.</p>
         </ul>
     </p>
+    <h3>Main</h3>
+    <p>
+        Elemen &lt;main&gt; digunakan untuk menampung/mewadahi konten utama dalam &lt;body&gt;
+        <br>
+        Catatan: &lt;!-- --&gt; merupakan tag komentar pada HTML yang fungsinya untuk menambahkan komentar atau catatan. Teks yang berada dalam tag tersebut tidak akan ditampilkan dalam website.
+        <!--Contoh penggunaan seperti ini-->
+    <h3>Nav</h3>
+    <p>
+        Elemen &lt;nav&gt; digunakan untuk menampung sebuah navigasi yang sifatnya penting, contohnya navigasi utama sebuah website.</p>
+        Sebuah <em>navigation</em> atau <em>navigasi</em> sangat berguna untuk aksesibilitas website karena memungkinkan pengguna mencari konten yang diinginkannya tanpa menelusuri seluruh konten website.
+    </p>
+    <h2>Article, Aside, dan Section</h2>
+    <h3>Article</h3>
+    <p>
+        Elemen &lt;article&gt; bertindak sebagai container untuk <em>independent content</em>  pada sebuah halaman, artinya konten yang utuh dan tidak terkait dengan konten lain, contohnya adalah artikel, blog, dan konten lainnya.<br>
+        Jika dalam sebuah website terdapat beberapa artikel, tiap artikel seharusnya berada pada elemen &lt;article&gt;-nya masing-masing.
+    </p>
+    <h3>Aside</h3>
+    <p>
+        Elemen &lt;aside&gt; memiliki dua tujuan, tergantung penempatannya di dalam elemen &lt;article&gt; atau tidak.
+        <br>
+        <ul>
+            <li>Ketika elemen &lt;aside&gt; ditempatkan di dalam elemen &lt;article&gt;, elemen ini dapat berisi informasi yang berhubungan dengan konten artikel tersebut.<br></li>
+            <li>Ketika elemen &lt;aside&gt; ditempatkan di luar elemen &lt;article&gt;, elemen ini dapat berisi informasi yang berhubungan dengan keseluruhan halaman.</li>
+        </ul>
+        Elemen &lt;aside&gt; biasanya berada di samping dari sebuah elemen yang menampungnya.
+    </p>
+    <h3>Section</h3>
+    <p>
+        Elemen yang memiliki kesamaan konten dan memiliki <em>heading</em> dapat dikelompokan dengan elemen &lt;section&gt;
+    </p>
+    <h3>Generic Element</h3>
+    <p>
+        Generic Element adalah elemen umum yang bisa dikustomisasi untuk menggambarkan konten dengan tepat.<br>
+        Ada dua Generic Element yang dapat dimanfaatkan, yaitu <strong>Div</strong> dan <strong>Span</strong>
+    </p>
+    <h4>Div</h4>
+    <p>
+        Elemen &lt;div&gt; merupakan sebuah wadah (container) yang bersifat umum untuk menampung beberapa konten<br>
+        Elemen ini tidak memberikan efek apapun pada konten sebelum diberikan style menggunakan CSS<br>
+        Elemen &lt;div&gt; lebih sering digunakan untuk mengelompokkan sebuah konten untuk memudahkan styling dengan menggunakan atribut <strong>class</strong> atau <strong>id</strong>
+    </p>
+    <h4>Span</h4>
+    <p>
+        Elemen &lt;span&gt; hampir sama dengan &lt;div&gt;, bedanya elemen ini digunakan sebagai <em>phrase element</em> dan tidak terdapat line breaks ketika menggunakannya.
+    </p>
+    <!--Cara Memasukkan Tabel ke Website-->
+    
 </body>
 </html>
