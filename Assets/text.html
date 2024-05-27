@@ -467,6 +467,9 @@
             <td>&lt;input type="hidden"&gt; &lt;/input&gt;</td>
         </tr>
     </table>
+    <p>
+        <strong>Catatan: <em>Elemen &lt;form&gt; berfungsi sebagai wrapper/pembungkus dari keseluruhan kolom input atau formulir.</em></strong>
+    </p>
     <h4>Non-Single Line Input Elemen</h4>
         <p>
             Non-Single Line Input Element biasanya dibutuhkan pada beberapa kasus, seperti membuat komentar, catatan, deskripsi, dsb.<br>
@@ -489,6 +492,285 @@
             <li>Menambahkan atribut <em>for</em> pada elemen <em>label</em> dan <em>value</em>-nya.</li>
             <p>Lalu kita perlu memberikan <em>value</em> yang sama pada kedua atribut <em>id</em> dan <em>for</em>. Dengan cara ini, elemen <em>label</em> akan berasosiasi dengan elemen input dan kita akan mendapatkan dua keuntungan di  atas.</p>
         </ol>
+    </p>
+    <h4>Atribut Pada Elemen Input</h4>
+    <p>
+        Atribut yang sering digunakan adalah atribut <em>placeholder</em> untuk memberikan contoh atau referensi data sebagai panduan user saat mengisi data dan atribut <em>required</em> yang menandakan bahwa elemen input tersebut wajib diisi.<br>
+        Catatan: Elemen <em>label</em> tidak dapat digantikan oleh atribut <em>placeholder</em> karena keduanya memiliki peranan sendiri dalam membuat formulir.
+    </p>
+    <table border="1">
+        <tr>
+            <th>Atribut</th>
+            <th>Tipe</th>
+            <th>Deskripsi</th>
+            <th>Cara Penggunaan</th>
+            <th>Contoh</th>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>semua</td>
+            <td>Menamai elemen <em>input</em>. Atribut ini memiliki peran yang sangat penting. Jika tidak menyertakannya,  data input tidak akan dikirim ke server.</td>
+            <td>&lt;input type="text" name="nama_elemen"&gt;</td>
+            <td><input type="text" name="teks"></td>
+        </tr>
+        <tr>
+            <td>placeholder</td>
+            <td>text, search, url, tel, email, password, number</td>
+            <td>Teks samar yang muncul pada kolom input, biasanya digunakan sebagai petunjuk atau contoh data yang perlu diisi.</td>
+            <td>&lt;input type="email" placeholder="email@example.com"&gt;</td>
+            <td><input type="email" placeholder="email@example.com"></td>
+        </tr>
+        <tr>
+            <td>required</td>
+            <td>semua tipe kecuali <em>hidden, range, color,</em> dan <em>button</em></td>
+            <td>Atribut ini menyebabkan elemen input wajib diisi untuk di submit.</td>
+            <td>&lt;input type="password" required&gt;</td>
+            <td><input type="password" required></td>
+        </tr>
+        <tr>
+            <td>value</td>
+            <td>semua tipe kecuali <em>image</em></td>
+            <td>Memberikan data awal atau default pada elemen &lt;input&gt;</td>
+            <td>&lt;input type="text" value="teks"&gt;</td>
+            <td><input type="text" value="teks default"></td>
+        </tr>
+        <tr>
+            <td>autocomplete</td>
+            <td>semua tipe kecuali <em>checkbox, radio,</em> dan <em>button</em></td>
+            <td>Melengkapi input secara otomatis. Biasanya terjadi ketika kita pernah meng-input sesuatu dan pada kesempatan berikutnya data tersebut akan ditampilkan lagi oleh browser sebagai <em>autocomplete</em>.</td>
+            <td>&lt;input type="email" autocomplete="data"&gt;</td>
+            <td><input type="email" autocomplete="email"></td>
+        </tr>
+        <tr>
+            <td>maxlength</td>
+            <td>text, search, url, tel, email, password</td>
+            <td>Menentukan maximal panjang karakter yang diperbolehkan pada kolom input.</td>
+            <td>&lt;input type="tel" maxlength="number"&gt;</td>
+            <td><input type="tel" placeholder="+62 812 3456 7890" maxlength="17"></td>
+        </tr>
+        <tr>
+            <td>max</td>
+            <td>date, month, week, time, datetime-local, number, range</td>
+            <td>Menentukan maksimal nilai yang diperbolehkan.</td>
+            <td>&lt;input type="date" max="number|date"&gt;</td>
+            <td><input type="date" max="26"></td>
+        </tr>
+        <tr>
+            <td>minlength</td>
+            <td>text, search, url, tel, email, password</td>
+            <td>Menentukan minimal panjang karakter yang diperbolehkan pada kolom input.</td>
+            <td>&lt;input type="tel" minlength="number"&gt;</td>
+            <td><input type="tel" minlength="15"></td>
+        </tr>
+        <tr>
+            <td>min</td>
+            <td>date, month, week, time, datetime-local, number, range</td>
+            <td>Menentukan minimal nilai yang diperbolehkan.</td>
+            <td>&lt;input type="date" min="number|date"&gt;</td>
+            <td><input type="date" min="16"></td>
+        </tr>
+        <tr>
+            <td>checked</td>
+            <td>checkbox, radio</td>
+            <td>Mengaktifkan atau mencentangkan input checkbox.</td>
+            <td>&lt;input type="checkbox" checked&gt;</td>
+            <td><input type="checkbox" checked></td>
+        </tr>
+        <tr>
+            <td>accept</td>
+            <td>file</td>
+            <td>Panduan atau batasan format berkas apa yang diperbolehkan pada input berkas.</td>
+            <td>&lt;input type="file" accept="file_extension"&gt;</td>
+            <td><input type="file" accept=".doc"></td>
+        </tr>
+        <tr>
+            <td>multiple</td>
+            <td>email, file</td>
+            <td>Memungkinkan pemilihan ganda pada elemen input.</td>
+            <td>&lt;input type="file" multiple&gt;</td>
+            <td><input type="file" multiple></td>
+        </tr>
+        <tr>
+            <td>pattern</td>
+            <td>text, search, url, tel, email,  password</td>
+            <td>Menenetukan pola yang wajib dipatuhi pada dara yang diisi agar dapat valid.</td>
+            <td>&lt;input type="password" pattern="&gt;</td>
+            <td><input type="password" pattern="pola_input_data"></td>
+        </tr>
+        <tr>
+            <td>readonly</td>
+            <td>semua tipe kecuali <em>hidden, range. color, checkbox, radio,</em> dan <em>button</em></td>
+            <td>Tidak memiliki akses edit nilai.</td>
+            <td>&lt;input type="text" readonly&gt;</td>
+            <td><input type="text" readonly></td>
+        </tr>
+        <tr>
+            <td>disabled</td>
+            <td>semua tipe</td>
+            <td>Memberikan efek tidak aktif pada elemen input.</td>
+            <td>&lt;input type="text" disabled&gt;</td>
+            <td><input type="text" disabled></td>
+        </tr>
+    </table>
+
+    <h2>Cara Membawa Data Formulir</h2>
+    <p>
+        <h3>Atribut Action</h3>
+        <p>
+            Atribut <em>action</em> akan menentukan alamat tujuan dari pengiriman data. Kita bisa memberikan URL yang relatif atau absolut.
+        </p>
+        <h3>Atribut Method</h3>
+        <p>
+            Atribut Method akan menentukan cara data dikirimkan ke server. Ada dua metode yang bisa digunakan untuk mengirimkan data pada formulir HTML, yaitu GET dan POST.
+        </p>
+        <ul>
+            <li>
+                <h4>Metode GET</h4>
+                <p>
+                    Biasanya metode ini digunakan untuk mendapatkan data dari server.
+                    <form action="Server/email.txt" method="get">
+                        <input type="email" placeholder="email@example.com" name="email" required>
+                        <input type="submit">
+                    </form>
+                </p>
+            </li>
+            <li>
+                <h4>Metode POST</h4>
+                <p>
+                    Metode POST merupakan metode untuk mengirimkan data dari browser ke server. 
+                    <form method="post" action="Server/email.txt">
+                        <input type="email" placeholder="email@example.com" name="email" required>
+                        <input type="submit">
+                    </form>
+                </p>
+            </li>
+        </ul>
+    </p>
+
+    <h2>Special Character</h2>
+    <p>
+        Beberapa karakter seperti copyright (&copy;), lebih kecil (&lt;), lebih besar (&gt;), dan lainnya tidak dapat ditampilkan langsung sebagai konten HTML. Untuk menampilkan karakter terebut diperlukan kode khusus seperti yang tertera di bawah:
+        <table border="1">
+            <tr>
+                <th>Karakter</th>
+                <th>Deskripsi</th>
+                <th>Named Entity</th>
+                <th>Numeric Entity</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>non-breaking space</td>
+                <td>&amp;nbsp;</td>
+                <td>&amp;#160;</td>
+            </tr>
+            <tr>
+                <td>&amp;</td>
+                <td>Ampersand</td>
+                <td>&amp;amp;</td>
+                <td>&amp;#038;</td>
+            </tr>
+            <tr>
+                <td>&apos;</td>
+                <td>Apostrophe</td>
+                <td>&amp;apos;</td>
+                <td>&amp;#039;</td>
+            </tr>
+            <tr>
+                <td>&lt;</td>
+                <td>Kurang dari</td>
+                <td>&amp;lt;</td>
+                <td>&amp;#060;</td>
+            </tr>
+            <tr>
+                <td>&gt;</td>
+                <td>Lebih dari</td>
+                <td>&amp;gt;</td>
+                <td>&amp;#062;</td>
+            </tr>
+            <tr>
+                <td>&copy;</td>
+                <td>Hak cipta</td>
+                <td>&amp;copy;</td>
+                <td>&amp;#169;</td>
+            </tr>
+            <tr>
+                <td>&reg;</td>
+                <td>Merek dagang terdaftar</td>
+                <td>&amp;reg;</td>
+                <td>&amp;#174;</td>
+            </tr>
+            <tr>
+                <td>&trade;</td>
+                <td>Merek dagang</td>
+                <td>&amp;trade</td>
+                <td>&amp;#8482;</td>
+            </tr>
+            <tr>
+                <td>&pound;</td>
+                <td>Pound</td>
+                <td>&amp;Pound;</td>
+                <td>&amp;#163;</td>
+            </tr>
+            <tr>
+                <td>&yen;</td>
+                <td>Yen</td>
+                <td>&amp;yen;</td>
+                <td>&amp;#165;</td>
+            </tr>
+            <tr>
+                <td>&euro;</td>
+                <td>Euro</td>
+                <td>&amp;euro;</td>
+                <td>&amp;#8364;</td>
+            </tr>
+            <tr>
+                <td>&ndash;</td>
+                <td>En-dash</td>
+                <td>&amp;ndash;</td>
+                <td>&amp;#8211;</td>
+            </tr>
+            <tr>
+                <td>&mdash;</td>
+                <td>Em-dash</td>
+                <td>&amp;mdash;</td>
+                <td>&amp;#8212;</td>
+            </tr><tr>
+                <td>&lsquo;</td>
+                <td>Kutip tunggal kiri</td>
+                <td>&amp;lsquo;</td>
+                <td>&amp;#8216;</td>
+            </tr>
+            <tr>
+                <td>&rsquo;</td>
+                <td>Kutip tunggal kanan</td>
+                <td>&amp;rsquo;</td>
+                <td>&amp;#8217;</td>
+            </tr>
+            <tr>
+                <td>&ldquo;</td>
+                <td>Kutip ganda kiri</td>
+                <td>&amp;ldquo;</td>
+                <td>&amp;#8220;</td>
+            </tr>
+            <tr>
+                <td>&rdquo;</td>
+                <td>Kutip ganda kanan</td>
+                <td>&amp;rdquo;</td>
+                <td>&amp;#8221;</td>
+            </tr>
+            <tr>
+                <td>&bull;</td>
+                <td>Bullet</td>
+                <td>&amp;bull;</td>
+                <td>&amp;#8226;</td>
+            </tr>
+            <tr>
+                <td>&hellip;</td>
+                <td>Horizontal ellipsis</td>
+                <td>&amp;hellip;</td>
+                <td>&amp;#8230;</td>
+            </tr>
+        </table>
     </p>
 </body>
 </html>
