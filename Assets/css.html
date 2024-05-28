@@ -336,5 +336,119 @@
             </tr>
          </table>
     </p>
+    <h3>ID Selector</h3>
+    <p>
+        Menetapkan target elemen berdasarkan nilai dari atribut <strong>id</strong> yang diterapkan pada elemennya, mirip dengan <strong>class</strong>. Kebanyakan atribut ini digunakan untuk memberikan sebuah arti pada <em>generic element</em> seperti &lt;div&gt; dan &lt;span&gt;. Namun, atribut ini tidak bersifat shareable, yang berarti nilai id hanya bisa digunakan pada satu elemen saja.<br>
+        Gunakan tanda (#) untuk menetapkan selector menggunakan id.
+        <table border="2">
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+       &lt;meta charset="UTF-8"
+       &lt;title&gt;Judul&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div id="greenback"&gt;
+        &lt;p&gt;
+          Div dengan id greenback
+        &lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;p&gt;
+          Div tanpa id
+        &lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    #greenback{
+        background-color: green;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Div dengan id greenback memiliki teks dengan latar belakang berwarna hijau, sedangkan div yang tidak memiliki id tidak berubah karena tidak terkait dengan selector manapun.
+                </td>
+            </tr>
+         </table>
+    </p>
+    <h3>Attribute Selector</h3>
+    <p>
+        Merupakan cara menetapkan target elemen berdasarkan sebuah atribut yang digunakan atau bahkan bisa lebih spesifik dengan nilainya.
+        <table border="2">
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+       &lt;meta charset="UTF-8"
+       &lt;title&gt;Judul&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;a href="URL"&gt;href attribute&lt;/a&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    a[href]{
+        color: red;
+    }
+                    </pre>
+                </td>
+            </tr>
+         </table>
+         <table border="5">
+            <tr>
+                <th>Syntax</th>
+                <th>Deskripsi</tr>
+            </tr>
+            <tr>
+                <td>attr</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr.</em></td>
+            </tr>
+            <tr>
+                <td>[attr=value]</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dengan nilai value</td>
+            </tr>
+            <tr>
+                <td>[attr~=value]</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan salah satu nilainya adalah <em>value.</em></td>
+            </tr>
+            <tr>
+                <td>[attr^=value]</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya diawali dengan nilai <em>value.</em></td>
+            </tr>
+            <tr>
+                <td>[attr$=value]</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya diakhiri dengan value.</td>
+            </tr>
+            <tr>
+                <td>[attr*=value]</td>
+                <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya mengandung value.</td>
+            </tr>
+         </table>
+    </p>
+    <h3>Universal Selector</h3>
+    <p>
+        Digunakan untuk diterapkan pada seluruh elemen. Namun, selector ini juga bisa secara spesifik menargetkan sebuah elemen dengan menggabungkannya bersama selector yang lain.
 </body>
 </html>
