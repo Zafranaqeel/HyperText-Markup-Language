@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Dengan CSS</title>
+</head>
+<body>
+    <nav>
+        <a href="../">kembali</a>
+    </nav>
+    <h1>Cascading Style Sheet</h1>
+    <h2>Keuntungan ketika menerapkan CSS</h2>
+    <ol>
+        <li>Dapat mengontrol dan menerapkan layout (tata letak) secara presisi</li>
+        <li>Menghindari pekerjaan yang berulang-ulang dalam menerapkan styling</li>
+        <li>Didukung banyak browser</li>
+    </ol>
+    <h2>Cara stylesheet bekerja</h2>
+    <ol>
+        <li>Dimulai dari sebuah dokumen yang sudah ditandai dengan tag elemen HTML.</li>
+        <li>Menuliskan aturan styling untuk menentukan tampilan elemen HTML.</li>
+        <li>Melampirkan file .css pada HTML.</li>
+    </ol>
+    <h2>Menulis Aturan Styling</h2>
+    <p>
+        Terdapat 2 bagian pada sebuah rule. Bagian pertama adalah identitas elemen (selector) dan kedua adalah deklarasi atau instruksi yang akan diterapkan pada sebuah selector.<br>
+        <img src="css rule.png" alt="css rule ilustration" width="400px">
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    h1{
+      color: green;    
+    }
+            
+    p{
+      font-size: small;
+      font-family: sans-serif;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Selector</h3>
+    <p>
+        Pada contoh di atas, &lt;h1&gt; dan &lt;7&gt; digunakan sebagai selector. Properti dan nilainya yang terdapat dalam <em>declaration/declaration block</em> akan diterapkan pada seluruh elemen &lt;h1&gt; dan &lt;p&gt; yang ada pada dokumen HTML.
+    </p>
+    <h3>Declaration</h3>
+    <p>
+        Deklarasi terdiri dari pasangan properti dengan nilainya. Satu rule bisa diberi lebih dari satu deklarasi seperti contoh pada selector p di atas. Setiap deklarasi harus diakhiri dengan <em>semicolon</em> (;) sebagai tanda diakhirinya sebuah deklarasi.<br>
+        CSS tidak memperhatikan spasi, sama seperti bahasa pemrograman pada umumnya. Walaupun seperti itu, untuk satuan nilai semisal <em>px, em,</em> dan lainnya harus dituliskan tanpa spasi pada nilainya. Contohnya seperti dibawah:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+            h1{
+                margin: 2em;
+            }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Komentar Pada CSS</h3>
+    <p>
+        Komentar digunakan untuk menjelaskan kode dan dapat membantu ketika mengedit kode di lain waktu. Hal yang ditulis tidak akan ditampilkan di browser namun bisa dilihat pada text editor.<br>
+        Cara penulisan comment pada CSS adalah sebagai berikut:<br>
+        /* */
+    </p>
+    <h2>Melampirkan Styling Pada Dokumen HTML</h2>
+    <p>
+        <ul>
+            <li>External Style Sheet</li>
+            <p>
+                <em>External Style Sheet</em> adalah berkas terpisah yang di dalamnya hanya ada CSS rules. Berkas harus berekstensi <strong>.css</strong> dan dihubungkan dengan dokumen HTML. Dengan cara ini, satu berkas styling dapaat digunakan oleh banyak berkas HTML.
+                <table border="2">
+                    <tr>
+                        <th>Cara Menghubungkan berkas .css dengan dokumen HTML</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+    &lt;head&gt;
+        &lt;meta charset="8-UTF"&gt;
+        &lt;title&gt;Styling&lt;/title&gt;
+        &lt;link href="Style.css"&gt;
+    &lt;/head&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Catatan: <em>Nama berkas yang mengandung "min.css" adalah penamaan format berkas CSS yang sudah diminimalkan dengan menghilangkan white space yang tidak digunakan.</em>
+            </p>
+            <li>Embedded Style Sheet</li>
+            <p>
+                <em>Embedded Style Sheet</em> adalah kumpulan rules yang dituliskan dalam berkas HTML dengan menggunakan elemen &lt;style&gt;. Dengan demikian, CSS rules yang dituliskan hanya dapat dicakup oleh satu berkas HTML. Penulisan rules harus dituliskan dalam elemen &lt;style&gt;.
+                <table border="2">
+                    <tr>
+                        <th>Penulisan Rules</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+    &lt;head&gt;
+        &lt;title&gt;
+        &lt;style&gt;
+          h1{
+            color: blue;
+          }
+        &lt;/style&gt;
+    &lt;/head&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <li>Inline Style</li>
+            <p>
+                <em>Inline Style</em> adalah stylingyang diterapkan secara langsung pada elemen HTML dengan menggunakan atribut <em>style</em>.<br>
+                Dalaam metode ini kita tidak memerlukan selector karena style hanya diterapkan pada elemen tempat atribut <em>style</em> diterapkan.
+                <table border="2">
+                    <tr>
+                        <th>Inline Style</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+&lt;p&gt; style="color: blue;"&gt; paragraf &lt;/p&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </ul>
+    </p>
+    <h2>CSS Conception</h2>
+    <h3>Inheritance</h3>
+    <p>
+        Dapat mewarisi properti style tertentu dari suatu elemen ke elemen-elemen di dalamnya (child-elements).
+        Contohnya CSS rules yang ditetapkan untuk elemen &lt;body&gt; akan diterapkan pada seluruh child-elements secara otomatis. 
+    </p>
+    <h3>Group Selector</h3>
+    <p>
+        Jika beberapa selector yang berbeda memiliki penerapan properti-properti yang sama, kita dapat menggabungkannya menggunakan group selector.
+        <table border="2">
+            <tr>
+                <th>Contoh Penggunaan</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    h1{
+        font-family: sans-serif;
+    }
+    h2{
+        font-family: sans-serif;
+    }
+    /*Diubah menjadi*/
+    h1, h2{
+        font-family: sans-serif;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Rule Order</h3>
+    <p>
+        <em>cascading</em> artinya "mengalir". Demikian halnya dengan alur kerja CSS dalam membaca kode, mengalir dari atas ke bawah. Oleh karena itu, urutan dalam penulisan rules harus diperhatikan, terutama saat terjadi konflik. Konflik dapat terjadi ketika menerapkan beberapa styling pada satu dokumen HTML dan menimpa styling yang telah diterapkan sebelumnya baik disadari maupun tidak.
+    </p>
+    <table border="2">
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Judul&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="Style.css"&gt;
+
+    &lt;style&gt;
+        p{
+         color: blue;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet.
+    &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </td>
+            <td>
+                <pre>
+  p{
+   color: red;
+  }
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Dalam contoh diatas, warna yang akan diterapkan pada elemen &lt;p&gt; adalah warna biru karena merupakan warna yang paling akhir didefinisikan.</td>
+        </tr>
+    </table>
+    <p>
+        Namun, kita bisa membuat sebuah <strong>property styling</strong> agar dianggap penting oleh browser untuk diterapkan dan urutan tidak diperhatikan dengan menambahkan keyword !important pada akhir nilai propertinya.
+        <table border="2">
+        <tr>
+            <th>HTML</th>
+            <th>CSS</th>
+        </tr>
+        <tr>
+            <td>
+                <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;title&gt;Judul&lt;/title&gt;
+
+    &lt;link rel="stylesheet" href="Style.css"&gt;
+
+    &lt;style&gt;
+        p{
+         color: blue;
+        }
+    &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet.
+    &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </pre>
+            </td>
+            <td>
+                <pre>
+  p{
+   color: red !important;
+  }
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Dalam contoh diatas, warna yang akan diterapkan pada elemen &lt;p&gt; adalah warna merah karena karena terdapat keyword !important pada akhir nilai properti.</td>
+        </tr>
+    </table>
+    </p>
+    <h2>Selektor Dasar</h2>
+    <h3>Type Selector</h3>
+    <p>
+        Menggunakan nama elemen sebagai target untuk diterapkannya rule.
+    </p>
+    <h3>Class Selector</h3>
+    <p>
+        Menetapkan target elemen berdasarkan nilai dari atribut class yang diterapkan pada elemennya. Untuk penulisan selector-nya diawali dengan tanda titik (.) dan dilanjutkan dengan nama class nya.
+        &lt;!DOCTYPE html&gt;
+        <table border="2">
+            <tr>
+                <th>HTML</th>
+                <th>CSS</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+       &lt;meta charset="UTF-8"
+       &lt;title&gt;Judul&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;p class="baris1"&gt;dolor sed viverra&lt;/p&gt;
+      &lt;p class="baris2"&gt;in nibh mauris&lt;/p&gt;
+      &lt;p class="baris3"&gt;a diam sollicitudin&lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    .baris1{
+        color: red;
+    }
+    
+    .baris2{
+        color: blue;
+    }
+
+    .baris3{
+        background-color: green;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Output (hasil) dari ketiga elemen &lt;p&gt; tersebut masing-masing adalah:<br>
+                    baris 1 merupakan teks berwarna merah<br>
+                    baris 2 merupakan teks berwarna biru<br>
+                    baris 3 merupakan teks dengan latar belakang berwarna hijau
+                </td>
+            </tr>
+         </table>
+         <br>
+         Class bersifat <em>sharable</em> sehingga dapat diterapkan pada banyak elemen dengan tipe elemen yang berbeda-beda seperti pada contoh di bawah:
+         <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    &lt;h1 class="baris1"&gt;Heading dengan teks berwarna merah&lt;/h1&gt;
+    &lt;p class="baris1"&gt;Paragraf dengan teks berwarna merah&lt;/p&gt;
+                    </pre>
+                </td>
+            </tr>
+         </table>
+         <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    &lt;h1 class="baris1"&gt;Heading dengan teks berwarna merah&lt;/h1&gt;
+    &lt;p class="baris1 baris3"&gt;Paragraf dengan teks berwarna merah dan background berwarna hijau&lt;/p&gt;
+                    </pre>
+                </td>
+            </tr>
+         </table>
+    </p>
+</body>
+</html>
