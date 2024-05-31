@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Styling Dengan CSS</title>
+    <link rel="Website Icon" href="cssico.webp">
+    <style>
+        h1{
+            text-align: center;
+            text-decoration: underline;
+            color: cyan;
+        }
+
+        h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -450,5 +462,354 @@
     <h3>Universal Selector</h3>
     <p>
         Digunakan untuk diterapkan pada seluruh elemen. Namun, selector ini juga bisa secara spesifik menargetkan sebuah elemen dengan menggabungkannya bersama selector yang lain.
+    </p>
+    <h2>Combinators</h2>
+    <h3>Adjacent Sibling Selector</h3>
+    <p>
+        Menggabungkan gua buah basic selector dengan menggunakan tanda (+) diantara keduanya.
+        <table border="2">
+            <td>
+                <pre>
+    img + p{
+        color:green;
+    }
+                </pre>
+            </td>
+        </table>
+        Adjacent Sibling Selector terdiri dari dua buah target elemen, tetapi hanya elemen kedua yang menerapkan rule selama elemen tersebut dituliskan langsung setelah elemen pertama pada berkas HTML. Selain itu, kedua elemen tersebut harus berada dalam induk elemen yang sama.
+    </p>
+    <h3>General Sibling Selector</h3>
+    <p>
+        Mirip seperti Adjacent Sibling Selector, tetapi rules akan diterapkan pada seluruh elemen kedua yang berada setelah elemen pertama selama masih memiliki induk yang sama, walaupun posisi dari elemen kedua tidak berada tepat setelahnya. Menggunaakan simbol tilda (~) untuk menetapkan elemennya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    img ~ p{
+        color: blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Rule di atas akan diterapkan pada elemen paragraf yang berada setelah elemen img selama masih di dalam induk yang sama.</td>
+
+            </tr>
+        </table>
+    </p>
+    <h3>Child Selector</h3>
+    <p>
+        Menggabungkan dua buah basic selector dengan menggunakan tanda <em>greater than</em> (&gt;) diantara basic selectornya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    div > p{
+        background-color: red;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Pada contoh di atas, CSS rule akan diterapkan pada seluruh elemen paragraf yang berada dalam elemen div secara langsung.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Descendant Selector (space)</h3>
+    <p>
+        Mirip seperti Child Selector, tetapi hierarkinya lebih luas karena rule diterapkan pada seluruh elemen yang menjadi turunannya walaupun secara tidak langsung. Selector ini menggunakan spasi dalam menggabungkan dua basic selector.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    div p{
+        background-color: blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Dalam contoh di atas, CSS rule akan diterapkan pada seluruh elemen paragraf yang merupakan turunan dari elemen div.</td>
+            </tr>
+        </table>
+    </p>
+    <h2>Pseudo Selector</h2>
+    <p>
+        Pseudo Selector berbeda dari selector yang sudah dibahas sebelumnya. Selector ini menargetkan elemen pada bagian yang "tidak terlihat", seperti sifat pada elemen sehingga untuk menetapkannya tidak bisa menggunakan selector biasa. salah satu contoh yang paling sering diterapkan adalah :hover, pseudo selector tersebut digunakan untuk menetapkan rule ketika curcor diarahkan ke target elemen.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    a:hover{
+        color: blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Rule di atas menyebabkan elemen anchor menerapkan warna biru ketika kursor diarahkan pada elemen tersebut.
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Pseudo Class Selector</h3>
+    <p>
+        Merupakan sebuah class "semu" yang sebenarnya ada pada tiap elemen HTML.<br>
+        Untuk menetapkan rule hanya ketika sebuah tautan telah dikunjungi dapat menggunakan (:visited).<br>
+        Untuk menetapkan rule hanya ketika sebuah elemen diarahkan dengan kursor dapat menggunakan (:hover).<br>
+        Untuk menggunakan pseudo-class, kita gunakan tanda titik dua (:) pada basic selector dan diikuti dengan pseudo-class nya.
+    </p>
+    <h3>Pseudo Elemen Selector</h3>
+    <p>
+        Merupakan sebuah elemen "semu" yang sebenarnya ada, tetapi tidak tampak secara tertulis. Selector ini bisa digunakan ketika kita menambahkan konten tepat sebelum dan setelah sebuah elemen paragraf. Tidak perlu menuliskan elemen/konten baru pada aberkas HTML untuk menambahkan konten. Namun, kita dapat memanfaatkan pseudo-element untuk melakukannya. Pseudo-element yang dimaksud adalah <mark>::before </mark> dan <mark>::after </mark>. Konten yang dibuat dengan pseudo-element dituliskan pada CSS. Untuk menggunakan pseudo-element, kita gunakan dua buaha tanda titik dua (::) dan diikuti dengan nama pseudo-element-nya.
+    </p>
+    <h2>Formatting Text</h2>
+    <h3>Font Styling</h3>
+    <p>
+        Dalam CSS, font ditentukan menggunakan beberapa paket properti font yang dapat mengatur tipe font, ukuran, ketebalan, dan style. Berikut daftar properti font yang akan dipelajari:
+        <ul>
+            <li>font-family: Menetapkan jenis font yang akan diterapkan pada target.</li>
+            <li>font-size: Menentukan ukuran pada teks.</li>
+            <li>font-weight: Menentukan ketebalan pada teks.</li>
+            <li>font-style: Menetapkan styling yang diterapkan pada teks.</li>
+            <li>font-variant: Menentukan teks untuk mengunakan gara <em>small caps</em>(huruf kapital kecil.)</li>
+            <li>font: Sebagai <em>shorthand</em> dari properti font yang ada.</li>
+        </ul>
+    </p>
+    <h4>Font-family</h4>
+    
+    <p>
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    body{
+        font-family: sans-serif;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Pada rule tersebut, kita mengubah standar font yang digunakan browser dengan font "sans-serif". Untuk nilai dari properti ini dapat lebih dari satu (font stack), tujuannya adalah sebagai <em>fallback</em> jika terjadi kegagalan dalam menggunakan font yang kita gunakan.
+    </p>
+    <img src="font-family.jpeg" border="1" width="600">
+    <table border="2">
+        <tr>
+            <td>
+                <pre>
+    p{
+        font-family: Arial, "Open Sans", sans-serif;
+    }
+    
+    selector{
+        property-name: Value1, Value2, Value3;
+    }
+                </pre>
+            </td>
+        </tr>
+    </table>
+    <p>
+        Penjelasan:
+        <ul>
+            <li>Selurh nilai font yang bukan merupakan <em>generic font</em> harus dituliskan secara kapital. Contohnya "Arial" bukan "arial".</li>
+            <li>Gunakan tanda koma (,) untuk memisahkan antara nilai font yang digunakan.</li>
+            <li>Selalu tanda kutip (") untuk membungkus nilai font yang memiliki spasi pada namanya</li>
+        </ul>
+        Catatan: Pastikan untuk menggunakan <em>generic font families</em> pada akhir nilai properti karena nilai ini dipastikan didukung oleh seluruh browser saat ini. Berikut adalah nilai-nilai <em>generic font families</em>:
+        <table border="4">
+            <tr>
+                <th>Generic Font Families</th>
+                <th>Deskripsi</th>
+                <th>Contoh Font</th>
+            </tr>
+            <tr>
+                <td>Serif</td>
+                <td>Jenis font yang memiliki runcing pada garis akhir karakternya.</td>
+                <td>Times New Roman</td>
+            </tr>
+            <tr>
+                <td>Sans-serif</td>
+                <td>Jenis font yang tidak meruncing pada garis akhir karakternya.</td>
+                <td>Open Sans, Fira Sans, dan lainnya</td>
+            </tr>
+            <tr>
+                <td>Monospace</td>
+                <td>Jenis font yang memiliki nilai lebar tiap karakternya sama.</td>
+                <td>Consolas</td>
+            </tr>
+            <tr>
+                <td>Cursive</td>
+                <td>Jenis font yang tampak seperti <em>handwriting</em> atau hasil tulisan tangan.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fantasy</td>
+                <td>Jenis font yang merepresentasikan karakteristik yang menyenangkan.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>System-ui</td>
+                <td>Jika menerapkan nilai ini maka font yang diterapkan akan sama seperti font yang digunakan pada sistem operasi kita.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Math</td>
+                <td>Jenis font yang digunakan untuk penulisan rurmus-rumus matematika.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Emoji</td>
+                <td>Jenis font yang digunakan untuk menampilkan emoji.</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Fangsong</td>
+                <td>Jenis font yang menampilkan gaya penulisan Chinese.</td>
+                <td></td>
+            </tr>
+        </table>
+    </p>
+    <h3>@font-face</h3>
+    <p>
+        CSS memiliki fitur yang digunakan utuk memasukkan font eksternal ke dalam CSS, yakni menggunakan @font-face. Berikut adalah contoh penulisannya pada CSS:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    @font-face{
+        font-family: "Nama Font"
+        src: url('File Font.TIF')
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Setelah mendefinisikan font-face tersebut, ada nilai font-family baru bernilai "Nama Font" untuk diterapkan pada elemen HTML.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    p{
+        font-family: "Nama Font";
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Font-size</h3>
+    <p>
+        Untuk mneetapkan ukuran font, kita perlu menerapkan properti font-size. Dengan menetapkan nilai dari properti ini dengan menuliskan langsung nilai dan satuannya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    h1{
+        font-size: 1.5em;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Hal yang perlu diperhatikan adalah ketika menuliskan nilai dan  satuannya. Pastikan tidak ada jarak (spasi) diantaranya karena rule tidak akan diterapkan pada target jika terdapat spasi diantara nilai dan satuan.
+        <h4>Satuan dalam menetapkan ukuran font terbagi dua jenis:</h4>
+        <ul>
+            <li>Relative Unit</li>
+            <p>Satuan yang nilainya tergantung pada suatu hal. Contohnya ukuran viewport, induk elemen, tau ukuran teks standar.</p>
+            <li>Absolute Unit</li>
+            <p>Satuan yang nilainya telah ditentukan atau doigunakan dalam dunia nyata.</p>
+        </ul>
+    </p>
+    <h4>Relative Unit</h4>
+    <table border="4">
+        <tr>
+            <th>Satuan</th>
+            <th>Relative to</th>
+            <th>Fungsi</th>
+        </tr>
+        <tr>
+            <td>em</td>
+            <td>Font size</td>
+            <td>Satuan relatif terhadap ukuran font yang sedang digunakan pada elemen (contohnya 2em berarti 2 kali lebih besar dari ukuran font seharusnya).</td>
+        </tr>
+        <tr>
+            <td>ex</td>
+            <td>Font height</td>
+            <td>Satuan relatif terhadap tinggi font saat ini, satuan ini sangat jarang sekali digunakan.</td>
+        </tr>
+        <tr>
+            <td>rem</td>
+            <td>Font size</td>
+            <td>Mirip seperti em, tetapi rem merupakan satuan relatif terhadap ukuran font dari root element.</td>
+        </tr>
+        <tr>
+            <td>ch</td>
+            <td>Font width</td>
+            <td>Satuan relatif terhadap lebar dari karakter "0" nol.</td>
+        </tr>
+        <tr>
+            <td>vw</td>
+            <td>Viewport width</td>
+            <td>Satuan relatif terhadap 1% lebar viewport. Contoh 1vw=1% dari tinggi viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.</td>
+        </tr>
+        
+        <tr>
+            <td>vh</td>
+            <td>Viewport height</td>
+            <td>Satuan relatif terhadap 1% tinggi viewport. Contoh 1vh = 1% dari tinggi viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.</td>
+        </tr>
+    </table>
+    <h4>Absolute Unit</h4>
+    <table border="5">
+        <tr>
+            <th>Satuan</th>
+            <th>Fungsi</th>
+        </tr>
+        <tr>
+            <td>px</td>
+            <td>Menetapkan nilai font berdasarkan ukuran pixel.</td>
+        </tr>
+        <tr>
+            <td>pt</td>
+            <td>Menetapkan nilaia font berdasarkan ukuran points (1/72 inch di CSS 2.1).</td>
+        </tr>
+        <tr>
+            <td>pc</td>
+            <td>Menetapkan nilai font berdasarkan picas (1 pica = 12 point).</td>
+        </tr>
+        <tr>
+            <td>mm</td>
+            <td>Menetapkan nilai font berdasarkan milimeters.</td>
+        </tr>
+        <tr>
+            <td>cm</td>
+            <td>Menetapkan nilai font berdasarkan centimeters.</td>
+        </tr>
+        <tr>
+            <td>in</td>
+            <td>Menetapkan nilai font berdasarkan inches.</td>
+        </tr>
+    </table>
+    <p>
+        Selain dengan menetapkan nilaai dan satuannya secara langsung, kita juga bisa menggunaskan nilai persentase untuk mengatur ukuran font. 
+    <table border="2">
+        <tr>
+            <td>
+                <pre>
+    body{
+        font-size: 16px;
+    }
+
+    h1{
+        font-size: 150%;
+    }
+                </pre>
+            </td>
+        </tr>
+    </table>
+    Pada contoh di atas, ukuran font dari element &lt;h1&gt; seharusnya memiliki ukuran 16px karena mewarisi dari induk elemennya (body). Namun, dibawahnya terdapat rule yang menargetkan secara spesifik untuk elemen h1 untuk menerapkan font sebesar 150% dari ukuran induknya. Dampaknya, elemen &lt;h1&gt; akan tampak 50% lebih besar dari elemen yang lain yang ada di dalam body.<br>
+    Hal yang terakhir, kita juga bisa menentukan ukuran font dengan menuliskan kata kunci secara spesifik yang tersedia pada CSS. Kata kunci tersebut adalah : xx-small, x-small, small, medium, large, x-large, xx-large.
+    </p>
 </body>
 </html>
