@@ -811,5 +811,218 @@
     Pada contoh di atas, ukuran font dari element &lt;h1&gt; seharusnya memiliki ukuran 16px karena mewarisi dari induk elemennya (body). Namun, dibawahnya terdapat rule yang menargetkan secara spesifik untuk elemen h1 untuk menerapkan font sebesar 150% dari ukuran induknya. Dampaknya, elemen &lt;h1&gt; akan tampak 50% lebih besar dari elemen yang lain yang ada di dalam body.<br>
     Hal yang terakhir, kita juga bisa menentukan ukuran font dengan menuliskan kata kunci secara spesifik yang tersedia pada CSS. Kata kunci tersebut adalah : xx-small, x-small, small, medium, large, x-large, xx-large.
     </p>
+    <h2>Font Styling</h2>
+    <h3>Font-weight</h3>
+    <p>
+        Digunakan untuk mengatur ketebalan dari font yang ditampilkan. Nilai dari properti ini dapat ditentukan dengan menggunakan numeric values (100 sampai 900) atau dengan menggunakan descriptive terms (normal, bold, bolder, dan lighter). Properti font-weight dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan padaelemen turunannya.
+    </p>
+    <h3>Font-style</h3>
+    <p>
+        Digunakan untuk menentukan postur dari teks yang ditampilkan, yakni bentuknya vertikal (normal) atau miring (italic dan oblique). Properti font-style dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada elemen turunannya.
+    </p>
+    <h3>Font-variant</h3>
+    <p>
+        Menentukan apakah teks harus ditampilkan dalam font huruf kecil atau tidak. Properti font-variant dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada elemen turunannya.
+    </p>
+    <h3>Shorthand</h3>
+    <p>
+        Menspesifikasikan masung-masing nilai properti fotn akan menghasilkan banyak sekali kode repetitif. CSS memiliki properti CSS yang biasa disebut dengan <em>shorthand properti</em>. Ia memberikan suatu "jalan pintas" untuk menuliskan properti-properti tersebut ke dalam satu properti, yaitu <strong>font</strong>. Dengan menggunakan properti font, kita dapat menuliskan beberapa properti hanya dalam satu properti pada satu rule.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    target{font: style weight variant size font-family}
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Nilai dari properti font merupakan nilai seluruh properti dari font yang sudah dibahas sebelumnya, setiap nilai dipisahkan menggunakan spasi. Urutan nilai merupakan hal yang penting pada properti ini sehingga jangan sampai salah urutan dalam menuliskannya. Kesalahan penulisan atau urutan menyebabkan seluruh struktur rule menjadi tidak valid. Kita bisa tidak menuliskan seluruh nilai properti yang ada, tetapi nilai dari properti <mark>font-size</mark> dan <mark>font-family wajib ada ketika menggunakan properti ini.</mark>
+    </p>
+    <h2>Text Styling</h2>
+    <h3>Line Height</h3>
+    <p>
+        Digunakan untuk mengatur jarak minimal dari garis dasar ke garis dasar dalam menampilkan teks pada halaman. 
+        <img src="lineheight.jpeg" border="1" width="600px">
+        Pada penjelasan di atas disebutkan "minimal" karena jika terdapat sebuah karakter yang tinggi atau besar dalam sebuah baris, tinggi dari baris pun akan menyesuaikan agar jarak tetap mengakomodasinya. Cara pertama merupakan cara paling mudah digunakan karena hanya menentukan nilai dengan satu angka. Angka tersebut nantinya dikalikan dengan nilai font-size sebelum diterapkan pada nilai prrperti line-height.<br>
+        Contohnya, Ukuran font standar pada paragraf adalah 16pixel dan kita definisikan properti line-height dengan nilai 2. Nilai properti line-height seharusnya adalah 16pixel*2 = 32pixel.<br>
+        Properti line-height dapat diaplikasikan ke seluruh elemen yang ada pada HTML dan nilainya dapat diturunkan pada elemen turunannya.
+    </p>
+    <h3>Text Indent</h3>
+    <p>
+        Digunakan untuk mengatur jarak di awal paragraf. Nilai properti ini dapat ditentukan melalui perhitungan panjang dalam px, em, dan in, atau bisa menggunakan nilai persentase (%). Nilai persentase dihitung berdasarkan lebar dari induk elemen.
+        <img src="textindent.jpeg" border="1" width="600px">
+        Pada contoh ketiga dapat dilihat bahwa pada nilai properti ini dapat diberikan nilai negatif. Jika menggunakan nilai tersebut, baris pertama pada paragraf akan keluar dari batas elemen yang menampungnya (disebut hanging indent). Properti <mark>text-indent</mark> hanya berpengaruh pada awal baris paragraf. 
+    </p>
+    <h3>Text Alignment</h3>
+    <p>
+        Digunakan untuk mengatur text alignment seperti yang biasa dilakukan pada Microsoft Word. Untuk standarnya, properti <mark>text-align</mark> bernilai left (rata kiri).  Namun, standarnya bisa jadi menggunakan right (rata kanan) jika ada penerapan atribut language dengan nilai bahasa yang arah bacanya berlawanan seperti Bahasa Arab.
+        <table border="5">
+            <tr>
+                <th>Nilai Properti</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>text-align: left;</td>
+                <td>Membuat perataan teks pada ujung kiri.</td>
+            </tr>
+            <tr>
+                <td>text-align: right;</td>
+                <td>Membuat perataan teks pada ujung kanan.</td>
+            </tr>
+            <tr>
+                <td>text-align: center;</td>
+                <td>Membuat perataan teks secara menengah.</td>
+            </tr>
+            <tr>
+                <td>text-align: justify;</td>
+                <td>Membuat perataan teks yang setara pada ujung kiri dan kanannya.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Text Decoration</h3>
+    <p>
+        Properti ini sering digunakan untuk membuat underline (garis bawah) pada teks. Namun, masih ada beberapa nilai lain yang dapat digunakan untuk properti ini.
+        <table border="5">
+            <tr>
+                <th>Nilai Properti</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>text-decoration: underline;</td>
+                <td>Memberikan garis bawah (underline) pada teks.</td>
+            </tr>
+            <tr>
+                <td>text-decoration: overline;</td>
+                <td>Memberikan garis atas (overline) pada teks.</td>
+            </tr>
+            <tr>
+                <td>text-decoration: line-through;</td>
+                <td>Memberikan efek tulisan dicoret (strikethrough).</td>
+            </tr>
+            <tr>
+                <td>text-decoration: none;</td>
+                <td>Menghilangkan dekorasi teks yang ada pada elemen.</td>
+            </tr>
+        </table>
+        Dengan menggunakan text-decoration, kita dapat menghilangkan efek underline pada link yang ditampilkan dengan memberikan nilai <mark>text-decoration: none;</mark> pada elemen &lt;a&gt;
+    </p>
+    <h3>Text Transform</h3>
+    <p>
+        Ketika menerapkan properti <mark>text-transform</mark> pada elemen teks, kapitalisasi akan berubah ketika halaman di-render tanpa harus mengubahnya pada dokumen HTML.
+        <table border="5">
+            <tr>
+                <th>Nilai Properti</th>
+                <th>Fungsi</th>
+            </tr>
+            <tr>
+                <td>text-transform: none;</td>
+                <td>Teks yang ditampilkan sama seperti yang dituliskan.</td>
+            </tr>
+            <tr>
+                <td>text-transform: capitalize;</td>
+                <td>Membuat huruf pertama besar pada tiap katanya.</td>
+            </tr>
+            <tr>
+                <td>text-transform: lowercase;</td>
+                <td>Membuat seluruh teks menggunakan huruf kecil.</td>
+            </tr>
+            <tr>
+                <td>text-transform: uppercase;</td>
+                <td>Membuat seluruh teks menggunakan huruf besar.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Word and Letter Spacing</h3>
+    <p>
+        Properti <mark>letter-spaing</mark> digunakan untuk mengatur jarak antar huruf. Properti <mark>word-spacing</mark> digunakan untuk mengatur jarak antar kata. Kedua elemen ini dapat diaplikasikan ke seluruh elemen yang ada pada HTML dan nilainya dapat diturunkan pada elemen turunannya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    letter{
+        letter-spacing: 2px; 
+    }
+
+    word{
+        word-spacing: 11px; 
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Text Shadow</h3>
+    <p>
+        Properti <mark>text-shadow</mark> digunakan untuk membuat bayangan pada teks (biasa disebut drop shadow). Nilai properti ini cukup rumit karena membutuhkan tiga buah nilai dan satu buah nilai warna sehingga membutuhkan empat nilai dalam satu properti untuk menentukan bayangannya.
+        <ul>
+            <li><strong>Nilai Pertama</strong> menunjukkan seberapa jauh ke kiri atau kanan (horizontal) bayangan yang harus ditampilkan.</li>
+            <li><strong>Nilai Kedua</strong> menunjukkan jarak ke atas atau bawah (vertical) bayangan harus ditampilkan.</li>
+            <li><strong>Nilai Ketiga</strong>(opsional) menentukan tingkat keburaman yang harus diterapkan pada bayangan.</li>
+            <li><strong>Nilai Keempat</strong> menentukan warna yang digunakan pada bayangan.</li>
+        </ul>
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    shadow{
+        text-shadow: nilai1 nilai2 nilai3 warna;
+    }
+
+    shadow{
+        text-shadow: 2px 2px 0px blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h2>Pewarnaan</h2>
+    <h3>Menetapkan Nilai Warna</h3>
+    <p>
+        Setiap warna pada layar komputer terdiri dari campuran warna merah, hijau, dan biru (RGB). Layar komputer dibuat dari ribuan kotak kecil yang biasa disebut piksel. Ketika layar dinyalakan, tiap piksel dapat menghasilkana warna yang berbeda sehingga dapat menampilkan gambar.<br>
+        <img src="rgb.jpeg" width="250px" border="1" alt="Kombinasi Merah Hijau dan Biru">
+        Kita bisa memilih kode RGB dengan bantuan color picker online yang dapat dicari di browser.
+    </p>
+    <h3>Numeric Value</h3>
+    <p>
+        Penetapan warna menggunakan numeric value adalah cara yang paling banyak digunakan karena dapat menentukan warna yang diinginkan dengan tepat. Berikut adalah contoh penulisannya:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    /* Warna biru menggunakan format RGB */
+    selector{
+        color: rgb(0, 0, 255);
+    }
+
+    /* Warna biru menggunakan format HEX */
+    selector{
+        color: #0000FF
+    }
+
+    /* Warna biru menggunakan format HSL */
+    selector{
+        color: hsl(240, 100%, 100%);
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Predefined Color Name</h3>
+    <p>
+        Selain menggunakan format angka, menentukan warna juga dapat enggunakan sebuah kata seperti blue, yellow, red, dan lainnya. Denga menggunakan kata, tentu dapat lebih mudah dan cepat dalam menentukan warna, tetapi mungkin hanya warna dasar yang dapat kita hafal. Hampir seluruh browser saat ini mendukung 140 nama warna.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        color: blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
 </body>
 </html>
