@@ -1024,5 +1024,164 @@
             </tr>
         </table>
     </p>
+    <h2>Warna untuk Teks dan Latar Belakang</h2>
+    <h3>Text Color</h3>
+    <p>
+        Kita dapat mengganti warna teks dengan mudah menggunakan properti <mark>color</mark>. Nilai dari properti color dapat berupa <em>predefined color name</em> atau sebuah <em>numeric value</em> dengan menggunakan RGB, RGBA, Hex, HSL, ataupun HSLA.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    p { color: blue; }
+    p { color: #0000FF; }
+    p { color: rgb(0, 0, 255); }
+    p { color: hsl(240, 100%, 50%); }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Pada contoh di atas, seluruh elemen &lt;p&gt; akan diberi warna biru dengan menggunakan beberapa cara.
+        Properti color dapat diaplikasikan ke seluruh elemen yang ada dalam HTML dan nilainya dapat diturunkan pada elemen turunannya.
+    </p>
+    <h3>Background Color</h3>
+    <p>
+        CSS memperlakukan setiap elemen HTML seperti berada pada sebuah kotak dan properti <mark>backround-color</mark> dapat mengatur warna untuk background dari kotak tersebut. Nilai dari properti background-color dapat berupa <em>predefined color name</em> atau sebuah <em>numeric value</em> dengan menggunakan RGB, RGBA, Hex, HSL, ataupun HSLA. Properti background-color akan bernilai transparan jika tidak ditetapkan warna apapun. Kebanyakan browser menetapkan nilai putih sebagai standar untuk nilai background-color, tetapi nilai standar tersebut dapat pengguna ubah melalui pengaturan browsernya. Untuk memastikan web memiliki tampilan background putih, kita dapat terapkan nilai background-color: white; pada elemen body.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    body {
+        background-color: #0000FF;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Opacity</h3>
+    <p>
+        Apa perbedaan antara transparan dan opacity? Transparan adalah seberapa besar tingkata tembus pandang atau tak terlihatnya suatu objek, sedangkan opacity adalah seberapa besar tingkat terlihat suatu objek. Semakin besar tingkat transparansi suatu objek, semakin tak terlihat objek tersebut. Namun, semakin besar tingkat opacity suatu objek, semakin terlihat objek tersebut (solid).
+        <table border="5">
+            <tr>
+                <th>Nilai</th>
+                <th>Deskripsi</th>
+            </tr>
+            <tr>
+                <td>0%</td>
+                <td>Elemen tak akan terlihat.</td>
+            </tr>
+            <tr>
+                <td>Di antara 0% - 100%</td>
+                <td>Elemen akan tembus cahaya alias masih dapat terlihat.</td>
+            </tr>
+            <tr>
+                <td>100%</td>
+                <td>Elemen sepenuhnya terlihat.</td>
+            </tr>
+        </table>
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        opacity: 50%;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Opacity pada Warna</h3>
+    <p>
+        CSS memiliki fitur bernama opacity yang dapat ditetapkan dalam warna. Ini merupakan komponen keempat setelah red, blue, dan green. Biasanya disebut sebagai alpha channel. Untuk melakukannya, kita bisa menggunakan format warna RGBA, HSLA, dan Hex.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        background-color: rgb(0, 0, 255, 0.5)
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h2>Box Model</h2>
+    <p>
+        Setiap elemen yang dibuat HTML akan menciptakan sebuah kotak untuk menampung kontennya. Layaknya bentuk kotak pada umumnya, ada beberapa nilai atau komponen padanya.
+        <ul>
+            <li>Lebar dan tinggi kotak (konten)</li>
+            <li>Ruang kosong antara konten dengan border (padding)</li>
+            <li>Garis tepi (border)</li>
+            <li>Jarak dari elemen lain (margin)</li>
+        </ul>
+    </p>
+    <h3>Box Dimension</h3>
+    <p>Standarnya, sebuah box yang dihasilkan tiap elemen selalu cukup untuk menampung konten. Namun, kita dapat mengatur dimensi dari box tersebut dengan properti <mark>width</mark> dan <mark>height</mark>. Cara yang paling banyak digunakan dalam menentukan dimensi kotak adalah menggunakan piksel, persentase, atau ems. Secara tradisional, piksel merupakan cara yang paling populer karena kita dapat merancang dan mengontrol ukuran secara akurat. Berbeda dengan persentase, ukuran kotak akan relatif atau menyesuaikan dari ukuran lain, seperti ukuran jendela browser atau ukuran induk yang menaunginya. Pada saat ini, banyak developer mulai merancang menggunakan persentase dan ems untuk menetapkan ukuran box agar dapat menyesuaikan dengan berbagai macam ukuran layar
+    </p>
+    <table border="2">
+        <tr>
+            <td>
+                <pre>
+    .box{
+        height: 123px;
+        width:123px;
+        background-color: red;
+    }
+
+    p{
+        height: 50%;
+        width: 50%;
+        background-color: blue;
+    }
+                </pre>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Pada contoh di atas, class "box" memiliki dimensi elemen dengan lebar 123px dan tinggi 123px. Di dalamnya terdapat elemen &lt;p&gt; yang memiliki ukuran elemen 50% dari lebar dan tinggi elemen induknya. Dengan demikian, elemen &lt;p&gt; memiliki ukuran 61,5px untuk panjang dan lebarnya.
+            </td>
+        </tr>
+    </table>
+    <h3>Limiting Dimension</h3>
+    <p>
+        Beberapa website ada yang sekarang menampilkan layout yang dapat melebar dan menyempit mengikuti ukuran layar pengguna. Pada prinsip tersebut, mungkin kita memerlukan sebuah limitasi ukuraan yang harus ditetapkan agar konten selalu ditampilkan secara proporsional. Kita dapat memanfaatkan properti <mark>min-width</mark> dan <mark>max-width</mark> untuk melakukannya.
+        <ul>
+            <li><strong>min-width</strong> menetapkan nilai lebar minimal yang harus dimiliki elemen.</li>
+            <li><strong>max-width</strong> menetapkan nilai lebar maksimal yang harus dimiliki elemen.</li>
+        </ul>
+        Keduanya merupakan properti yang sangat membantu untuk memastikan konten halaman dapat terbaca oleh pengguna.
+    </p>
+    <h3>Overflowing Content</h3>
+    <p>
+        Dimensi box yang dihasilkan elemen selalu cukup untuk menampung konten, tetapi tidak berlaku jika kita tetapkan secara manual panjang dan lebarnya. Tak jatrang terjadi overflow ketika kita menerapkan ukuran pada elemen dengan konten di dalamnya yang terlalu banyak. Untuk menangani kasus tersebut, kita bisa gunakan properti overflow, properti ini dapat bernilai berikut:
+        <ul>
+            <li>
+                <h4>visible</h4>
+                <p>Nilai default pada properti ini. Konten yang tidak tertampung akan tetap ditampilkan seperti pada standarnya.</p>
+            </li>
+            <li>
+                <h4>hidden</h4>
+                <p>Konten yang tidak tertampung akan disembunyikan jika tterjadi overflow.</p>
+            </li>
+            <li>
+                <h4>scroll</h4>
+                <p>Memunculkan scroll bar pada pinggir elemen sehingga konten yang tidak tertampung akan ditampilkan dengan scroll bar. Jika menggunakan nilai ini, scroll bar akan tetap muncul walaupun tidak terjadi overflow.</p>
+            </li>
+            <li>
+                <h4>auto</h4>
+                <p>Sama seperti scroll, hanya jika tidak terjadi overflow, nilai visible yang akan diterapkan.</p>
+            </li>
+        </ul>
+    </p>
+    <h3>Box-Sizing</h3>
+    <p>
+        Pada CSS3, kita dapat memilih tipe pengukuran lain dalam menentukan dimensi elemen. Dengan menggunakan properti <mark>box-sizing</mark>, kita dapat menentukannya berdasarkan border box. Ukuran elemen sudah termasuk content, padding, dan border. Dengan metode ini, hasil elemen yang ditampilkan akan memiliki dimensi yang sama persis seperti yang kita tentukan.
+    </p>
+    <h2>Box Model</h2>
+    <h3>Border</h3>
+    <p>
+        
+    </p>
 </body>
 </html>
