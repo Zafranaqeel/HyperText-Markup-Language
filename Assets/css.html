@@ -1106,7 +1106,7 @@
             </tr>
         </table>
     </p>
-    <h2>Box Model</h2>
+    <h2>Box Model (Box Dimension)</h2>
     <p>
         Setiap elemen yang dibuat HTML akan menciptakan sebuah kotak untuk menampung kontennya. Layaknya bentuk kotak pada umumnya, ada beberapa nilai atau komponen padanya.
         <ul>
@@ -1178,10 +1178,265 @@
     <p>
         Pada CSS3, kita dapat memilih tipe pengukuran lain dalam menentukan dimensi elemen. Dengan menggunakan properti <mark>box-sizing</mark>, kita dapat menentukannya berdasarkan border box. Ukuran elemen sudah termasuk content, padding, dan border. Dengan metode ini, hasil elemen yang ditampilkan akan memiliki dimensi yang sama persis seperti yang kita tentukan.
     </p>
-    <h2>Box Model</h2>
-    <h3>Border</h3>
+    <h2>Box Model (Border)</h2>
     <p>
-        
+       Merupakan sebuah garis yang mengelilingi area konten dan  padding. Kita dapat mengatur tipe, ketebalan, serta warna garis yang ditampilkan sesuai dengan yang diinginkan. Kita juga bisa mengatur dalam menampilkan sebagian atau keseluruhan garis pada elemen.
+    </p>
+    <h3>Border Width</h3>
+    <p>
+        Digunakan untuk mengatur ketebalan dari border, nilai dari properti ini dapat berupa piksel atau menggunakan predefined names value,  seperti thin, medium, dan thick. Nilai persentase (%) tidak bisa digunakan pada properti ini.
+        <table border="2">
+            <tr>
+                <th>Mengatur ukuran garis dengan menggunakan 4 properti terpisah</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    .box{
+        border-top-width: 2px;
+        border-right-width: 2px;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <th>Mengatur ukuran garis dengan menetapkan nilai sekaligus dalam 1 properti</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    .box{
+        border-width: 2px 2px 2px 2px; /*top right bottom left*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <ul>
+        <li>Ketika satu nilai ditentukan, nilai berlakuuntuk empat sisi.</li>
+        <li>Ketika dua nilai ditentukan, nilai pertama berlaku untuk sisi atas dan bawah, nilai kedua untuk sisi kiri dan kanan</li>
+        <li>Ketika tiga nilai ditentukan, nilai pertama berlaku untuk sisi atas, nilai yang kedua untuk sisi kiri dan kanan, nilai ketiga untuk sisi bawah.</li>
+        <li>Ketika empat nilai ditentukan, nilai pertama berlaku untuk sisi atas, nilai kedua untuk sisi kanan, nilai ketiga untuk sisi bawah, dan nilai keempat untuk sisi kiri.</li>
+    </ul>
+    <h3>Border Style</h3>
+    <p>
+        Properti <mark>border-style</mark> digunakan untuk menetapkan tipe border.
+        <table border="5">
+            <tr>
+                <th>Nilai Properti</th>
+                <th>Penjelasan</th>
+                <th>Gambar</th>
+            </tr>
+            <tr>
+                <td>solid</td>
+                <td>Tipe garis padat (menyambung).</td>
+                <td><img src="solid.jpeg" width="50%"></td>
+            </tr>
+            <tr>
+                <td>dotted</td>
+                <td>Garis yang dibentuk dari serangkaian titik-titik.</td>
+                <td><img src="dotted.jpeg" width="50%"></td>
+            </tr>
+            <tr>
+                <td>dashed</td>
+                <td>Garis yang dibentuk dari serangkaian garis pendek.</td>
+                <td><img src="dashed.jpeg" width="50%"></td>
+            </tr>
+            <tr>
+                <td>double</td>
+                <td>Garis yang dibentuk dari dua buah garis padat.</td>
+                <td><img src="double.jpeg" width="50%"></td>
+            </tr>
+            <tr>
+                <td>groove</td>
+                <td>Tipe garis yang berbentuk seperti frame.</td>
+                <td><img src="groove.jpeg" width="50%"></td>
+            </tr>
+            <tr>
+                <td>hidden</td>
+                <td>Digunakan untuk menyembunyikan garis pada elemen.</td>
+                <td></td>
+            </tr>
+        </table>
+    </p>
+    <h3>Border Color</h3>
+    <p>
+        Properti <mark>border-color</mark> digunakan untuk menentukan warna pada garis dengan menggunakan nilai RGB, Hex, atau nama warna pada CSS.
+    </p>
+    <h3>Shorthand</h3>
+    <p>
+        CSS menyediakan jalan pintas (shorthand) untuk membuat border dengan satu properti saja.<br>
+        div{ border: width type color; }
+        Properti border memiliki tiga buah nilai yang digunakan untuk menentukan ketebalan, tipe, dan warna pada border. Berikut contoh penerapannya:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .box{
+        border: 2px dotted blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Tidak ada aturan peletakan nilai pada shorthand ini karena tidak akan menjadi masalah.
+    </p>
+    <h2>Box Model (Padding)</h2>
+    <p>
+        Padding merupakan jarak antara area konten dan border. Padding banyak diterapkan pada elemen jika elemen tersebut menerapkan warna latar atau border. Padding memberikan sedikit ruang sehingga konten di dalam elemen dapat lebih nyaman untuk ditampilkan. Satuan piksel sering digunakan dalam menetapkan nilai properti ini. Jika menetapkan mengunakan persentase, nilai akan relative pada elemen induk atau jendela browser (jika tidak memiliki induk elemen).
+        <table border="2">
+            <tr>
+                <th>Menentukan nilai padding</th>
+                <th>Menentukan nilai padding menggunakan shorthand</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        padding-top: 10px;
+        padding-right: 15px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+    }
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    selector{
+        padding: 10px 15px 10px 15px;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Berikut hasil penerapannya
+        <img src="padding.jpeg" border="1" width="550px">
+    </p>
+    <h2>Box Model (Margin)</h2>
+    <p>
+        Margin merupakan ruang atau jarak pada sebuah elemen. Jarak tersebut terletak di luar dari konten dan border element. Margin digunakan untuk menjaga elemen agar tidak bertabrakan satu sama lain atau dari tepi jendela browser. Margin bersifat collapsed, yang artinya dapat menumpuk jika terdapat dua margin yang saling bertumpukan. Jika terjadi penumpukan margin, nilai yang paling besar yang akan diterapkan. Nilai tiap margin dapat ditentukan berbeda-beda untuk masing-masing sisi elemen seperti contoh berikut:
+        <table border="2">
+            <tr>
+                <th>Menentukan nilai margin</th>
+                <th>Menentukan nilai margin menggunakan shorthand</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        margin-top: 10px;
+        margin-right: 15px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    }
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    selector{
+        margin: 10px 15px 20px 25px;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Untuk menentukan nilai margin vertikal dan horizontal bisa hanya menggunakan dua nilai saja. Nilai pertama untuk margin top dan bottom, nilai kedua untuk margin left dan right.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    selector{
+        margin: 10px 15px;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h2>Box Model (Centering Content)</h2>
+    <p>
+        Untuk membuat sebuah kotak berada tepat di tengah sebuah halaman, margin kanan dan kiri bisa diatur dengan nilai auto. Untuk membuat kotak berada ditengah harus menentukan lebar dari kotak tersebut menggunakan properti width. Jika tidak, kotak akan mengambil lebar penuh pada halaman atau induk elemen.
+    </p>
+    <h2>Display Roles</h2>
+    <p>
+        Setiap elemen HTML memiliki dua tipe, yaitu block dan inline.
+        <table border="5">
+            <tr>
+                <th></th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>Inline Element</td>
+                <td>
+                    <ul>
+                        <li>Elemen HTML yang secara default tidak menambahkan baris baru ketika dibuat.</li>
+                        <li>Nilai lebar dan tinggi elemen inline sebesar konten di dalamnya dan tidak dapat diubah.</li>
+                        <li>Margin dan padding hanya mempengaruhi elemen secara horizontal, tidak vertikal.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Block Element</td>
+                <td>
+                    <ul>
+                        <li>Elemen HTML secara default menambahkan baris baru ketika dibuat.</li>
+                        <li>Jika tidak diatur lebaraanya, lebar dari elemen block akan memenuhi lebar dari browser atau elemen yang menaunginya.</li>
+                        <li>Dimensi dari elemen block dapat diatur.</li>
+                        <li>Di dalam elemen block dapat menyimpan tag elemen HTML lainnya.</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        Dengan menggunakan properti display, kita dapat mengubah sebuah elemen inline menjadi block, begitu pun sebaliknya. Properti ini juga dapat digunakan untuk menyembunyikan elemen yang ditampilkan. Nilai dari properti ini dapat berupa hal berikut:
+        <table border="5">
+            <tr>
+                <th>Nilai</th>
+                <th>Keterangan</th>
+            </tr>
+            <tr>
+                <td>inline</td>
+                <td>Mengubah elemen block berperilaku seperti elemen inline.</td>
+            </tr>
+            <tr>
+                <td>block</td>
+                <td>Mengubah elemen inline berperilaku seperti elemen block.</td>
+            </tr>
+            <tr>
+                <td>inline-block</td>
+                <td>Membuat elemen block tidak menambahkan baris baru ketika dibuat, tetapi tetap mempertahankan sifat lain dari elemen block.</td>
+            </tr>
+            <tr>
+                <td>none</td>
+                <td>Menyembunyikan elemen dari halaman.</td>
+            </tr>
+        </table>
+        Properti ini banyak digunakan dalam pembuatan navigasi. Biasanya navigasi dibuat menggunakan elemen list yang memiliki sifat block sehingga item list selalu ditampilkan dalam baris baru. Dengan menggunakan properti display, kita dapat  mengubah perilaku elemen list tersebut dengan menerapkan inline.
+    </p>
+    <h2>Box Shadow</h2>
+    <p>
+        Pada CSS3, drop shadow dapat ditambahkan di sekitar kotak elemen (tidak termasuk margin) dengan menggunakan properti <mark>box-shadow</mark>. Nilai dan cara kerja dari properti box-shadow mirip seperti text-shadow, nilainya menentukan jarak vertikal dan horizontal, tingkat keburaman, dan warna pada bayangan. Pada box shadow, kita juga dapat menentukan tingkat sebaran (spread) bayangan. Jika nilai semakin besar, bayangan yang tampak akan semakin luas.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .box{
+        box-shadow: 6px 6px 5px 10px blue;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Penjelasan tiap nilai dari properti:
+        <ol>
+            <li>Menunjukkan seberapa jauh ke kiri atau kanan (horizontal) bayangan harus ditampilkan.</li>
+            <li>Menunjukkan jarak ke atas atau bawah (vertical) bayangan harus ditampilkan.</li>
+            <li>Menentukan tingkat keburaman yang harus diterapkan pada bayangan.(opsional)</li>
+            <li>Tingkat sebaran (spread). Semakin besar nilai yang ditentukan, bayangan yang tampak akan semakin luas.(opsional)</li>
+            <li>Menentukan warna yang digunakan pada bayangan.</li>
+        </ol>
     </p>
 </body>
 </html>
