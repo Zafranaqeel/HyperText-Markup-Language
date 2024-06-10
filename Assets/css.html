@@ -1438,5 +1438,177 @@
             <li>Menentukan warna yang digunakan pada bayangan.</li>
         </ol>
     </p>
+    <h2>Rounded Corner</h2>
+    <p>
+        Properti <mark>border-radius</mark> digunakan untuk membuat <em>rounded corner</em> atau sudut bundar pada box dalam CSS3. Nilai dari properti ini merupakan tingkat lengkungan border dalam piksel.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    content{
+        width: 300px;
+        padding: 20px;
+        border: 4px solid deeppink;
+
+        border-radius: 10px;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        <table border="2">
+            <tr>
+                <th>Menetapkan nilai dengan menggunakan 4 properti terpisah</th>
+                <th>Menetapkan nilai dengan menggunakan shorthand</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>
+    content{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 10px;
+    }
+                    </pre>
+                </td>
+                <td>
+                    <pre>
+    content{
+        border-radius: 10px 5px 10px 5px;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        object-fit, object-position, object-fit: cover; object-position: center; 
+    </p>
+    <h2>Positioning</h2>
+    <p>
+        Properti <strong>position</strong> digunakan untuk mengubah <em>positioning schema</em> dalam mengontrol letak elemen tersebut.<br> Berikut nilai dari properti <strong>position</strong> yang ada pada CSS.
+        <ul>
+            <li>
+                <h4>Normal Flow</h4>
+                <p>Adalah default behaviour yang dimiliki elemen, yakni setiap elemen block akan ditampilkan dalam baris baru ketika dibuat. Jadi, setiap elemen block selalu muncul di bawah dari elemen block sebelumnya. Bahkan jika masih terdapat ruang kosong pada samping elemennya, mereka tidak akan tampak bersebelahan.</p>
+            </li>
+            <li>
+                <h4>Relative Positioning</h4>
+                <p>Membuat elemen dapat melakukan perpindahan posisi ke atas, kanan, bawah, ataupun kiri dari posisi semula atau posisi seharusnya elemen tersebut berada dan tidak akan berpengaruh terhadap elemen di sekitarnya karena elemen tersebut akan dipindahkan dari normal flow.</p>
+            </li>
+            <li>
+                <h4>Absolute Positioning</h4>
+                <p>Elemen akan dipindahkan keluar dari normal flow sehingga kita dapat memindahkan posisi elemen ke atas, kanan, bawah, atau kiri secara leluasa tanpa mengganggu elemen di sekitarnya. Namun, posisinya relatif terhadap jendela browser dan posisinya dapat relatif pada induk elemen selama induk elemen juga berada di luar dari normal flow.</p>
+            </li>
+            <li>
+                <h4>Fixed Positioning</h4>
+                <p>Merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser, bahkan ketika pengguna melakukan scrolling posisinya akan tetap tampak pada posisinya di layar.</p>
+            </li>
+        </ul>
+    </p>
+    <h3>Perbedaan Static Flow dan Non-Static Flow</h3>
+    <p>
+        Ketika kita memiliki tia buah elemen &lt;div&gt; yang masing-masingnya memiliki warna berbeda, jika kita tidak mengatur properti <strong>position</strong> dari ketiga elemen tersebut, tiap elemen akan ditampilkan dengan <em>static flow</em> seperti contoh di bawah.
+        <img src="staticflow.jpeg" width="600px" border="1" alt="Ilustrasi Penerapan Static Flow">
+        Ketika ingin mengubah letak kotak biru (kotak kedua) dengan menggunakan <mark>margin-top: 20px</mark>, tentu akan berpengaruh pada posisi elemen di bawahnya (elemen di bawahnya bergeser).
+        <img src="staticflow2.jpeg" width="600px" border="1">
+        Pada ilustrasi di atas, kotak yang berwarna oranye ikut bergeser ke bawah. Berbeda ketika kita menerapkan properti <mark>position</mark> yang dapat membuat elemen keluar dari static flow. Contohnya dengan menerapkan properti <mark>position</mark> dengan nilai <mark>relative</mark>, <strong>position: relative;</strong><br>
+        Berikut contohnya:
+        <img src="staticflow3.jpeg" width="600px" border="1">
+        Dalam tampilan browser tidak terdapat perbedaan setelah menerapkan nilai relative pada atribut position. Namun, sebenarnya elemen yang menerapkannya akan diangkat dari luar static flow seperti yang ditampilkan pada ilustrasi 3D. Elemen tersebut dapat leluasa berpindah posisi tanpa memengaruhi elemen yang berada pada static flow. Dengan mengubah elemen yang berada di non-static flow, kita dapat menggunakan properti <mark>top, right, bottom,</mark> ataupun <mark>left</mark>.
+        <img src="staticflow4.jpeg" width="600px" border="1">
+        Properti <mark>top, left, right, bottom</mark> hanya akan berpengaruh pada elemen yang menggunakan non-static flow, yaitu elemen yang menerapkan nilai <strong>relative, absolute,</strong> dan <strong>fixed</strong> pada properti <mark>position</mark>
+    </p>
+    <h3>Normal Flow</h3>
+    <p>
+        Setiap elemen block ditempatkan di bawah elemen sebelumnya. Nilai properti position tidak perlu ditetapkan ketika ingin membuat perilaku seperti ini. Namun, secara  sintaks perilaku ini ditetapkan dengan nilai <strong>static</strong>.
+    </p>
+    <h3>Relative Positioning</h3>
+    <p>
+        Dengan menetapkan relative pada properti position, kita dapat melakukan perpindahan posisi elemen ke atas, kanan, bawah, atau kiri. Perpindahan posisi yang dilakukan tidak akan berpengaruh terhadap posisi elemen di sekitarnya. Hal ini karena ketika menggunakan relative positioning elemen tersebut akan dipindahkan dari normal flow. Untuk menggunakan relative positioning dapat menetapkan nilai <mark>relative</mark> pada properti position.
+    </p>
+    <h3>Absolute Positioning</h3>
+    <p>
+        Ketika properti position diberikan nilai absolute, elemen akan dikeluarkan dari normal flow sehingga jika dipindahkan posisinya tidak akan berpengaruh pada elemen lain di sekitarnya. Elemen ini benar-benar tidak dianggap ada oleh elemen yang berada pada normal flow. Dampaknya, lokasi awal elemen yang diberikan nilai absolute akan ditempati oleh elemen di bawahnya.
+    </p>
+    <h3>Fixed Positioning</h3>
+    <p>
+        Fixed positioning merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser (meskipun diletakkan dalam induk elemen di luar flow normal). Bahkan, ketika pengguna melakukan scrolling, posisinya akan tetap tampak pada posisinya di layar. Ketika pengguna melakukan scrolling pada halaman, elemen yang diberikan nilai fixed tetap berada pada posisi yang sama dan paragraf yang ditampilkan tampak di belakang elemen heading tersebut.
+    </p>
+    <h2>Floating</h2>
+    <p>
+        Properti float dapat membuat elemen berada pada sebelah kanan atau kiri. Bahkan, jika diterapkan pada elemen inline memungkinkan elemen disekitarnya mengelilingi elemen tersebut (wrap). Selain dalam membuat text wrapping, float juga merupakan salah satu teknik dalam membuat layout website. Teknik ini masih banyak digunakan developer karena sangat mudah dipahami dan tergolong mudah untuk multiple column seperti gambar berikut.
+        <img src="floating.jpeg" border="1" width="600px" alt="Contoh penerapan floating dalam membuat layout website">
+        Hal ini dapat dilakukan dengan mudah menggunakan properti <mark>float</mark> karena nilai dari properti ini adalah <mark>left</mark> dan <mark>right</mark>. Nilai tersebut menunjukkan posisi elemen harus diletakkan. Contoh penerapannya seperti berikut:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    body{
+        margin: 0;
+        padding: 0;
+        }
+
+    .konten1{
+        width: 40%;
+        height: 100%;
+        float: left;
+    }
+    
+    .konten2{
+        width: 60%;
+        height: 100%;
+        float: right;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Dari contoh di atas, pada selector .konten1 dan .konten2 ditetapkan properti float dengan nilai left an right sehingga elemen tersebut dapat diposisikan secara bersebelahan. Ketika menggunakan properti float, jangan lupa memberikan ukuran lebar dari propertinya karena nilai dari lebar menentukan sberapa banyak ruang yang dicakup oleh elemen. Pada contoh di atas, kita menetapkan nilai 40% untuk konten kiri dan 60% untuk konten kanan. Jika terdapat lebih dari dua kolom dalam menyusun layout, hal yang perlu dilakukan hanya perlu menetapkan nilai left pada ketigaa kolomnya, dengan demikian maka kolom akan tampil bersebelahan sesuai urutan penulisan elemennya.
+    </p>
+    <h3>Permasalahan Penerapan Float</h3>
+    <p>
+        Masalah yang ditimbulkan properti float adalah jika sebuah elemen induk yang hanya memiliki satu elemen dengan menerapkan properti float akan memiliki nilai tinggi 0px. Hal ini menunjukkan bahwa elemen yang menerapkan float <mark>tidak dianggap ada</mark> oleh induk elemen yang menaunginya karena dengan menggunakannya, float elemen akan dikeluarkan dari normal flow. Ada dua cara untuk menangani hal tersebut, yakni dengan menggunakan properti <mark>clear</mark> dan menetapkan nilai <mark>overflow: auto;</mark> pada container.
+    </p>
+    <h3>Clear Property</h3>
+    <p>
+        Properti <mark>clear</mark> dibuat untuk menghilangkan sifat float. Dengan demikian, elemen yang menerapkan properti float akan kembali dianggap ada. Namun, untuk menerapkan properti ini kita perlu membuat sebuah elemen kosong (biasanya menggunakan div tanpa konten) yang menerapkan properti clear.
+        Nilai dari properti clear merupakan nilai yang digunakan pada properti float. Sebab, properti clear akan menghapus sifat float sesuai dengan nilai yang ditetapkan.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    img{
+        float: left;
+    }
+
+    .clear{
+        clear: left;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Jika mengubah clear menjadi <mark>clear: right;</mark>, hasilnya akan kembali seperti hasil sebelum menerapkannya. Ada satu nilai lagi yang dapat menghilangkan kedua sifat float tersebut, yakni nilai <mark>both</mark>. Gunakan nilai tersebut jika ingin sepenuhnya menghilangkan sifat float pada elemen.
+    </p>
+    <h3>Teknik Overflow</h3>
+    <p>
+        Sebagian developer lebih memilih menggunakan properti <mark>overflow: auto;</mark> pada elemen yang menampung elemen float karena lebih praktis dan tidak perlu membuat elemen baru ketika menggunakannya. Untuk menerapkannya hanya perlu menambahkan properti <mark>overflow</mark> dengan nilai <mark>auto</mark> pada container. Hasil yang diperoleh pun sama seperti yang dilakukan dengan cara pertama (clear property).
+    </p>
+    <h2>Konfigurasi Meta Tag Viewport untuk Responsibilitas Layout</h2>
+    <p>
+        Viewport merupakan area yang dapat dilihat oleh pengguna kita pada halaman website. Ukuran viewport bervariasi berdasarkan devicenya. Ukuran viewport pada peranti mobile lebih kecil dibandingkan dengan layar komputer desktop. Sebelum adanya tablet atau handphone, halaman website didesain hanya untuk ukuran layar komputer desktop. Dengan demikian, banyak sekaliwebsite yang menerapkan tampilan dan ukuran yang statis. Jadi, ketika halaman tersebut diakses melalui handphone atau tablet, tampilannya akan mengecil karena tidak disesuaikan. Untuk mengatasi masalah di atas, kita perlu menetapkan meta tag viewport untuk mengendalikan dan menentukan bentuk dari viewport browser, terutama pada perangkat mobile. Jadi, kita dapat melihat ukuran halaman web layaknya diakses pada desktop device. Namun, hal tersebut tetap memerlukan penggunaan teknik peningkatan responsibilitas karena ukuran viewportnya yang berbeda. Mengatur viewport dapat dilakukan melalui tag &lt;meta&gt; yang disisipkan dalam elemen &lt;head&gt;. Contohnya seperti berikut:
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Tampilan halaman web sudah tidak kecil lagi dan level kebesarannya terlihat sama dengan tampilan yang dibuka pada layar desktop. Namun, permasalahan lain muncul. Elemen &lt;article&gt; terlalu kecil dan sempit dan elemen &lt;aside&gt; tidak ditampilkan dengan baik. 
+    </p>
 </body>
 </html>
