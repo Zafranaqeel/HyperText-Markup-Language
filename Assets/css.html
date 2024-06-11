@@ -1610,5 +1610,129 @@
         </table>
         Tampilan halaman web sudah tidak kecil lagi dan level kebesarannya terlihat sama dengan tampilan yang dibuka pada layar desktop. Namun, permasalahan lain muncul. Elemen &lt;article&gt; terlalu kecil dan sempit dan elemen &lt;aside&gt; tidak ditampilkan dengan baik. 
     </p>
+    <h3>Specific Style dengan Media Query</h3>
+    <p>
+        Viewport tampilan pada mobile device belum baik walaupun sudah menetapkan meta tag. Hal ini dikarenakan informasi yang ditampilkan pada elemen &lt;article&gt; terlalu sempit. informasi dalam elemen &lt;aside&gt; akan sulit terbaca. Untuk mengatasi masalah ini, CSS menyediakan sebuah fitur untuk menentukan styling hanya pada kondisi browser dan device device tertentu yang sesuai dengan aturan yang kita tetapkan. Fitur tersebut dinamakan CSS Media Query. Berikut adalah aturan penulisannya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    @media media-type and (media-feature-rule){
+        /*Tulis CSS rule apapun di sini*/
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>Media-type</td>
+                <td>Jenis media sebagai acuan bagi browser dalam menerapkan kode styling. Tipe yang dapat diberikan adalah print, screen, atau semuanya.</td>
+            </tr>
+            <tr>
+                <td>Media-feature-rule</td>
+                <td>Aturan atau kondisi yang harus terpenuhi agar kode styling dapat  diterapkan. Kondisi yang dimaksud seperti ukuran viewport, orientasi layar, dan jenis penggunaan perangkat tunjuk (touchscreen, keyboard navigation, atau mouse).</td>
+            </tr>
+            <tr>
+                <td>Media-block</td>
+                <td>Sekumpulan CSS rule yang akan diterapkan jika kedua poin sebelumnya terpenuhi</td>
+            </tr>
+            <tr>
+                <pre>
+    @media screen and (min-width:500px){
+        h1{
+            color: blue;
+        }
+
+        h2{
+            color: red;
+        }
+    }
+                </pre>
+            </tr>
+        </table>
+    </p>    
+    <h2>Debugging dan Optimasi</h2>
+    <p>Cara yang mudah dan cepat dilakukan dalam mencari dan memperbaiki CSS yang telah ditulis adalah dengan menggunakan tools untuk otomatis mencari kesalahan pada penulisan.</p>
+    <h3>Mencari Kesalahan CSS</h3>
+    <p>
+        Salah satu cara yang paling cepat untuk memastikan bahwa CSS yang telah ditulis itu valid dan dapat berjalan adalah menggunakan berbagai tools online yang tersedia secara gratis. Pengecekan cukup dengan cara copy-paste kode CSS, upload berkas CSS, atau menulis alamat situs yang ingin diperiksa.<br>Berikut beberapa opsi gratis yang tersedia:
+        <ul>
+            <li><a href="https://jigsaw.w3.org/css-validator/#validate_by_uri">CSS Validation Service by W3C</a></li>
+            <li><a href="https://codebeautify.org/cssvalidate">CSS Validator Online by codebeautify.org</a></li>
+            <li><a href="http://csslint.net/">CSS Lint</a></li>
+        </ul>
+    </p>
+    <h3>Kecilkan Ukuran CSS</h3>
+    <p>
+        Ukuran CSS sangat penting untuk dapat dihemat karena akan memengaruhi seberapa cepat situs dapat dimuat pada browser. Cara untuk menghemat ukuran berkas CSS adalah dengan menghapus spasi atau karakter yang tidak diperlukan dari kode.<br>Berikut adalah contoh spasi atau karakter yang  dapat dihapus:
+        <ul>
+            <li>New line Characters (Baris baru)</li>
+            <li>Whitespace characters (spasi)</li>
+            <li>Block delimiters (Pembatas block)</li>
+            <li>CSS comments (Komentar CSS)</li>
+        </ul>
+        Perbaikan di atas dapat dilakukan secara manual atau menggunakan tools online yang dapat memperbaiki secara otomatis.<br>Berikut beberapa opsi yang tersedia:
+        <ul>
+            <li>CSSNANO Playground</li>
+            <li>CSS Minifier Tool and Compressor</li>
+            <li>Minify - JavaScript and CSS minifier</li>
+        </ul>
+    </p>
+    <h2>Flexbox</h2>
+    <p>
+        Pada modul <strong>Pendalaman CSS</strong>, kita telah mempelajari dua tipe elemen HTML atau dua mode layout: <strong>block</strong> dan <strong>inline</strong>. Tipe elemen block didesain untuk membuat layout dokumen karena tipe ini akan mengatur penataan secara vertical dan menambahkan baris baru. Sementara itu, tipe elemen inline didesain untuk membuat layout teks karena tipe ini mengatur penataan secara horizontal. Selain itu, dalam membuat layout, kita telah mempelajari properti float untuk membuat multiple column. Namun, penggunaan properti ini dirasa sulit dan tidak efektif untuk membuat website yang responsif.<br>
+        <strong>Flexible box layout</strong> adalah model satu dimensi guna menyusun elemen-elemen (flex items) dalam posisi rows atau columns. Hal ini membuat flexbox disebut dengan direction-agnostic atau mengatur tata letak di banyak arah. Hal menarik dari flexbox adalah ia menawarkan penyusunan layout dengan flexible karena flex container atau flexbox dapat mengatur dimensi setiap flex-items (child element) sehingga layout yang diinginkan dapat tercapai dengan mudah.
+        Flex container memperluas flex items untuk mengisi ruang kosong atau menciutkannya sehingga menghindari overflow (dimensi child element yang keluar dari parent element-nya). Dengan hadirnya flexbox, perancangan layout dalam skala yang kecil dapat dilakukan dengan mudah pada halaman web.
+    </p>
+    <h3>Alasan Flexbox Hadir</h3>
+    <p>
+        Sebelum hadirnya flexbox, satu-satunya cara untuk membuat layout halaman web adalah float dan positioning. Dengan menggunakan kedua properti CSS tersebut, kita sudah bisa membuat  layout yang kita inginkan, baik pada layar desktop maupun mobile. Namun, dalam beberapa contoh kasus yang mungkin menyulitkan dan tidak fleksibel untuk dicapai dalam penggunaan float dan positioning. Dengan menggunakan kedua properti CSS tersebut, kita sudah bisa membuat layout yang kita inginkan, baik pada layar desktop maupun mobile. Namun, dlam beberapa kasus, penggunaan kedua properti CSS ini terbatas dan menyulitkan<br>
+        Berikut adalah beberapa contoh kasus yang mungkin menyulitkan dan tidak fleksibel untuk dicapai dalam penggunaan float dan positioning.
+        <h4>Centering Secara Vertical</h4>
+        <p>
+            Membuat konten berada di tengah secara vertical dalam parent element-nya. Dari beberapa kasus, hal ini bisa dicapai menggunakan line-height. Namun, ini hanya berguna jika konten berada dalam satu baris serta kita harus mengetahui secara eksplisit tinggi dari parent element.
+        </p>
+        <h4>Fluid Secara Dinamis dan Rata</h4>
+        <p>
+            Membuat semua child element memenuhi ruang dari parent element-nya secara dinamis dan merata mungkin bisa tercapai menggunakan ukuran nilai persentase. Namun, jika jumlah child element berjumlah ganjil, kita harus memikirkan nilai persentase yang tepat. Bahkan, tetap akan meninggalkan celah ruang sedikit.
+        </p>
+        <h4>Memiliki Height yang sama pada Multi-Column</h4>
+        <p>
+            Membentuk child element dalam layout multiple-column agar memiliki ukuran height yang sama, meskipun jumlah content dalamnya tidak sama.
+        </p>
+        Dari ketiga kasus di atas, layouting pada website akan sulit dijangkau oleh float dan positioning. Di sinilah flexbox hadir untuk menyelesaikan masalah seperti di atas. Sebagai gambaran, <a href="https://5we5i3.csb.app/">buka tautan ini</a> untuk melihat contoh kasus pada halaman web. Contoh pembuatan layout katalog tersebut disusun menggunakan flexbox sehingga posisi gambar berada di tengah, ukuran card menjadi responsif meski viewport berubah, dan ukuran height menjadi sama.
+    </p>
+    <h2>Dasar-Dasar dan Terminologi Flexbox</h2>
+    <p>
+        Dalam penggunaannya, flexbox bukanlah properti yang bekerja secara sendiri. Flexbox dapat melakukan banyak hal dengan melibatkan berbagai properti pendukung. Beberapa diantaranya digunakan oleh flex container dan sebagian lainnya digunakan oleh flex items.
+        Pada dasarnya, arah flow didasarkan pada flow dari elemen block (vertical) dan flow dari elemen inline (horizontal). Flexbox sendiri memiliki arah layout yang didasarkan pada flex-direction. Untuk memperjelasnya, perhatikan gambar di bawah ini.
+        <img src="flexbox.png" border="1" width="600px">
+        Pada gambar di atas, terlihat bahwa ada dua istilah khusus pada elemen yang menerapkan flexbox, yaitu flex container, dan flex item. Flex container adalah parent element dari seluruh flex items, sedangkan flex items adalah elemen yang secara langsung merupakan child dari parent element. Pada asalnya, flex items akan dijajarkan secara horizontal (row), yaitu dimulai dari main-start ke main-end (main axis). Namun, jangan khawatir, kita bisa mengubahnya menggunakan properti yang memiliki peran tersebut.
+        <ul>
+            <li>
+                <h5>Main axis</h5>
+                <p>Arah sumbu utama untuk flex item dijajarkan atau ditata. Perlu diingat, arah dari main axis tidak selalu horizontal. Hal ini bergantung terhadap value dari properti flex-direction.</p>
+            </li>
+            <li>
+                <h5>Main-start | main-end</h5>
+                <p>Flex item akan ditempatkan dalam flex container yang berawal dari main-start dan main-end.</p>
+            </li>
+            <li>
+                <h5>Main size</h5>
+                <p>Lebar atau tinggi dari flex item yang diposisikan pada sumbu utama (main axis).</p>
+            </li>
+            <li>
+                <h5>Cross axis</h5>
+                <p>Sumbu yang arahnya tegak lurus dengan main axis. Biasanya terjadi ketika flexbox menerapkan value wrap pada properti flex-wrap sehingga susunan layout terlihat dua dimensi.</p>
+            </li>
+            <li>
+                <h5>Cross-start | cross-end</h5>
+                <p>Flex item yang memenuhi ruang kosong flex container secara vertikal, mulai dari cross-start hingga cross-end. Hal ini dapa diatur mengguakan properti align-items, align-self, dan align-content.</p>
+            </li>
+            <li>
+                <h5>Cross size</h5>
+                <p>Lebar atau tinggi dari sebuah flex item yang ditempatkan pada dimensi cross.</p>
+            </li>
+        </ul>
+    </p>
 </body>
 </html>
