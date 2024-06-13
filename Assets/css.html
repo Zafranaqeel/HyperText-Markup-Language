@@ -1734,5 +1734,173 @@
             </li>
         </ul>
     </p>
+    <h2>Properti-Properti pada Flex Container</h2>
+    <h3>Display</h3>
+    <p>
+        Dalam modul sebelumnya, kita telah menggunakan properti display untuk mengatur elemen dengan value block dan inline. Kali ini, jika ingin mendefinisikan elemen agar disusun sebagai flexbox, kita dapat menggunakan properti yang sama dan mengubah valuenya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Direction</h3>
+    <p>
+        Pada dasarnya, flexbox mengatur elemen secara satu dimensi (terlepas dari permasalahan wrapping). Dengan begitu, untuk menentukan arah susunan flex item, kita bisa definisikan menggunakan properti flex-direction. Secara default, value ini adalah row.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        flex-direction: row | row-reverse | column | column-reverse;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>row</td>
+                <td>Flex items akan disusun secara horizontal dari kiri ke kanan.</td>
+            </tr>
+            <tr>
+                <td>row-reverse</td>
+                <td>Flex items akan disusun secara horizontal, tetapi berarah terbalik (kanan ke kiri).</td>
+            </tr>
+            <tr>
+                <td>column</td>
+                <td>Flex items akan disusun secara vertikal dari atas ke bawah.</td>
+            </tr>
+            <tr>
+                <td>column-reverse</td>
+                <td>Flex items akan disusun secara vertikal, tetapi dengan arah terbalik (bawah ke atas).</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Wrap</h3>
+    <p>
+        Ketika layout dari parent element disusun menggunakan flexbox, flex items akan selalu diletakkan dalam satu baris (satu dimensi). Dengan properti flex-wrap, kita bisa mengubah perilakunya menjadi dua dimensi (jika dibutuhkan). Value bawaan dari properti ini adalah nowrap.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        flex-wrap: nowrap | wrap | wrap-reverse;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>nowrap</td>
+                <td>Seluruh flex items hanya akan ditempatkan dalam satu baris meskipun sangat banyak jumlahnya.</td>
+            </tr>
+            <tr>
+                <td>wrap</td>
+                <td>Nilai ini menyebabkan flex items akan diletakkan ke baris yang baru (berikutnya) sehingga menjadi multiple lines.</td>
+            </tr>
+            <tr>
+                <td>wrap-reverse</td>
+                <td>Meskipun mirip dengan wrap, nilai ini akan menyebabkan beberapa flex items ditempatkan dengan menambahkan baris sebelumnya.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Justify Content</h3>
+    <p>
+        Properti justify-content akan mengatur posisi child elemen pada main axis. Kemudahan ini akan sangat dirasakan ketika membuat tampilan yang responsif.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Peletakan child element akan dimulai dari main-start.</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Peletakan child element akan dimulai dari main-end.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Child element akan diletakan di tengah parent child.</td>
+            </tr>
+            <tr>
+                <td>space-between</td>
+                <td>Child element akan tersusun secara merata, elemen pertama berada di tepi main-start dan elemen kedua berada di tepi main-end. Jika child element lebih dari dua, elemen lainnya akan didistribusikan berada di tengah dengan jarak yang sama.</td>
+            </tr>
+            <tr>
+                <td>space-around</td>
+                <td>Setiap child element akan memiliki panjang celah yang sama pada sisi horizontal.</td>
+            </tr>
+            <tr>
+                <td>space-evenly</td>
+                <td>Setiap child element akan memiliki jarak yang setara, termasuk jarak ke tepi main-start dan main-end</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Items</h3>
+    <p>
+        Properti ini memiliki perilaku menempatkan flex items sepanjang cross axis. Bayangkan bahwa tingkah laku dari properti ini mirip dengan properti justify-content, tetapi mengatur child element dalam satu baris pada cross axis.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        align-items: stretch | flex-start | flex-end | center | baseline;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>stretch</td>
+                <td>Melebar hingga memenuhi container dalam cross axis. Setiap child element akan memiliki nilai height yang sama meskipun isi konten berbeda.</td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Setiap child element akan memiliki ukuran height sesuai dengan isi konten serta selurruhnya akan berada di tepi cross-start</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Setiap child element akan memiliki ukuran height sesuai dengan isi konten serta seluruhnya akan berada di tepi cross-end.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Setiap child element memiliki ukuran height sesuai dengan isi konten dan secara vertikal posisi elemen berada di tengah.</td>
+            </tr>
+            <tr>
+                <td>baseline</td>
+                <td>Nilai pada asalnya akan menyerupai flex-start. Namun, jika konten pertama pada masing-masing child element memiliki ukuran height yang berbeda, child element lainnya akan menyesuaikan posisinya secara cross axis dari cross-start.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Content</h3>
+    <p>
+        Properti ini melakukan perataan terhadap flex items pada setiap baris dalam cross axis. Tingkah laku properti ini hampir mirip dengan properti justify-content yang mengatur tata letak flex items di sisi main axis. Hal yang perlu diperhatikan adalah penggunaan properti ini hanya akan berpengaruh pada multi-line flex container dan properti flex-wrap dilibatkan. Flex container yang hanya memiliki single line tidak akan memiliki efek diterapkannya properti align content.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        align-content: flex-start | flex-end | center | space-between | space-around | space evenly;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
 </body>
 </html>
