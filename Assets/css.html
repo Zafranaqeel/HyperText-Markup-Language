@@ -1900,6 +1900,130 @@
                     </pre>
                 </td>
             </tr>
+            <tr>
+                <td>normal (default)</td>
+                <td>Flex items akan diposisikan secara default jika tidak menerapkan value pada align content.</td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Flex items ditata pada permulaan flex container.</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Flex items ditata pada akhir flex container.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Flex items diposisikan di tengah flex container.</td>
+            </tr>
+            <tr>
+                <td>space-between</td>
+                <td>Flex items akan disebar secara merata, item pertama akan diposisikan pada cross-start dan item terakhir akan diposisikan pada cross-end.</td>
+            </tr>
+            <tr>
+                <td>space-around</td>
+                <td>Flex items akan disebar secara merata dengan jarak celah yang vsama juga.</td>
+            </tr>
+            <tr>
+                <td>space-evenly</td>
+                <td>Flex items akan disebar secara merata dengan jarak yang merata juga</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Gap (celah)</h3>
+    <p>
+        Biasanya kita mengandalkan properti  margin untuk memberikan jarak atau celah pada flex items. Namun, ada cara yang lebih efektif, yaitu menggunakan properti gap.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        gap: 1rem; /*diterapkan secara vertikal dan horizontal dengan nilai yang sama*/
+        gap: 1rem 2rem; /*diterapkan secara vertikal dan horizontal*/
+        row-gap: 1rem; /*diterapkan secara horizontal*/
+        column-gap: 1re; /*diterapkan secara vertikal*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h2>Properti-Properti pada Flex Items</h2>
+    <h3>Order</h3>
+    <p>
+        Secara asalnya, flex items akan diletakkan sesuai dengan urutan penulisan kode. Namun, dengan properti <mark>order</mark>, kita bisa mengatur urutan susunan flex items.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        order: 5; /*nilai default 0*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Grow</h3>
+    <p>
+        Ketika membuat layout dengan flexbox, flex item akan dijajarkan serta memiliki lebar sesuai dengan ukuran kontennya. Bisa saja flex container akan meninggalkan sisa ruang meski ukuran konten dari flex items tidak memenuhi flex container. Properti flex-grow akan melakukan grow pada main axis sehingga tidak akan menyisakan ruang kosong pada flex container. Flex grow akan melakukan pendistribusian sisa ruang dalam container kepada seluruh child element dengan porsi yang sama (adil). Jika salah satu  child element memiliki flex grow dengan nilai dua, child element tersebut akan mendapatkan pembagian porsi dua kali lebih besar dibanding child element yang hanya memiliki sattu porsi. Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-grow: 1; /*Nilai default 0*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Shrink</h3>
+    <p>
+        Properti ini memiliki kemampuan untuk menyusutkan atau menciutkan ukuran child element jika ukurannya tidak mencukupi ruang container. Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-shrink: 0; /*Nilai default 1*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Nilai default dari properti ini adalah1. Jika kita tidak memberikan nilai 0, ukuran child element tidak akan menciut.
+    </p>
+    <h3>Flex Basis</h3>
+    <p>
+        Properti ini akan memberikan ukuran default sebelum sisa ruang container didistribusikan kepada flex items. Nilai yang didukung untuk properti ini terkait ukuran dimensi (width dan height), yaitu rem, persentase (%), dan lainnya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-basis: 1rem | 25% | auto; /*Nilai default auto*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Self</h3>
+    <p>
+        Properti ini memiliki tingkah laku yang sama dengan properti align items. Properti ini dapat mengatur posisi child element secara cross-axis. Namun, properti ini hanya berlaku untuk child element. Jika ingin mengecualikan child element diantara child element lainnya, gunakanlah properti ini.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .items{
+        align-self: auto | self-start | flex-end | center | baseline | stretch; /*Nilai default auto*/
+    }
+                    </pre>
+                </td>
+            </tr>
         </table>
     </p>
 </body>
