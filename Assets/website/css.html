@@ -1,0 +1,2101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling Dengan CSS</title>
+    <link rel="Website Icon" href="../webicon/cssico.webp">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="judul">
+            <h1>Cascading Style Sheet</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li class="back">
+                    <a href="../../">Kembali</a>
+                </li>
+                <li>
+                    <a href="#keuntungan">Keuntungan CSS</a>
+                </li>
+                <li>
+                    <a href="#menulis">Menulis Aturan</a>
+                </li>
+                <li>
+                    <a href="#melampirkan">Melampirkan Stylesheet</a>
+                </li>
+                <li>
+                    <a href="#cssconception">CSS Conception</a>
+                </li>
+                <li>
+                    <a href="#selector">Selector</a>
+                </li>
+                <li>
+                    <a href="#formattingtext">Formatting Text</a>
+                </li>
+                <li>
+                    <a href="#textstyling">Text Styling</a>
+                </li>
+                <li>
+                    <a href="#boxmodel">Box Model</a>
+                </li>
+                <li>
+                    <a href="#positioning">Positioning</a>
+                </li>
+                <li>
+                    <a href="#floating">Floating</a>
+                </li>
+                <li>
+                    <a href="#metatag">Meta Tag</a>
+                </li>
+                <li>
+                    <a href="#debug">Debugging</a>
+                </li>
+                <li>
+                    <a href="#flexbox">Flexbox</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="keuntungan">
+            <h2>Keuntungan dan Cara Kerja CSS</h2>
+            <h3>Keuntungan Menerapkan CSS</h3>
+            <ol>
+                <li>Dapat mengontrol dan menerapkan layout (tata letak) secara presisi</li>
+                <li>Menghindari pekerjaan yang berulang-ulang dalam menerapkan styling</li>
+                <li>Didukung banyak browser</li>
+            </ol>
+            <h3>Cara stylesheet bekerja</h3>
+            <ol>
+                <li>Dimulai dari sebuah dokumen yang sudah ditandai dengan tag elemen HTML.</li>
+                <li>Menuliskan aturan styling untuk menentukan tampilan elemen HTML.</li>
+                <li>Melampirkan file .css pada HTML.</li>
+            </ol>
+        </div>
+
+        <div id="menulis">
+                <h2>Menulis Aturan Styling</h2>
+            <p>
+                Terdapat 2 bagian pada sebuah rule. Bagian pertama adalah identitas elemen (selector) dan kedua adalah deklarasi atau instruksi yang akan diterapkan pada sebuah selector.<br>
+                <img src="../image/css rule.png" border="1" alt="css rule ilustration" width="400px">
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            h1{
+              color: green;    
+            }
+                    
+            p{
+              font-size: small;
+              font-family: sans-serif;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Selector</h3>
+            <p>
+                Pada contoh di atas, &lt;h1&gt; dan &lt;7&gt; digunakan sebagai selector. Properti dan nilainya yang terdapat dalam <em>declaration/declaration block</em> akan diterapkan pada seluruh elemen &lt;h1&gt; dan &lt;p&gt; yang ada pada dokumen HTML.
+            </p>
+            <h3>Declaration</h3>
+            <p>
+                Deklarasi terdiri dari pasangan properti dengan nilainya. Satu rule bisa diberi lebih dari satu deklarasi seperti contoh pada selector p di atas. Setiap deklarasi harus diakhiri dengan <em>semicolon</em> (;) sebagai tanda diakhirinya sebuah deklarasi.<br>
+                CSS tidak memperhatikan spasi, sama seperti bahasa pemrograman pada umumnya. Walaupun seperti itu, untuk satuan nilai semisal <em>px, em,</em> dan lainnya harus dituliskan tanpa spasi pada nilainya. Contohnya seperti dibawah:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+                    h1{
+                        margin: 2em;
+                    }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Komentar Pada CSS</h3>
+            <p>
+                Komentar digunakan untuk menjelaskan kode dan dapat membantu ketika mengedit kode di lain waktu. Hal yang ditulis tidak akan ditampilkan di browser namun bisa dilihat pada text editor.<br>
+                Cara penulisan comment pada CSS adalah sebagai berikut:<br>
+                /* */
+            </p>
+        </div>
+        <div id="melampirkan">
+            <h2>Melampirkan Styling Pada Dokumen HTML</h2>
+            <p>
+                <ul>
+                    <li>External Style Sheet</li>
+                    <p>
+                        <em>External Style Sheet</em> adalah berkas terpisah yang di dalamnya hanya ada CSS rules. Berkas harus berekstensi <strong>.css</strong> dan dihubungkan dengan dokumen HTML. Dengan cara ini, satu berkas styling dapaat digunakan oleh banyak berkas HTML.
+                        <table border="2">
+                            <tr>
+                                <th>Cara Menghubungkan berkas .css dengan dokumen HTML</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <pre>
+            &lt;head&gt;
+                &lt;meta charset="8-UTF"&gt;
+                &lt;title&gt;Styling&lt;/title&gt;
+                &lt;link href="Style.css"&gt;
+            &lt;/head&gt;
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                        Catatan: <em>Nama berkas yang mengandung "min.css" adalah penamaan format berkas CSS yang sudah diminimalkan dengan menghilangkan white space yang tidak digunakan.</em>
+                    </p>
+                    <li>Embedded Style Sheet</li>
+                    <p>
+                        <em>Embedded Style Sheet</em> adalah kumpulan rules yang dituliskan dalam berkas HTML dengan menggunakan elemen &lt;style&gt;. Dengan demikian, CSS rules yang dituliskan hanya dapat dicakup oleh satu berkas HTML. Penulisan rules harus dituliskan dalam elemen &lt;style&gt;.
+                        <table border="2">
+                            <tr>
+                                <th>Penulisan Rules</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <pre>
+            &lt;head&gt;
+                &lt;title&gt;
+                &lt;style&gt;
+                  h1{
+                    color: blue;
+                  }
+                &lt;/style&gt;
+            &lt;/head&gt;
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                    </p>
+                    <li>Inline Style</li>
+                    <p>
+                        <em>Inline Style</em> adalah stylingyang diterapkan secara langsung pada elemen HTML dengan menggunakan atribut <em>style</em>.<br>
+                        Dalaam metode ini kita tidak memerlukan selector karena style hanya diterapkan pada elemen tempat atribut <em>style</em> diterapkan.
+                        <table border="2">
+                            <tr>
+                                <th>Inline Style</th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <pre>
+        &lt;p&gt; style="color: blue;"&gt; paragraf &lt;/p&gt;
+                                    </pre>
+                                </td>
+                            </tr>
+                        </table>
+                    </p>
+                </ul>
+            </p>
+        </div>
+        <div id="cssconception">
+            <h2>CSS Conception</h2>
+            <h3>Inheritance</h3>
+            <p>
+                Dapat mewarisi properti style tertentu dari suatu elemen ke elemen-elemen di dalamnya (child-elements).
+                Contohnya CSS rules yang ditetapkan untuk elemen &lt;body&gt; akan diterapkan pada seluruh child-elements secara otomatis. 
+            </p>
+            <h3>Group Selector</h3>
+            <p>
+                Jika beberapa selector yang berbeda memiliki penerapan properti-properti yang sama, kita dapat menggabungkannya menggunakan group selector.
+                <table border="2">
+                    <tr>
+                        <th>Contoh Penggunaan</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            h1{
+                font-family: sans-serif;
+            }
+            h2{
+                font-family: sans-serif;
+            }
+            /*Diubah menjadi*/
+            h1, h2{
+                font-family: sans-serif;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Rule Order</h3>
+            <p>
+                <em>cascading</em> artinya "mengalir". Demikian halnya dengan alur kerja CSS dalam membaca kode, mengalir dari atas ke bawah. Oleh karena itu, urutan dalam penulisan rules harus diperhatikan, terutama saat terjadi konflik. Konflik dapat terjadi ketika menerapkan beberapa styling pada satu dokumen HTML dan menimpa styling yang telah diterapkan sebelumnya baik disadari maupun tidak.
+            </p>
+            <table border="2">
+                <tr>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8" /&gt;
+            &lt;title&gt;Judul&lt;/title&gt;
+        
+            &lt;link rel="stylesheet" href="Style.css"&gt;
+        
+            &lt;style&gt;
+                p{
+                 color: blue;
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;p&gt;
+              Lorem ipsum dolor sit amet.
+            &lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+                        </pre>
+                    </td>
+                    <td>
+                        <pre>
+          p{
+           color: red;
+          }
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Dalam contoh diatas, warna yang akan diterapkan pada elemen &lt;p&gt; adalah warna biru karena merupakan warna yang paling akhir didefinisikan.</td>
+                </tr>
+            </table>
+            <p>
+                Namun, kita bisa membuat sebuah <strong>property styling</strong> agar dianggap penting oleh browser untuk diterapkan dan urutan tidak diperhatikan dengan menambahkan keyword !important pada akhir nilai propertinya.
+                <table border="2">
+                <tr>
+                    <th>HTML</th>
+                    <th>CSS</th>
+                </tr>
+                <tr>
+                    <td>
+                        <pre>
+        &lt;!DOCTYPE html&gt;
+        &lt;html&gt;
+            &lt;head&gt;
+            &lt;meta charset="UTF-8" /&gt;
+            &lt;title&gt;Judul&lt;/title&gt;
+        
+            &lt;link rel="stylesheet" href="Style.css"&gt;
+        
+            &lt;style&gt;
+                p{
+                 color: blue;
+                }
+            &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+            &lt;p&gt;
+              Lorem ipsum dolor sit amet.
+            &lt;/p&gt;
+            &lt;/body&gt;
+        &lt;/html&gt;
+                        </pre>
+                    </td>
+                    <td>
+                        <pre>
+          p{
+           color: red !important;
+          }
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Dalam contoh diatas, warna yang akan diterapkan pada elemen &lt;p&gt; adalah warna merah karena karena terdapat keyword !important pada akhir nilai properti.</td>
+                </tr>
+            </table>
+            </p>
+        </div>
+        <div id="selector">
+            <h2>Selektor Dasar</h2>
+            <h3>Type Selector</h3>
+            <p>
+                Menggunakan nama elemen sebagai target untuk diterapkannya rule.
+            </p>
+            <h3>Class Selector</h3>
+            <p>
+                Menetapkan target elemen berdasarkan nilai dari atribut class yang diterapkan pada elemennya. Untuk penulisan selector-nya diawali dengan tanda titik (.) dan dilanjutkan dengan nama class nya.
+                &lt;!DOCTYPE html&gt;
+                <table border="2">
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+               &lt;meta charset="UTF-8"
+               &lt;title&gt;Judul&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;p class="baris1"&gt;dolor sed viverra&lt;/p&gt;
+              &lt;p class="baris2"&gt;in nibh mauris&lt;/p&gt;
+              &lt;p class="baris3"&gt;a diam sollicitudin&lt;/p&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            .baris1{
+                color: red;
+            }
+            
+            .baris2{
+                color: blue;
+            }
+        
+            .baris3{
+                background-color: green;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Output (hasil) dari ketiga elemen &lt;p&gt; tersebut masing-masing adalah:<br>
+                            baris 1 merupakan teks berwarna merah<br>
+                            baris 2 merupakan teks berwarna biru<br>
+                            baris 3 merupakan teks dengan latar belakang berwarna hijau
+                        </td>
+                    </tr>
+                 </table>
+                 <br>
+                 Class bersifat <em>sharable</em> sehingga dapat diterapkan pada banyak elemen dengan tipe elemen yang berbeda-beda seperti pada contoh di bawah:
+                 <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;h1 class="baris1"&gt;Heading dengan teks berwarna merah&lt;/h1&gt;
+            &lt;p class="baris1"&gt;Paragraf dengan teks berwarna merah&lt;/p&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                 </table>
+                 <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;h1 class="baris1"&gt;Heading dengan teks berwarna merah&lt;/h1&gt;
+            &lt;p class="baris1 baris3"&gt;Paragraf dengan teks berwarna merah dan background berwarna hijau&lt;/p&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                 </table>
+            </p>
+            <h3>ID Selector</h3>
+            <p>
+                Menetapkan target elemen berdasarkan nilai dari atribut <strong>id</strong> yang diterapkan pada elemennya, mirip dengan <strong>class</strong>. Kebanyakan atribut ini digunakan untuk memberikan sebuah arti pada <em>generic element</em> seperti &lt;div&gt; dan &lt;span&gt;. Namun, atribut ini tidak bersifat shareable, yang berarti nilai id hanya bisa digunakan pada satu elemen saja.<br>
+                Gunakan tanda (#) untuk menetapkan selector menggunakan id.
+                <table border="2">
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+               &lt;meta charset="UTF-8"
+               &lt;title&gt;Judul&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;div id="greenback"&gt;
+                &lt;p&gt;
+                  Div dengan id greenback
+                &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;p&gt;
+                  Div tanpa id
+                &lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            #greenback{
+                background-color: green;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            Div dengan id greenback memiliki teks dengan latar belakang berwarna hijau, sedangkan div yang tidak memiliki id tidak berubah karena tidak terkait dengan selector manapun.
+                        </td>
+                    </tr>
+                 </table>
+            </p>
+            <h3>Attribute Selector</h3>
+            <p>
+                Merupakan cara menetapkan target elemen berdasarkan sebuah atribut yang digunakan atau bahkan bisa lebih spesifik dengan nilainya.
+                <table border="2">
+                    <tr>
+                        <th>HTML</th>
+                        <th>CSS</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+               &lt;meta charset="UTF-8"
+               &lt;title&gt;Judul&lt;/title&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+              &lt;a href="URL"&gt;href attribute&lt;/a&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            a[href]{
+                color: red;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                 </table>
+                 <table border="5">
+                    <tr>
+                        <th>Syntax</th>
+                        <th>Deskripsi</tr>
+                    </tr>
+                    <tr>
+                        <td>attr</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr.</em></td>
+                    </tr>
+                    <tr>
+                        <td>[attr=value]</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dengan nilai value</td>
+                    </tr>
+                    <tr>
+                        <td>[attr~=value]</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan salah satu nilainya adalah <em>value.</em></td>
+                    </tr>
+                    <tr>
+                        <td>[attr^=value]</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya diawali dengan nilai <em>value.</em></td>
+                    </tr>
+                    <tr>
+                        <td>[attr$=value]</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya diakhiri dengan value.</td>
+                    </tr>
+                    <tr>
+                        <td>[attr*=value]</td>
+                        <td>Menargetkan elemen yang menerapkan atribut <em>attr</em> dan nilainya mengandung value.</td>
+                    </tr>
+                 </table>
+            </p>
+            <h3>Universal Selector</h3>
+            <p>
+                Digunakan untuk diterapkan pada seluruh elemen. Namun, selector ini juga bisa secara spesifik menargetkan sebuah elemen dengan menggabungkannya bersama selector yang lain.
+            </p>
+            <h2>Combinators</h2>
+            <h3>Adjacent Sibling Selector</h3>
+            <p>
+                Menggabungkan gua buah basic selector dengan menggunakan tanda (+) diantara keduanya.
+                <table border="2">
+                    <td>
+                        <pre>
+            img + p{
+                color:green;
+            }
+                        </pre>
+                    </td>
+                </table>
+                Adjacent Sibling Selector terdiri dari dua buah target elemen, tetapi hanya elemen kedua yang menerapkan rule selama elemen tersebut dituliskan langsung setelah elemen pertama pada berkas HTML. Selain itu, kedua elemen tersebut harus berada dalam induk elemen yang sama.
+            </p>
+            <h3>General Sibling Selector</h3>
+            <p>
+                Mirip seperti Adjacent Sibling Selector, tetapi rules akan diterapkan pada seluruh elemen kedua yang berada setelah elemen pertama selama masih memiliki induk yang sama, walaupun posisi dari elemen kedua tidak berada tepat setelahnya. Menggunaakan simbol tilda (~) untuk menetapkan elemennya.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            img ~ p{
+                color: blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rule di atas akan diterapkan pada elemen paragraf yang berada setelah elemen img selama masih di dalam induk yang sama.</td>
+        
+                    </tr>
+                </table>
+            </p>
+            <h3>Child Selector</h3>
+            <p>
+                Menggabungkan dua buah basic selector dengan menggunakan tanda <em>greater than</em> (&gt;) diantara basic selectornya.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            div > p{
+                background-color: red;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Pada contoh di atas, CSS rule akan diterapkan pada seluruh elemen paragraf yang berada dalam elemen div secara langsung.</td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Descendant Selector (space)</h3>
+            <p>
+                Mirip seperti Child Selector, tetapi hierarkinya lebih luas karena rule diterapkan pada seluruh elemen yang menjadi turunannya walaupun secara tidak langsung. Selector ini menggunakan spasi dalam menggabungkan dua basic selector.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            div p{
+                background-color: blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Dalam contoh di atas, CSS rule akan diterapkan pada seluruh elemen paragraf yang merupakan turunan dari elemen div.</td>
+                    </tr>
+                </table>
+            </p>
+            <h2>Pseudo Selector</h2>
+            <p>
+                Pseudo Selector berbeda dari selector yang sudah dibahas sebelumnya. Selector ini menargetkan elemen pada bagian yang "tidak terlihat", seperti sifat pada elemen sehingga untuk menetapkannya tidak bisa menggunakan selector biasa. salah satu contoh yang paling sering diterapkan adalah :hover, pseudo selector tersebut digunakan untuk menetapkan rule ketika curcor diarahkan ke target elemen.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            a:hover{
+                color: blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Rule di atas menyebabkan elemen anchor menerapkan warna biru ketika kursor diarahkan pada elemen tersebut.
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Pseudo Class Selector</h3>
+            <p>
+                Merupakan sebuah class "semu" yang sebenarnya ada pada tiap elemen HTML.<br>
+                Untuk menetapkan rule hanya ketika sebuah tautan telah dikunjungi dapat menggunakan (:visited).<br>
+                Untuk menetapkan rule hanya ketika sebuah elemen diarahkan dengan kursor dapat menggunakan (:hover).<br>
+                Untuk menggunakan pseudo-class, kita gunakan tanda titik dua (:) pada basic selector dan diikuti dengan pseudo-class nya.
+            </p>
+            <h3>Pseudo Elemen Selector</h3>
+            <p>
+                Merupakan sebuah elemen "semu" yang sebenarnya ada, tetapi tidak tampak secara tertulis. Selector ini bisa digunakan ketika kita menambahkan konten tepat sebelum dan setelah sebuah elemen paragraf. Tidak perlu menuliskan elemen/konten baru pada aberkas HTML untuk menambahkan konten. Namun, kita dapat memanfaatkan pseudo-element untuk melakukannya. Pseudo-element yang dimaksud adalah <mark>::before </mark> dan <mark>::after </mark>. Konten yang dibuat dengan pseudo-element dituliskan pada CSS. Untuk menggunakan pseudo-element, kita gunakan dua buaha tanda titik dua (::) dan diikuti dengan nama pseudo-element-nya.
+            </p>
+        </div>
+        <div id="formattingtext">
+            <h2>Formatting Text</h2>
+            <h3>Font Styling</h3>
+            <p>
+                Dalam CSS, font ditentukan menggunakan beberapa paket properti font yang dapat mengatur tipe font, ukuran, ketebalan, dan style. Berikut daftar properti font yang akan dipelajari:
+                <ul>
+                    <li>font-family: Menetapkan jenis font yang akan diterapkan pada target.</li>
+                    <li>font-size: Menentukan ukuran pada teks.</li>
+                    <li>font-weight: Menentukan ketebalan pada teks.</li>
+                    <li>font-style: Menetapkan styling yang diterapkan pada teks.</li>
+                    <li>font-variant: Menentukan teks untuk mengunakan gara <em>small caps</em>(huruf kapital kecil.)</li>
+                    <li>font: Sebagai <em>shorthand</em> dari properti font yang ada.</li>
+                </ul>
+            </p>
+            <h4>Font-family</h4>
+            
+            <p>
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            body{
+                font-family: sans-serif;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Pada rule tersebut, kita mengubah standar font yang digunakan browser dengan font "sans-serif". Untuk nilai dari properti ini dapat lebih dari satu (font stack), tujuannya adalah sebagai <em>fallback</em> jika terjadi kegagalan dalam menggunakan font yang kita gunakan.
+            </p>
+            <img src="../image/font-family.jpeg" border="1" width="600">
+            <table border="2">
+                <tr>
+                    <td>
+                        <pre>
+            p{
+                font-family: Arial, "Open Sans", sans-serif;
+            }
+            
+            selector{
+                property-name: Value1, Value2, Value3;
+            }
+                        </pre>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                Penjelasan:
+                <ul>
+                    <li>Selurh nilai font yang bukan merupakan <em>generic font</em> harus dituliskan secara kapital. Contohnya "Arial" bukan "arial".</li>
+                    <li>Gunakan tanda koma (,) untuk memisahkan antara nilai font yang digunakan.</li>
+                    <li>Selalu tanda kutip (") untuk membungkus nilai font yang memiliki spasi pada namanya</li>
+                </ul>
+                Catatan: Pastikan untuk menggunakan <em>generic font families</em> pada akhir nilai properti karena nilai ini dipastikan didukung oleh seluruh browser saat ini. Berikut adalah nilai-nilai <em>generic font families</em>:
+                <table border="4">
+                    <tr>
+                        <th>Generic Font Families</th>
+                        <th>Deskripsi</th>
+                        <th>Contoh Font</th>
+                    </tr>
+                    <tr>
+                        <td>Serif</td>
+                        <td>Jenis font yang memiliki runcing pada garis akhir karakternya.</td>
+                        <td>Times New Roman</td>
+                    </tr>
+                    <tr>
+                        <td>Sans-serif</td>
+                        <td>Jenis font yang tidak meruncing pada garis akhir karakternya.</td>
+                        <td>Open Sans, Fira Sans, dan lainnya</td>
+                    </tr>
+                    <tr>
+                        <td>Monospace</td>
+                        <td>Jenis font yang memiliki nilai lebar tiap karakternya sama.</td>
+                        <td>Consolas</td>
+                    </tr>
+                    <tr>
+                        <td>Cursive</td>
+                        <td>Jenis font yang tampak seperti <em>handwriting</em> atau hasil tulisan tangan.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Fantasy</td>
+                        <td>Jenis font yang merepresentasikan karakteristik yang menyenangkan.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>System-ui</td>
+                        <td>Jika menerapkan nilai ini maka font yang diterapkan akan sama seperti font yang digunakan pada sistem operasi kita.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Math</td>
+                        <td>Jenis font yang digunakan untuk penulisan rurmus-rumus matematika.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Emoji</td>
+                        <td>Jenis font yang digunakan untuk menampilkan emoji.</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Fangsong</td>
+                        <td>Jenis font yang menampilkan gaya penulisan Chinese.</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </p>
+            <h3>@font-face</h3>
+            <p>
+                CSS memiliki fitur yang digunakan utuk memasukkan font eksternal ke dalam CSS, yakni menggunakan @font-face. Berikut adalah contoh penulisannya pada CSS:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            @font-face{
+                font-family: "Nama Font"
+                src: url('File Font.TIF')
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Setelah mendefinisikan font-face tersebut, ada nilai font-family baru bernilai "Nama Font" untuk diterapkan pada elemen HTML.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            p{
+                font-family: "Nama Font";
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Font-size</h3>
+            <p>
+                Untuk mneetapkan ukuran font, kita perlu menerapkan properti font-size. Dengan menetapkan nilai dari properti ini dengan menuliskan langsung nilai dan satuannya.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            h1{
+                font-size: 1.5em;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Hal yang perlu diperhatikan adalah ketika menuliskan nilai dan  satuannya. Pastikan tidak ada jarak (spasi) diantaranya karena rule tidak akan diterapkan pada target jika terdapat spasi diantara nilai dan satuan.
+                <h4>Satuan dalam menetapkan ukuran font terbagi dua jenis:</h4>
+                <ul>
+                    <li>Relative Unit</li>
+                    <p>Satuan yang nilainya tergantung pada suatu hal. Contohnya ukuran viewport, induk elemen, tau ukuran teks standar.</p>
+                    <li>Absolute Unit</li>
+                    <p>Satuan yang nilainya telah ditentukan atau doigunakan dalam dunia nyata.</p>
+                </ul>
+            </p>
+            <h4>Relative Unit</h4>
+            <table border="4">
+                <tr>
+                    <th>Satuan</th>
+                    <th>Relative to</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td>em</td>
+                    <td>Font size</td>
+                    <td>Satuan relatif terhadap ukuran font yang sedang digunakan pada elemen (contohnya 2em berarti 2 kali lebih besar dari ukuran font seharusnya).</td>
+                </tr>
+                <tr>
+                    <td>ex</td>
+                    <td>Font height</td>
+                    <td>Satuan relatif terhadap tinggi font saat ini, satuan ini sangat jarang sekali digunakan.</td>
+                </tr>
+                <tr>
+                    <td>rem</td>
+                    <td>Font size</td>
+                    <td>Mirip seperti em, tetapi rem merupakan satuan relatif terhadap ukuran font dari root element.</td>
+                </tr>
+                <tr>
+                    <td>ch</td>
+                    <td>Font width</td>
+                    <td>Satuan relatif terhadap lebar dari karakter "0" nol.</td>
+                </tr>
+                <tr>
+                    <td>vw</td>
+                    <td>Viewport width</td>
+                    <td>Satuan relatif terhadap 1% lebar viewport. Contoh 1vw=1% dari tinggi viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.</td>
+                </tr>
+                
+                <tr>
+                    <td>vh</td>
+                    <td>Viewport height</td>
+                    <td>Satuan relatif terhadap 1% tinggi viewport. Contoh 1vh = 1% dari tinggi viewport. Satuan ini tidak didukung pada browser IE8 ke bawah.</td>
+                </tr>
+            </table>
+            <h4>Absolute Unit</h4>
+            <table border="5">
+                <tr>
+                    <th>Satuan</th>
+                    <th>Fungsi</th>
+                </tr>
+                <tr>
+                    <td>px</td>
+                    <td>Menetapkan nilai font berdasarkan ukuran pixel.</td>
+                </tr>
+                <tr>
+                    <td>pt</td>
+                    <td>Menetapkan nilaia font berdasarkan ukuran points (1/72 inch di CSS 2.1).</td>
+                </tr>
+                <tr>
+                    <td>pc</td>
+                    <td>Menetapkan nilai font berdasarkan picas (1 pica = 12 point).</td>
+                </tr>
+                <tr>
+                    <td>mm</td>
+                    <td>Menetapkan nilai font berdasarkan milimeters.</td>
+                </tr>
+                <tr>
+                    <td>cm</td>
+                    <td>Menetapkan nilai font berdasarkan centimeters.</td>
+                </tr>
+                <tr>
+                    <td>in</td>
+                    <td>Menetapkan nilai font berdasarkan inches.</td>
+                </tr>
+            </table>
+            <p>
+                Selain dengan menetapkan nilaai dan satuannya secara langsung, kita juga bisa menggunaskan nilai persentase untuk mengatur ukuran font. 
+            <table border="2">
+                <tr>
+                    <td>
+                        <pre>
+            body{
+                font-size: 16px;
+            }
+        
+            h1{
+                font-size: 150%;
+            }
+                        </pre>
+                    </td>
+                </tr>
+            </table>
+            Pada contoh di atas, ukuran font dari element &lt;h1&gt; seharusnya memiliki ukuran 16px karena mewarisi dari induk elemennya (body). Namun, dibawahnya terdapat rule yang menargetkan secara spesifik untuk elemen h1 untuk menerapkan font sebesar 150% dari ukuran induknya. Dampaknya, elemen &lt;h1&gt; akan tampak 50% lebih besar dari elemen yang lain yang ada di dalam body.<br>
+            Hal yang terakhir, kita juga bisa menentukan ukuran font dengan menuliskan kata kunci secara spesifik yang tersedia pada CSS. Kata kunci tersebut adalah : xx-small, x-small, small, medium, large, x-large, xx-large.
+            </p>
+            <h3>Font-weight</h3>
+            <p>
+                Digunakan untuk mengatur ketebalan dari font yang ditampilkan. Nilai dari properti ini dapat ditentukan dengan menggunakan numeric values (100 sampai 900) atau dengan menggunakan descriptive terms (normal, bold, bolder, dan lighter). Properti font-weight dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan padaelemen turunannya.
+            </p>
+            <h3>Font-style</h3>
+            <p>
+                Digunakan untuk menentukan postur dari teks yang ditampilkan, yakni bentuknya vertikal (normal) atau miring (italic dan oblique). Properti font-style dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada elemen turunannya.
+            </p>
+            <h3>Font-variant</h3>
+            <p>
+                Menentukan apakah teks harus ditampilkan dalam font huruf kecil atau tidak. Properti font-variant dapat diaplikasikan ke seluruh elemen yang ada di HTML dan nilainya dapat diturunkan pada elemen turunannya.
+            </p>
+            <h3>Shorthand</h3>
+            <p>
+                Menspesifikasikan masung-masing nilai properti fotn akan menghasilkan banyak sekali kode repetitif. CSS memiliki properti CSS yang biasa disebut dengan <em>shorthand properti</em>. Ia memberikan suatu "jalan pintas" untuk menuliskan properti-properti tersebut ke dalam satu properti, yaitu <strong>font</strong>. Dengan menggunakan properti font, kita dapat menuliskan beberapa properti hanya dalam satu properti pada satu rule.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            target{font: style weight variant size font-family}
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Nilai dari properti font merupakan nilai seluruh properti dari font yang sudah dibahas sebelumnya, setiap nilai dipisahkan menggunakan spasi. Urutan nilai merupakan hal yang penting pada properti ini sehingga jangan sampai salah urutan dalam menuliskannya. Kesalahan penulisan atau urutan menyebabkan seluruh struktur rule menjadi tidak valid. Kita bisa tidak menuliskan seluruh nilai properti yang ada, tetapi nilai dari properti <mark>font-size</mark> dan <mark>font-family wajib ada ketika menggunakan properti ini.</mark>
+            </p>
+        </div>
+        <div id="textstyling">
+            <h2>Text Styling</h2>
+            <h3>Line Height</h3>
+            <p>
+                Digunakan untuk mengatur jarak minimal dari garis dasar ke garis dasar dalam menampilkan teks pada halaman. 
+                <img src="../image/lineheight.jpeg" border="1" width="600px">
+                Pada penjelasan di atas disebutkan "minimal" karena jika terdapat sebuah karakter yang tinggi atau besar dalam sebuah baris, tinggi dari baris pun akan menyesuaikan agar jarak tetap mengakomodasinya. Cara pertama merupakan cara paling mudah digunakan karena hanya menentukan nilai dengan satu angka. Angka tersebut nantinya dikalikan dengan nilai font-size sebelum diterapkan pada nilai prrperti line-height.<br>
+                Contohnya, Ukuran font standar pada paragraf adalah 16pixel dan kita definisikan properti line-height dengan nilai 2. Nilai properti line-height seharusnya adalah 16pixel*2 = 32pixel.<br>
+                Properti line-height dapat diaplikasikan ke seluruh elemen yang ada pada HTML dan nilainya dapat diturunkan pada elemen turunannya.
+            </p>
+            <h3>Text Indent</h3>
+            <p>
+                Digunakan untuk mengatur jarak di awal paragraf. Nilai properti ini dapat ditentukan melalui perhitungan panjang dalam px, em, dan in, atau bisa menggunakan nilai persentase (%). Nilai persentase dihitung berdasarkan lebar dari induk elemen.
+                <img src="../image/textindent.jpeg" border="1" width="600px">
+                Pada contoh ketiga dapat dilihat bahwa pada nilai properti ini dapat diberikan nilai negatif. Jika menggunakan nilai tersebut, baris pertama pada paragraf akan keluar dari batas elemen yang menampungnya (disebut hanging indent). Properti <mark>text-indent</mark> hanya berpengaruh pada awal baris paragraf. 
+            </p>
+            <h3>Text Alignment</h3>
+            <p>
+                Digunakan untuk mengatur text alignment seperti yang biasa dilakukan pada Microsoft Word. Untuk standarnya, properti <mark>text-align</mark> bernilai left (rata kiri).  Namun, standarnya bisa jadi menggunakan right (rata kanan) jika ada penerapan atribut language dengan nilai bahasa yang arah bacanya berlawanan seperti Bahasa Arab.
+                <table border="5">
+                    <tr>
+                        <th>Nilai Properti</th>
+                        <th>Fungsi</th>
+                    </tr>
+                    <tr>
+                        <td>text-align: left;</td>
+                        <td>Membuat perataan teks pada ujung kiri.</td>
+                    </tr>
+                    <tr>
+                        <td>text-align: right;</td>
+                        <td>Membuat perataan teks pada ujung kanan.</td>
+                    </tr>
+                    <tr>
+                        <td>text-align: center;</td>
+                        <td>Membuat perataan teks secara menengah.</td>
+                    </tr>
+                    <tr>
+                        <td>text-align: justify;</td>
+                        <td>Membuat perataan teks yang setara pada ujung kiri dan kanannya.</td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Text Decoration</h3>
+            <p>
+                Properti ini sering digunakan untuk membuat underline (garis bawah) pada teks. Namun, masih ada beberapa nilai lain yang dapat digunakan untuk properti ini.
+                <table border="5">
+                    <tr>
+                        <th>Nilai Properti</th>
+                        <th>Fungsi</th>
+                    </tr>
+                    <tr>
+                        <td>text-decoration: underline;</td>
+                        <td>Memberikan garis bawah (underline) pada teks.</td>
+                    </tr>
+                    <tr>
+                        <td>text-decoration: overline;</td>
+                        <td>Memberikan garis atas (overline) pada teks.</td>
+                    </tr>
+                    <tr>
+                        <td>text-decoration: line-through;</td>
+                        <td>Memberikan efek tulisan dicoret (strikethrough).</td>
+                    </tr>
+                    <tr>
+                        <td>text-decoration: none;</td>
+                        <td>Menghilangkan dekorasi teks yang ada pada elemen.</td>
+                    </tr>
+                </table>
+                Dengan menggunakan text-decoration, kita dapat menghilangkan efek underline pada link yang ditampilkan dengan memberikan nilai <mark>text-decoration: none;</mark> pada elemen &lt;a&gt;
+            </p>
+            <h3>Text Transform</h3>
+            <p>
+                Ketika menerapkan properti <mark>text-transform</mark> pada elemen teks, kapitalisasi akan berubah ketika halaman di-render tanpa harus mengubahnya pada dokumen HTML.
+                <table border="5">
+                    <tr>
+                        <th>Nilai Properti</th>
+                        <th>Fungsi</th>
+                    </tr>
+                    <tr>
+                        <td>text-transform: none;</td>
+                        <td>Teks yang ditampilkan sama seperti yang dituliskan.</td>
+                    </tr>
+                    <tr>
+                        <td>text-transform: capitalize;</td>
+                        <td>Membuat huruf pertama besar pada tiap katanya.</td>
+                    </tr>
+                    <tr>
+                        <td>text-transform: lowercase;</td>
+                        <td>Membuat seluruh teks menggunakan huruf kecil.</td>
+                    </tr>
+                    <tr>
+                        <td>text-transform: uppercase;</td>
+                        <td>Membuat seluruh teks menggunakan huruf besar.</td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Word and Letter Spacing</h3>
+            <p>
+                Properti <mark>letter-spaing</mark> digunakan untuk mengatur jarak antar huruf. Properti <mark>word-spacing</mark> digunakan untuk mengatur jarak antar kata. Kedua elemen ini dapat diaplikasikan ke seluruh elemen yang ada pada HTML dan nilainya dapat diturunkan pada elemen turunannya.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            letter{
+                letter-spacing: 2px; 
+            }
+        
+            word{
+                word-spacing: 11px; 
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Text Shadow</h3>
+            <p>
+                Properti <mark>text-shadow</mark> digunakan untuk membuat bayangan pada teks (biasa disebut drop shadow). Nilai properti ini cukup rumit karena membutuhkan tiga buah nilai dan satu buah nilai warna sehingga membutuhkan empat nilai dalam satu properti untuk menentukan bayangannya.
+                <ul>
+                    <li><strong>Nilai Pertama</strong> menunjukkan seberapa jauh ke kiri atau kanan (horizontal) bayangan yang harus ditampilkan.</li>
+                    <li><strong>Nilai Kedua</strong> menunjukkan jarak ke atas atau bawah (vertical) bayangan harus ditampilkan.</li>
+                    <li><strong>Nilai Ketiga</strong>(opsional) menentukan tingkat keburaman yang harus diterapkan pada bayangan.</li>
+                    <li><strong>Nilai Keempat</strong> menentukan warna yang digunakan pada bayangan.</li>
+                </ul>
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            shadow{
+                text-shadow: nilai1 nilai2 nilai3 warna;
+            }
+        
+            shadow{
+                text-shadow: 2px 2px 0px blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h2>Pewarnaan</h2>
+            <h3>Menetapkan Nilai Warna</h3>
+            <p>
+                Setiap warna pada layar komputer terdiri dari campuran warna merah, hijau, dan biru (RGB). Layar komputer dibuat dari ribuan kotak kecil yang biasa disebut piksel. Ketika layar dinyalakan, tiap piksel dapat menghasilkana warna yang berbeda sehingga dapat menampilkan gambar.<br>
+                <img src="../image/rgb.jpeg" width="250px" border="1" alt="Kombinasi Merah Hijau dan Biru">
+                Kita bisa memilih kode RGB dengan bantuan color picker online yang dapat dicari di browser.
+            </p>
+            <h3>Numeric Value</h3>
+            <p>
+                Penetapan warna menggunakan numeric value adalah cara yang paling banyak digunakan karena dapat menentukan warna yang diinginkan dengan tepat. Berikut adalah contoh penulisannya:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            /* Warna biru menggunakan format RGB */
+            selector{
+                color: rgb(0, 0, 255);
+            }
+        
+            /* Warna biru menggunakan format HEX */
+            selector{
+                color: #0000FF
+            }
+        
+            /* Warna biru menggunakan format HSL */
+            selector{
+                color: hsl(240, 100%, 100%);
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Predefined Color Name</h3>
+            <p>
+                Selain menggunakan format angka, menentukan warna juga dapat enggunakan sebuah kata seperti blue, yellow, red, dan lainnya. Denga menggunakan kata, tentu dapat lebih mudah dan cepat dalam menentukan warna, tetapi mungkin hanya warna dasar yang dapat kita hafal. Hampir seluruh browser saat ini mendukung 140 nama warna.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                color: blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h2>Warna untuk Teks dan Latar Belakang</h2>
+            <h3>Text Color</h3>
+            <p>
+                Kita dapat mengganti warna teks dengan mudah menggunakan properti <mark>color</mark>. Nilai dari properti color dapat berupa <em>predefined color name</em> atau sebuah <em>numeric value</em> dengan menggunakan RGB, RGBA, Hex, HSL, ataupun HSLA.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            p { color: blue; }
+            p { color: #0000FF; }
+            p { color: rgb(0, 0, 255); }
+            p { color: hsl(240, 100%, 50%); }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Pada contoh di atas, seluruh elemen &lt;p&gt; akan diberi warna biru dengan menggunakan beberapa cara.
+                Properti color dapat diaplikasikan ke seluruh elemen yang ada dalam HTML dan nilainya dapat diturunkan pada elemen turunannya.
+            </p>
+            <h3>Background Color</h3>
+            <p>
+                CSS memperlakukan setiap elemen HTML seperti berada pada sebuah kotak dan properti <mark>backround-color</mark> dapat mengatur warna untuk background dari kotak tersebut. Nilai dari properti background-color dapat berupa <em>predefined color name</em> atau sebuah <em>numeric value</em> dengan menggunakan RGB, RGBA, Hex, HSL, ataupun HSLA. Properti background-color akan bernilai transparan jika tidak ditetapkan warna apapun. Kebanyakan browser menetapkan nilai putih sebagai standar untuk nilai background-color, tetapi nilai standar tersebut dapat pengguna ubah melalui pengaturan browsernya. Untuk memastikan web memiliki tampilan background putih, kita dapat terapkan nilai background-color: white; pada elemen body.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            body {
+                background-color: #0000FF;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Opacity</h3>
+            <p>
+                Apa perbedaan antara transparan dan opacity? Transparan adalah seberapa besar tingkata tembus pandang atau tak terlihatnya suatu objek, sedangkan opacity adalah seberapa besar tingkat terlihat suatu objek. Semakin besar tingkat transparansi suatu objek, semakin tak terlihat objek tersebut. Namun, semakin besar tingkat opacity suatu objek, semakin terlihat objek tersebut (solid).
+                <table border="5">
+                    <tr>
+                        <th>Nilai</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                    <tr>
+                        <td>0%</td>
+                        <td>Elemen tak akan terlihat.</td>
+                    </tr>
+                    <tr>
+                        <td>Di antara 0% - 100%</td>
+                        <td>Elemen akan tembus cahaya alias masih dapat terlihat.</td>
+                    </tr>
+                    <tr>
+                        <td>100%</td>
+                        <td>Elemen sepenuhnya terlihat.</td>
+                    </tr>
+                </table>
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                opacity: 50%;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Opacity pada Warna</h3>
+            <p>
+                CSS memiliki fitur bernama opacity yang dapat ditetapkan dalam warna. Ini merupakan komponen keempat setelah red, blue, dan green. Biasanya disebut sebagai alpha channel. Untuk melakukannya, kita bisa menggunakan format warna RGBA, HSLA, dan Hex.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                background-color: rgb(0, 0, 255, 0.5)
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+        </div>
+        <div id="boxmodel">
+            <h2>Box Model (Box Dimension)</h2>
+            <p>
+                Setiap elemen yang dibuat HTML akan menciptakan sebuah kotak untuk menampung kontennya. Layaknya bentuk kotak pada umumnya, ada beberapa nilai atau komponen padanya.
+                <ul>
+                    <li>Lebar dan tinggi kotak (konten)</li>
+                    <li>Ruang kosong antara konten dengan border (padding)</li>
+                    <li>Garis tepi (border)</li>
+                    <li>Jarak dari elemen lain (margin)</li>
+                </ul>
+            </p>
+            <h3>Box Dimension</h3>
+            <p>Standarnya, sebuah box yang dihasilkan tiap elemen selalu cukup untuk menampung konten. Namun, kita dapat mengatur dimensi dari box tersebut dengan properti <mark>width</mark> dan <mark>height</mark>. Cara yang paling banyak digunakan dalam menentukan dimensi kotak adalah menggunakan piksel, persentase, atau ems. Secara tradisional, piksel merupakan cara yang paling populer karena kita dapat merancang dan mengontrol ukuran secara akurat. Berbeda dengan persentase, ukuran kotak akan relatif atau menyesuaikan dari ukuran lain, seperti ukuran jendela browser atau ukuran induk yang menaunginya. Pada saat ini, banyak developer mulai merancang menggunakan persentase dan ems untuk menetapkan ukuran box agar dapat menyesuaikan dengan berbagai macam ukuran layar
+            </p>
+            <table border="2">
+                <tr>
+                    <td>
+                        <pre>
+            .box{
+                height: 123px;
+                width:123px;
+                background-color: red;
+            }
+        
+            p{
+                height: 50%;
+                width: 50%;
+                background-color: blue;
+            }
+                        </pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Pada contoh di atas, class "box" memiliki dimensi elemen dengan lebar 123px dan tinggi 123px. Di dalamnya terdapat elemen &lt;p&gt; yang memiliki ukuran elemen 50% dari lebar dan tinggi elemen induknya. Dengan demikian, elemen &lt;p&gt; memiliki ukuran 61,5px untuk panjang dan lebarnya.
+                    </td>
+                </tr>
+            </table>
+            <h3>Limiting Dimension</h3>
+            <p>
+                Beberapa website ada yang sekarang menampilkan layout yang dapat melebar dan menyempit mengikuti ukuran layar pengguna. Pada prinsip tersebut, mungkin kita memerlukan sebuah limitasi ukuraan yang harus ditetapkan agar konten selalu ditampilkan secara proporsional. Kita dapat memanfaatkan properti <mark>min-width</mark> dan <mark>max-width</mark> untuk melakukannya.
+                <ul>
+                    <li><strong>min-width</strong> menetapkan nilai lebar minimal yang harus dimiliki elemen.</li>
+                    <li><strong>max-width</strong> menetapkan nilai lebar maksimal yang harus dimiliki elemen.</li>
+                </ul>
+                Keduanya merupakan properti yang sangat membantu untuk memastikan konten halaman dapat terbaca oleh pengguna.
+            </p>
+            <h3>Overflowing Content</h3>
+            <p>
+                Dimensi box yang dihasilkan elemen selalu cukup untuk menampung konten, tetapi tidak berlaku jika kita tetapkan secara manual panjang dan lebarnya. Tak jatrang terjadi overflow ketika kita menerapkan ukuran pada elemen dengan konten di dalamnya yang terlalu banyak. Untuk menangani kasus tersebut, kita bisa gunakan properti overflow, properti ini dapat bernilai berikut:
+                <ul>
+                    <li>
+                        <h4>visible</h4>
+                        <p>Nilai default pada properti ini. Konten yang tidak tertampung akan tetap ditampilkan seperti pada standarnya.</p>
+                    </li>
+                    <li>
+                        <h4>hidden</h4>
+                        <p>Konten yang tidak tertampung akan disembunyikan jika tterjadi overflow.</p>
+                    </li>
+                    <li>
+                        <h4>scroll</h4>
+                        <p>Memunculkan scroll bar pada pinggir elemen sehingga konten yang tidak tertampung akan ditampilkan dengan scroll bar. Jika menggunakan nilai ini, scroll bar akan tetap muncul walaupun tidak terjadi overflow.</p>
+                    </li>
+                    <li>
+                        <h4>auto</h4>
+                        <p>Sama seperti scroll, hanya jika tidak terjadi overflow, nilai visible yang akan diterapkan.</p>
+                    </li>
+                </ul>
+            </p>
+            <h3>Box-Sizing</h3>
+            <p>
+                Pada CSS3, kita dapat memilih tipe pengukuran lain dalam menentukan dimensi elemen. Dengan menggunakan properti <mark>box-sizing</mark>, kita dapat menentukannya berdasarkan border box. Ukuran elemen sudah termasuk content, padding, dan border. Dengan metode ini, hasil elemen yang ditampilkan akan memiliki dimensi yang sama persis seperti yang kita tentukan.
+            </p>
+            <h2>Box Model (Border)</h2>
+            <p>
+               Merupakan sebuah garis yang mengelilingi area konten dan  padding. Kita dapat mengatur tipe, ketebalan, serta warna garis yang ditampilkan sesuai dengan yang diinginkan. Kita juga bisa mengatur dalam menampilkan sebagian atau keseluruhan garis pada elemen.
+            </p>
+            <h3>Border Width</h3>
+            <p>
+                Digunakan untuk mengatur ketebalan dari border, nilai dari properti ini dapat berupa piksel atau menggunakan predefined names value,  seperti thin, medium, dan thick. Nilai persentase (%) tidak bisa digunakan pada properti ini.
+                <table border="2">
+                    <tr>
+                        <th>Mengatur ukuran garis dengan menggunakan 4 properti terpisah</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            .box{
+                border-top-width: 2px;
+                border-right-width: 2px;
+                border-bottom-width: 2px;
+                border-left-width: 2px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mengatur ukuran garis dengan menetapkan nilai sekaligus dalam 1 properti</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            .box{
+                border-width: 2px 2px 2px 2px; /*top right bottom left*/
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <ul>
+                <li>Ketika satu nilai ditentukan, nilai berlakuuntuk empat sisi.</li>
+                <li>Ketika dua nilai ditentukan, nilai pertama berlaku untuk sisi atas dan bawah, nilai kedua untuk sisi kiri dan kanan</li>
+                <li>Ketika tiga nilai ditentukan, nilai pertama berlaku untuk sisi atas, nilai yang kedua untuk sisi kiri dan kanan, nilai ketiga untuk sisi bawah.</li>
+                <li>Ketika empat nilai ditentukan, nilai pertama berlaku untuk sisi atas, nilai kedua untuk sisi kanan, nilai ketiga untuk sisi bawah, dan nilai keempat untuk sisi kiri.</li>
+            </ul>
+            <h3>Border Style</h3>
+            <p>
+                Properti <mark>border-style</mark> digunakan untuk menetapkan tipe border.
+                <table border="5">
+                    <tr>
+                        <th>Nilai Properti</th>
+                        <th>Penjelasan</th>
+                        <th>Gambar</th>
+                    </tr>
+                    <tr>
+                        <td>solid</td>
+                        <td>Tipe garis padat (menyambung).</td>
+                        <td><img src="../image/solid.jpeg" width="50%"></td>
+                    </tr>
+                    <tr>
+                        <td>dotted</td>
+                        <td>Garis yang dibentuk dari serangkaian titik-titik.</td>
+                        <td><img src="../image/dotted.jpeg" width="50%"></td>
+                    </tr>
+                    <tr>
+                        <td>dashed</td>
+                        <td>Garis yang dibentuk dari serangkaian garis pendek.</td>
+                        <td><img src="../image/dashed.jpeg" width="50%"></td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>Garis yang dibentuk dari dua buah garis padat.</td>
+                        <td><img src="../image/double.jpeg" width="50%"></td>
+                    </tr>
+                    <tr>
+                        <td>groove</td>
+                        <td>Tipe garis yang berbentuk seperti frame.</td>
+                        <td><img src="../image/groove.jpeg" width="50%"></td>
+                    </tr>
+                    <tr>
+                        <td>hidden</td>
+                        <td>Digunakan untuk menyembunyikan garis pada elemen.</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </p>
+            <h3>Border Color</h3>
+            <p>
+                Properti <mark>border-color</mark> digunakan untuk menentukan warna pada garis dengan menggunakan nilai RGB, Hex, atau nama warna pada CSS.
+            </p>
+            <h3>Shorthand</h3>
+            <p>
+                CSS menyediakan jalan pintas (shorthand) untuk membuat border dengan satu properti saja.<br>
+                div{ border: width type color; }
+                Properti border memiliki tiga buah nilai yang digunakan untuk menentukan ketebalan, tipe, dan warna pada border. Berikut contoh penerapannya:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            .box{
+                border: 2px dotted blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Tidak ada aturan peletakan nilai pada shorthand ini karena tidak akan menjadi masalah.
+            </p>
+            <h2>Box Model (Padding)</h2>
+            <p>
+                Padding merupakan jarak antara area konten dan border. Padding banyak diterapkan pada elemen jika elemen tersebut menerapkan warna latar atau border. Padding memberikan sedikit ruang sehingga konten di dalam elemen dapat lebih nyaman untuk ditampilkan. Satuan piksel sering digunakan dalam menetapkan nilai properti ini. Jika menetapkan mengunakan persentase, nilai akan relative pada elemen induk atau jendela browser (jika tidak memiliki induk elemen).
+                <table border="2">
+                    <tr>
+                        <th>Menentukan nilai padding</th>
+                        <th>Menentukan nilai padding menggunakan shorthand</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                padding-top: 10px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+            }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            selector{
+                padding: 10px 15px 10px 15px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Berikut hasil penerapannya
+                <img src="../image/padding.jpeg" border="1" width="550px">
+            </p>
+            <h2>Box Model (Margin)</h2>
+            <p>
+                Margin merupakan ruang atau jarak pada sebuah elemen. Jarak tersebut terletak di luar dari konten dan border element. Margin digunakan untuk menjaga elemen agar tidak bertabrakan satu sama lain atau dari tepi jendela browser. Margin bersifat collapsed, yang artinya dapat menumpuk jika terdapat dua margin yang saling bertumpukan. Jika terjadi penumpukan margin, nilai yang paling besar yang akan diterapkan. Nilai tiap margin dapat ditentukan berbeda-beda untuk masing-masing sisi elemen seperti contoh berikut:
+                <table border="2">
+                    <tr>
+                        <th>Menentukan nilai margin</th>
+                        <th>Menentukan nilai margin menggunakan shorthand</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                margin-top: 10px;
+                margin-right: 15px;
+                margin-bottom: 20px;
+                margin-left: 25px;
+            }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            selector{
+                margin: 10px 15px 20px 25px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Untuk menentukan nilai margin vertikal dan horizontal bisa hanya menggunakan dua nilai saja. Nilai pertama untuk margin top dan bottom, nilai kedua untuk margin left dan right.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            selector{
+                margin: 10px 15px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <h2>Box Model (Centering Content)</h2>
+            <p>
+                Untuk membuat sebuah kotak berada tepat di tengah sebuah halaman, margin kanan dan kiri bisa diatur dengan nilai auto. Untuk membuat kotak berada ditengah harus menentukan lebar dari kotak tersebut menggunakan properti width. Jika tidak, kotak akan mengambil lebar penuh pada halaman atau induk elemen.
+            </p>
+            <h2>Display Roles</h2>
+            <p>
+                Setiap elemen HTML memiliki dua tipe, yaitu block dan inline.
+                <table border="5">
+                    <tr>
+                        <th></th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>Inline Element</td>
+                        <td>
+                            <ul>
+                                <li>Elemen HTML yang secara default tidak menambahkan baris baru ketika dibuat.</li>
+                                <li>Nilai lebar dan tinggi elemen inline sebesar konten di dalamnya dan tidak dapat diubah.</li>
+                                <li>Margin dan padding hanya mempengaruhi elemen secara horizontal, tidak vertikal.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Block Element</td>
+                        <td>
+                            <ul>
+                                <li>Elemen HTML secara default menambahkan baris baru ketika dibuat.</li>
+                                <li>Jika tidak diatur lebaraanya, lebar dari elemen block akan memenuhi lebar dari browser atau elemen yang menaunginya.</li>
+                                <li>Dimensi dari elemen block dapat diatur.</li>
+                                <li>Di dalam elemen block dapat menyimpan tag elemen HTML lainnya.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                Dengan menggunakan properti display, kita dapat mengubah sebuah elemen inline menjadi block, begitu pun sebaliknya. Properti ini juga dapat digunakan untuk menyembunyikan elemen yang ditampilkan. Nilai dari properti ini dapat berupa hal berikut:
+                <table border="5">
+                    <tr>
+                        <th>Nilai</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>inline</td>
+                        <td>Mengubah elemen block berperilaku seperti elemen inline.</td>
+                    </tr>
+                    <tr>
+                        <td>block</td>
+                        <td>Mengubah elemen inline berperilaku seperti elemen block.</td>
+                    </tr>
+                    <tr>
+                        <td>inline-block</td>
+                        <td>Membuat elemen block tidak menambahkan baris baru ketika dibuat, tetapi tetap mempertahankan sifat lain dari elemen block.</td>
+                    </tr>
+                    <tr>
+                        <td>none</td>
+                        <td>Menyembunyikan elemen dari halaman.</td>
+                    </tr>
+                </table>
+                Properti ini banyak digunakan dalam pembuatan navigasi. Biasanya navigasi dibuat menggunakan elemen list yang memiliki sifat block sehingga item list selalu ditampilkan dalam baris baru. Dengan menggunakan properti display, kita dapat  mengubah perilaku elemen list tersebut dengan menerapkan inline.
+            </p>
+            <h2>Box Shadow</h2>
+            <p>
+                Pada CSS3, drop shadow dapat ditambahkan di sekitar kotak elemen (tidak termasuk margin) dengan menggunakan properti <mark>box-shadow</mark>. Nilai dan cara kerja dari properti box-shadow mirip seperti text-shadow, nilainya menentukan jarak vertikal dan horizontal, tingkat keburaman, dan warna pada bayangan. Pada box shadow, kita juga dapat menentukan tingkat sebaran (spread) bayangan. Jika nilai semakin besar, bayangan yang tampak akan semakin luas.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            .box{
+                box-shadow: 6px 6px 5px 10px blue;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Penjelasan tiap nilai dari properti:
+                <ol>
+                    <li>Menunjukkan seberapa jauh ke kiri atau kanan (horizontal) bayangan harus ditampilkan.</li>
+                    <li>Menunjukkan jarak ke atas atau bawah (vertical) bayangan harus ditampilkan.</li>
+                    <li>Menentukan tingkat keburaman yang harus diterapkan pada bayangan.(opsional)</li>
+                    <li>Tingkat sebaran (spread). Semakin besar nilai yang ditentukan, bayangan yang tampak akan semakin luas.(opsional)</li>
+                    <li>Menentukan warna yang digunakan pada bayangan.</li>
+                </ol>
+            </p>
+            <h2>Rounded Corner</h2>
+            <p>
+                Properti <mark>border-radius</mark> digunakan untuk membuat <em>rounded corner</em> atau sudut bundar pada box dalam CSS3. Nilai dari properti ini merupakan tingkat lengkungan border dalam piksel.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            content{
+                width: 300px;
+                padding: 20px;
+                border: 4px solid deeppink;
+        
+                border-radius: 10px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                <table border="2">
+                    <tr>
+                        <th>Menetapkan nilai dengan menggunakan 4 properti terpisah</th>
+                        <th>Menetapkan nilai dengan menggunakan shorthand</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <pre>
+            content{
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 10px;
+            }
+                            </pre>
+                        </td>
+                        <td>
+                            <pre>
+            content{
+                border-radius: 10px 5px 10px 5px;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </p>
+            <p>
+                object-fit, object-position, object-fit: cover; object-position: center; 
+            </p>
+        </div>
+        <div id="positioning">
+            <h2>Positioning</h2>
+            <p>
+                Properti <strong>position</strong> digunakan untuk mengubah <em>positioning schema</em> dalam mengontrol letak elemen tersebut.<br> Berikut nilai dari properti <strong>position</strong> yang ada pada CSS.
+                <ul>
+                    <li>
+                        <h4>Normal Flow</h4>
+                        <p>Adalah default behaviour yang dimiliki elemen, yakni setiap elemen block akan ditampilkan dalam baris baru ketika dibuat. Jadi, setiap elemen block selalu muncul di bawah dari elemen block sebelumnya. Bahkan jika masih terdapat ruang kosong pada samping elemennya, mereka tidak akan tampak bersebelahan.</p>
+                    </li>
+                    <li>
+                        <h4>Relative Positioning</h4>
+                        <p>Membuat elemen dapat melakukan perpindahan posisi ke atas, kanan, bawah, ataupun kiri dari posisi semula atau posisi seharusnya elemen tersebut berada dan tidak akan berpengaruh terhadap elemen di sekitarnya karena elemen tersebut akan dipindahkan dari normal flow.</p>
+                    </li>
+                    <li>
+                        <h4>Absolute Positioning</h4>
+                        <p>Elemen akan dipindahkan keluar dari normal flow sehingga kita dapat memindahkan posisi elemen ke atas, kanan, bawah, atau kiri secara leluasa tanpa mengganggu elemen di sekitarnya. Namun, posisinya relatif terhadap jendela browser dan posisinya dapat relatif pada induk elemen selama induk elemen juga berada di luar dari normal flow.</p>
+                    </li>
+                    <li>
+                        <h4>Fixed Positioning</h4>
+                        <p>Merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser, bahkan ketika pengguna melakukan scrolling posisinya akan tetap tampak pada posisinya di layar.</p>
+                    </li>
+                </ul>
+            </p>
+            <h3>Perbedaan Static Flow dan Non-Static Flow</h3>
+            <p>
+                Ketika kita memiliki tia buah elemen &lt;div&gt; yang masing-masingnya memiliki warna berbeda, jika kita tidak mengatur properti <strong>position</strong> dari ketiga elemen tersebut, tiap elemen akan ditampilkan dengan <em>static flow</em> seperti contoh di bawah.
+                <img src="../image/staticflow.jpeg" width="600px" border="1" alt="Ilustrasi Penerapan Static Flow">
+                Ketika ingin mengubah letak kotak biru (kotak kedua) dengan menggunakan <mark>margin-top: 20px</mark>, tentu akan berpengaruh pada posisi elemen di bawahnya (elemen di bawahnya bergeser).
+                <img src="../image/staticflow2.jpeg" width="600px" border="1">
+                Pada ilustrasi di atas, kotak yang berwarna oranye ikut bergeser ke bawah. Berbeda ketika kita menerapkan properti <mark>position</mark> yang dapat membuat elemen keluar dari static flow. Contohnya dengan menerapkan properti <mark>position</mark> dengan nilai <mark>relative</mark>, <strong>position: relative;</strong><br>
+                Berikut contohnya:
+                <img src="../image/staticflow3.jpeg" width="600px" border="1">
+                Dalam tampilan browser tidak terdapat perbedaan setelah menerapkan nilai relative pada atribut position. Namun, sebenarnya elemen yang menerapkannya akan diangkat dari luar static flow seperti yang ditampilkan pada ilustrasi 3D. Elemen tersebut dapat leluasa berpindah posisi tanpa memengaruhi elemen yang berada pada static flow. Dengan mengubah elemen yang berada di non-static flow, kita dapat menggunakan properti <mark>top, right, bottom,</mark> ataupun <mark>left</mark>.
+                <img src="../image/staticflow4.jpeg" width="600px" border="1">
+                Properti <mark>top, left, right, bottom</mark> hanya akan berpengaruh pada elemen yang menggunakan non-static flow, yaitu elemen yang menerapkan nilai <strong>relative, absolute,</strong> dan <strong>fixed</strong> pada properti <mark>position</mark>
+            </p>
+            <h3>Normal Flow</h3>
+            <p>
+                Setiap elemen block ditempatkan di bawah elemen sebelumnya. Nilai properti position tidak perlu ditetapkan ketika ingin membuat perilaku seperti ini. Namun, secara  sintaks perilaku ini ditetapkan dengan nilai <strong>static</strong>.
+            </p>
+            <h3>Relative Positioning</h3>
+            <p>
+                Dengan menetapkan relative pada properti position, kita dapat melakukan perpindahan posisi elemen ke atas, kanan, bawah, atau kiri. Perpindahan posisi yang dilakukan tidak akan berpengaruh terhadap posisi elemen di sekitarnya. Hal ini karena ketika menggunakan relative positioning elemen tersebut akan dipindahkan dari normal flow. Untuk menggunakan relative positioning dapat menetapkan nilai <mark>relative</mark> pada properti position.
+            </p>
+            <h3>Absolute Positioning</h3>
+            <p>
+                Ketika properti position diberikan nilai absolute, elemen akan dikeluarkan dari normal flow sehingga jika dipindahkan posisinya tidak akan berpengaruh pada elemen lain di sekitarnya. Elemen ini benar-benar tidak dianggap ada oleh elemen yang berada pada normal flow. Dampaknya, lokasi awal elemen yang diberikan nilai absolute akan ditempati oleh elemen di bawahnya.
+            </p>
+            <h3>Fixed Positioning</h3>
+            <p>
+                Fixed positioning merupakan absolute position. Namun, posisinya selalu relatif pada jendela browser (meskipun diletakkan dalam induk elemen di luar flow normal). Bahkan, ketika pengguna melakukan scrolling, posisinya akan tetap tampak pada posisinya di layar. Ketika pengguna melakukan scrolling pada halaman, elemen yang diberikan nilai fixed tetap berada pada posisi yang sama dan paragraf yang ditampilkan tampak di belakang elemen heading tersebut.
+            </p>
+        </div>
+        <div id="floating">
+            <h2>Floating</h2>
+            <p>
+                Properti float dapat membuat elemen berada pada sebelah kanan atau kiri. Bahkan, jika diterapkan pada elemen inline memungkinkan elemen disekitarnya mengelilingi elemen tersebut (wrap). Selain dalam membuat text wrapping, float juga merupakan salah satu teknik dalam membuat layout website. Teknik ini masih banyak digunakan developer karena sangat mudah dipahami dan tergolong mudah untuk multiple column seperti gambar berikut.
+                <img src="../image/floating.jpeg" border="1" width="600px" alt="Contoh penerapan floating dalam membuat layout website">
+                Hal ini dapat dilakukan dengan mudah menggunakan properti <mark>float</mark> karena nilai dari properti ini adalah <mark>left</mark> dan <mark>right</mark>. Nilai tersebut menunjukkan posisi elemen harus diletakkan. Contoh penerapannya seperti berikut:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            body{
+                margin: 0;
+                padding: 0;
+                }
+        
+            .konten1{
+                width: 40%;
+                height: 100%;
+                float: left;
+            }
+            
+            .konten2{
+                width: 60%;
+                height: 100%;
+                float: right;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Dari contoh di atas, pada selector .konten1 dan .konten2 ditetapkan properti float dengan nilai left an right sehingga elemen tersebut dapat diposisikan secara bersebelahan. Ketika menggunakan properti float, jangan lupa memberikan ukuran lebar dari propertinya karena nilai dari lebar menentukan sberapa banyak ruang yang dicakup oleh elemen. Pada contoh di atas, kita menetapkan nilai 40% untuk konten kiri dan 60% untuk konten kanan. Jika terdapat lebih dari dua kolom dalam menyusun layout, hal yang perlu dilakukan hanya perlu menetapkan nilai left pada ketigaa kolomnya, dengan demikian maka kolom akan tampil bersebelahan sesuai urutan penulisan elemennya.
+            </p>
+            <h3>Permasalahan Penerapan Float</h3>
+            <p>
+                Masalah yang ditimbulkan properti float adalah jika sebuah elemen induk yang hanya memiliki satu elemen dengan menerapkan properti float akan memiliki nilai tinggi 0px. Hal ini menunjukkan bahwa elemen yang menerapkan float <mark>tidak dianggap ada</mark> oleh induk elemen yang menaunginya karena dengan menggunakannya, float elemen akan dikeluarkan dari normal flow. Ada dua cara untuk menangani hal tersebut, yakni dengan menggunakan properti <mark>clear</mark> dan menetapkan nilai <mark>overflow: auto;</mark> pada container.
+            </p>
+            <h3>Clear Property</h3>
+            <p>
+                Properti <mark>clear</mark> dibuat untuk menghilangkan sifat float. Dengan demikian, elemen yang menerapkan properti float akan kembali dianggap ada. Namun, untuk menerapkan properti ini kita perlu membuat sebuah elemen kosong (biasanya menggunakan div tanpa konten) yang menerapkan properti clear.
+                Nilai dari properti clear merupakan nilai yang digunakan pada properti float. Sebab, properti clear akan menghapus sifat float sesuai dengan nilai yang ditetapkan.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            img{
+                float: left;
+            }
+        
+            .clear{
+                clear: left;
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Jika mengubah clear menjadi <mark>clear: right;</mark>, hasilnya akan kembali seperti hasil sebelum menerapkannya. Ada satu nilai lagi yang dapat menghilangkan kedua sifat float tersebut, yakni nilai <mark>both</mark>. Gunakan nilai tersebut jika ingin sepenuhnya menghilangkan sifat float pada elemen.
+            </p>
+            <h3>Teknik Overflow</h3>
+            <p>
+                Sebagian developer lebih memilih menggunakan properti <mark>overflow: auto;</mark> pada elemen yang menampung elemen float karena lebih praktis dan tidak perlu membuat elemen baru ketika menggunakannya. Untuk menerapkannya hanya perlu menambahkan properti <mark>overflow</mark> dengan nilai <mark>auto</mark> pada container. Hasil yang diperoleh pun sama seperti yang dilakukan dengan cara pertama (clear property).
+            </p>
+        </div>
+        <div id="metatag">
+            <h2>Konfigurasi Meta Tag Viewport untuk Responsibilitas Layout</h2>
+            <p>
+                Viewport merupakan area yang dapat dilihat oleh pengguna kita pada halaman website. Ukuran viewport bervariasi berdasarkan devicenya. Ukuran viewport pada peranti mobile lebih kecil dibandingkan dengan layar komputer desktop. Sebelum adanya tablet atau handphone, halaman website didesain hanya untuk ukuran layar komputer desktop. Dengan demikian, banyak sekaliwebsite yang menerapkan tampilan dan ukuran yang statis. Jadi, ketika halaman tersebut diakses melalui handphone atau tablet, tampilannya akan mengecil karena tidak disesuaikan. Untuk mengatasi masalah di atas, kita perlu menetapkan meta tag viewport untuk mengendalikan dan menentukan bentuk dari viewport browser, terutama pada perangkat mobile. Jadi, kita dapat melihat ukuran halaman web layaknya diakses pada desktop device. Namun, hal tersebut tetap memerlukan penggunaan teknik peningkatan responsibilitas karena ukuran viewportnya yang berbeda. Mengatur viewport dapat dilakukan melalui tag &lt;meta&gt; yang disisipkan dalam elemen &lt;head&gt;. Contohnya seperti berikut:
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+                Tampilan halaman web sudah tidak kecil lagi dan level kebesarannya terlihat sama dengan tampilan yang dibuka pada layar desktop. Namun, permasalahan lain muncul. Elemen &lt;article&gt; terlalu kecil dan sempit dan elemen &lt;aside&gt; tidak ditampilkan dengan baik. 
+            </p>
+            <h3>Specific Style dengan Media Query</h3>
+            <p>
+                Viewport tampilan pada mobile device belum baik walaupun sudah menetapkan meta tag. Hal ini dikarenakan informasi yang ditampilkan pada elemen &lt;article&gt; terlalu sempit. informasi dalam elemen &lt;aside&gt; akan sulit terbaca. Untuk mengatasi masalah ini, CSS menyediakan sebuah fitur untuk menentukan styling hanya pada kondisi browser dan device device tertentu yang sesuai dengan aturan yang kita tetapkan. Fitur tersebut dinamakan CSS Media Query. Berikut adalah aturan penulisannya.
+                <table border="2">
+                    <tr>
+                        <td>
+                            <pre>
+            @media media-type and (media-feature-rule){
+                /*Tulis CSS rule apapun di sini*/
+            }
+                            </pre>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Media-type</td>
+                        <td>Jenis media sebagai acuan bagi browser dalam menerapkan kode styling. Tipe yang dapat diberikan adalah print, screen, atau semuanya.</td>
+                    </tr>
+                    <tr>
+                        <td>Media-feature-rule</td>
+                        <td>Aturan atau kondisi yang harus terpenuhi agar kode styling dapat  diterapkan. Kondisi yang dimaksud seperti ukuran viewport, orientasi layar, dan jenis penggunaan perangkat tunjuk (touchscreen, keyboard navigation, atau mouse).</td>
+                    </tr>
+                    <tr>
+                        <td>Media-block</td>
+                        <td>Sekumpulan CSS rule yang akan diterapkan jika kedua poin sebelumnya terpenuhi</td>
+                    </tr>
+                    <tr>
+                        <pre>
+            @media screen and (min-width:500px){
+                h1{
+                    color: blue;
+                }
+        
+                h2{
+                    color: red;
+                }
+            }
+                        </pre>
+                    </tr>
+                </table>
+            </p>
+        </div>    
+        <div id="debug">
+            <h2>Debugging dan Optimasi</h2>
+            <p>Cara yang mudah dan cepat dilakukan dalam mencari dan memperbaiki CSS yang telah ditulis adalah dengan menggunakan tools untuk otomatis mencari kesalahan pada penulisan.</p>
+            <h3>Mencari Kesalahan CSS</h3>
+            <p>
+                Salah satu cara yang paling cepat untuk memastikan bahwa CSS yang telah ditulis itu valid dan dapat berjalan adalah menggunakan berbagai tools online yang tersedia secara gratis. Pengecekan cukup dengan cara copy-paste kode CSS, upload berkas CSS, atau menulis alamat situs yang ingin diperiksa.<br>Berikut beberapa opsi gratis yang tersedia:
+                <ul>
+                    <li><a href="https://jigsaw.w3.org/css-validator/#validate_by_uri">CSS Validation Service by W3C</a></li>
+                    <li><a href="https://codebeautify.org/cssvalidate">CSS Validator Online by codebeautify.org</a></li>
+                    <li><a href="http://csslint.net/">CSS Lint</a></li>
+                </ul>
+            </p>
+            <h3>Kecilkan Ukuran CSS</h3>
+            <p>
+                Ukuran CSS sangat penting untuk dapat dihemat karena akan memengaruhi seberapa cepat situs dapat dimuat pada browser. Cara untuk menghemat ukuran berkas CSS adalah dengan menghapus spasi atau karakter yang tidak diperlukan dari kode.<br>Berikut adalah contoh spasi atau karakter yang  dapat dihapus:
+                <ul>
+                    <li>New line Characters (Baris baru)</li>
+                    <li>Whitespace characters (spasi)</li>
+                    <li>Block delimiters (Pembatas block)</li>
+                    <li>CSS comments (Komentar CSS)</li>
+                </ul>
+                Perbaikan di atas dapat dilakukan secara manual atau menggunakan tools online yang dapat memperbaiki secara otomatis.<br>Berikut beberapa opsi yang tersedia:
+                <ul>
+                    <li>CSSNANO Playground</li>
+                    <li>CSS Minifier Tool and Compressor</li>
+                    <li>Minify - JavaScript and CSS minifier</li>
+                </ul>
+            </p>
+        </div>
+        <div id="flexbox">
+            <h2>Flexbox</h2>
+            <p>
+                Pada modul <strong>Pendalaman CSS</strong>, kita telah mempelajari dua tipe elemen HTML atau dua mode layout: <strong>block</strong> dan <strong>inline</strong>. Tipe elemen block didesain untuk membuat layout dokumen karena tipe ini akan mengatur penataan secara vertical dan menambahkan baris baru. Sementara itu, tipe elemen inline didesain untuk membuat layout teks karena tipe ini mengatur penataan secara horizontal. Selain itu, dalam membuat layout, kita telah mempelajari properti float untuk membuat multiple column. Namun, penggunaan properti ini dirasa sulit dan tidak efektif untuk membuat website yang responsif.<br>
+                <strong>Flexible box layout</strong> adalah model satu dimensi guna menyusun elemen-elemen (flex items) dalam posisi rows atau columns. Hal ini membuat flexbox disebut dengan direction-agnostic atau mengatur tata letak di banyak arah. Hal menarik dari flexbox adalah ia menawarkan penyusunan layout dengan flexible karena flex container atau flexbox dapat mengatur dimensi setiap flex-items (child element) sehingga layout yang diinginkan dapat tercapai dengan mudah.
+                Flex container memperluas flex items untuk mengisi ruang kosong atau menciutkannya sehingga menghindari overflow (dimensi child element yang keluar dari parent element-nya). Dengan hadirnya flexbox, perancangan layout dalam skala yang kecil dapat dilakukan dengan mudah pada halaman web.
+            </p>
+            <h3>Alasan Flexbox Hadir</h3>
+            <p>
+                Sebelum hadirnya flexbox, satu-satunya cara untuk membuat layout halaman web adalah float dan positioning. Dengan menggunakan kedua properti CSS tersebut, kita sudah bisa membuat  layout yang kita inginkan, baik pada layar desktop maupun mobile. Namun, dalam beberapa contoh kasus yang mungkin menyulitkan dan tidak fleksibel untuk dicapai dalam penggunaan float dan positioning. Dengan menggunakan kedua properti CSS tersebut, kita sudah bisa membuat layout yang kita inginkan, baik pada layar desktop maupun mobile. Namun, dlam beberapa kasus, penggunaan kedua properti CSS ini terbatas dan menyulitkan<br>
+                Berikut adalah beberapa contoh kasus yang mungkin menyulitkan dan tidak fleksibel untuk dicapai dalam penggunaan float dan positioning.
+                <h4>Centering Secara Vertical</h4>
+                <p>
+                    Membuat konten berada di tengah secara vertical dalam parent element-nya. Dari beberapa kasus, hal ini bisa dicapai menggunakan line-height. Namun, ini hanya berguna jika konten berada dalam satu baris serta kita harus mengetahui secara eksplisit tinggi dari parent element.
+                </p>
+                <h4>Fluid Secara Dinamis dan Rata</h4>
+                <p>
+                    Membuat semua child element memenuhi ruang dari parent element-nya secara dinamis dan merata mungkin bisa tercapai menggunakan ukuran nilai persentase. Namun, jika jumlah child element berjumlah ganjil, kita harus memikirkan nilai persentase yang tepat. Bahkan, tetap akan meninggalkan celah ruang sedikit.
+                </p>
+                <h4>Memiliki Height yang sama pada Multi-Column</h4>
+                <p>
+                    Membentuk child element dalam layout multiple-column agar memiliki ukuran height yang sama, meskipun jumlah content dalamnya tidak sama.
+                </p>
+                Dari ketiga kasus di atas, layouting pada website akan sulit dijangkau oleh float dan positioning. Di sinilah flexbox hadir untuk menyelesaikan masalah seperti di atas. Sebagai gambaran, <a href="https://5we5i3.csb.app/">buka tautan ini</a> untuk melihat contoh kasus pada halaman web. Contoh pembuatan layout katalog tersebut disusun menggunakan flexbox sehingga posisi gambar berada di tengah, ukuran card menjadi responsif meski viewport berubah, dan ukuran height menjadi sama.
+            </p>
+            <h2>Dasar-Dasar dan Terminologi Flexbox</h2>
+    <p>
+        Dalam penggunaannya, flexbox bukanlah properti yang bekerja secara sendiri. Flexbox dapat melakukan banyak hal dengan melibatkan berbagai properti pendukung. Beberapa diantaranya digunakan oleh flex container dan sebagian lainnya digunakan oleh flex items.
+        Pada dasarnya, arah flow didasarkan pada flow dari elemen block (vertical) dan flow dari elemen inline (horizontal). Flexbox sendiri memiliki arah layout yang didasarkan pada flex-direction. Untuk memperjelasnya, perhatikan gambar di bawah ini.
+        <img src="flexbox.png" border="1" width="600px">
+        Pada gambar di atas, terlihat bahwa ada dua istilah khusus pada elemen yang menerapkan flexbox, yaitu flex container, dan flex item. Flex container adalah parent element dari seluruh flex items, sedangkan flex items adalah elemen yang secara langsung merupakan child dari parent element. Pada asalnya, flex items akan dijajarkan secara horizontal (row), yaitu dimulai dari main-start ke main-end (main axis). Namun, jangan khawatir, kita bisa mengubahnya menggunakan properti yang memiliki peran tersebut.
+        <ul>
+            <li>
+                <h5>Main axis</h5>
+                <p>Arah sumbu utama untuk flex item dijajarkan atau ditata. Perlu diingat, arah dari main axis tidak selalu horizontal. Hal ini bergantung terhadap value dari properti flex-direction.</p>
+            </li>
+            <li>
+                <h5>Main-start | main-end</h5>
+                <p>Flex item akan ditempatkan dalam flex container yang berawal dari main-start dan main-end.</p>
+            </li>
+            <li>
+                <h5>Main size</h5>
+                <p>Lebar atau tinggi dari flex item yang diposisikan pada sumbu utama (main axis).</p>
+            </li>
+            <li>
+                <h5>Cross axis</h5>
+                <p>Sumbu yang arahnya tegak lurus dengan main axis. Biasanya terjadi ketika flexbox menerapkan value wrap pada properti flex-wrap sehingga susunan layout terlihat dua dimensi.</p>
+            </li>
+            <li>
+                <h5>Cross-start | cross-end</h5>
+                <p>Flex item yang memenuhi ruang kosong flex container secara vertikal, mulai dari cross-start hingga cross-end. Hal ini dapa diatur mengguakan properti align-items, align-self, dan align-content.</p>
+            </li>
+            <li>
+                <h5>Cross size</h5>
+                <p>Lebar atau tinggi dari sebuah flex item yang ditempatkan pada dimensi cross.</p>
+            </li>
+        </ul>
+    </p>
+    <h2>Properti-Properti pada Flex Container</h2>
+    <h3>Display</h3>
+    <p>
+        Dalam modul sebelumnya, kita telah menggunakan properti display untuk mengatur elemen dengan value block dan inline. Kali ini, jika ingin mendefinisikan elemen agar disusun sebagai flexbox, kita dapat menggunakan properti yang sama dan mengubah valuenya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Direction</h3>
+    <p>
+        Pada dasarnya, flexbox mengatur elemen secara satu dimensi (terlepas dari permasalahan wrapping). Dengan begitu, untuk menentukan arah susunan flex item, kita bisa definisikan menggunakan properti flex-direction. Secara default, value ini adalah row.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        flex-direction: row | row-reverse | column | column-reverse;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>row</td>
+                <td>Flex items akan disusun secara horizontal dari kiri ke kanan.</td>
+            </tr>
+            <tr>
+                <td>row-reverse</td>
+                <td>Flex items akan disusun secara horizontal, tetapi berarah terbalik (kanan ke kiri).</td>
+            </tr>
+            <tr>
+                <td>column</td>
+                <td>Flex items akan disusun secara vertikal dari atas ke bawah.</td>
+            </tr>
+            <tr>
+                <td>column-reverse</td>
+                <td>Flex items akan disusun secara vertikal, tetapi dengan arah terbalik (bawah ke atas).</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Wrap</h3>
+    <p>
+        Ketika layout dari parent element disusun menggunakan flexbox, flex items akan selalu diletakkan dalam satu baris (satu dimensi). Dengan properti flex-wrap, kita bisa mengubah perilakunya menjadi dua dimensi (jika dibutuhkan). Value bawaan dari properti ini adalah nowrap.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        flex-wrap: nowrap | wrap | wrap-reverse;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>nowrap</td>
+                <td>Seluruh flex items hanya akan ditempatkan dalam satu baris meskipun sangat banyak jumlahnya.</td>
+            </tr>
+            <tr>
+                <td>wrap</td>
+                <td>Nilai ini menyebabkan flex items akan diletakkan ke baris yang baru (berikutnya) sehingga menjadi multiple lines.</td>
+            </tr>
+            <tr>
+                <td>wrap-reverse</td>
+                <td>Meskipun mirip dengan wrap, nilai ini akan menyebabkan beberapa flex items ditempatkan dengan menambahkan baris sebelumnya.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Justify Content</h3>
+    <p>
+        Properti justify-content akan mengatur posisi child elemen pada main axis. Kemudahan ini akan sangat dirasakan ketika membuat tampilan yang responsif.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Peletakan child element akan dimulai dari main-start.</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Peletakan child element akan dimulai dari main-end.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Child element akan diletakan di tengah parent child.</td>
+            </tr>
+            <tr>
+                <td>space-between</td>
+                <td>Child element akan tersusun secara merata, elemen pertama berada di tepi main-start dan elemen kedua berada di tepi main-end. Jika child element lebih dari dua, elemen lainnya akan didistribusikan berada di tengah dengan jarak yang sama.</td>
+            </tr>
+            <tr>
+                <td>space-around</td>
+                <td>Setiap child element akan memiliki panjang celah yang sama pada sisi horizontal.</td>
+            </tr>
+            <tr>
+                <td>space-evenly</td>
+                <td>Setiap child element akan memiliki jarak yang setara, termasuk jarak ke tepi main-start dan main-end</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Items</h3>
+    <p>
+        Properti ini memiliki perilaku menempatkan flex items sepanjang cross axis. Bayangkan bahwa tingkah laku dari properti ini mirip dengan properti justify-content, tetapi mengatur child element dalam satu baris pada cross axis.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        align-items: stretch | flex-start | flex-end | center | baseline;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>stretch</td>
+                <td>Melebar hingga memenuhi container dalam cross axis. Setiap child element akan memiliki nilai height yang sama meskipun isi konten berbeda.</td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Setiap child element akan memiliki ukuran height sesuai dengan isi konten serta selurruhnya akan berada di tepi cross-start</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Setiap child element akan memiliki ukuran height sesuai dengan isi konten serta seluruhnya akan berada di tepi cross-end.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Setiap child element memiliki ukuran height sesuai dengan isi konten dan secara vertikal posisi elemen berada di tengah.</td>
+            </tr>
+            <tr>
+                <td>baseline</td>
+                <td>Nilai pada asalnya akan menyerupai flex-start. Namun, jika konten pertama pada masing-masing child element memiliki ukuran height yang berbeda, child element lainnya akan menyesuaikan posisinya secara cross axis dari cross-start.</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Content</h3>
+    <p>
+        Properti ini melakukan perataan terhadap flex items pada setiap baris dalam cross axis. Tingkah laku properti ini hampir mirip dengan properti justify-content yang mengatur tata letak flex items di sisi main axis. Hal yang perlu diperhatikan adalah penggunaan properti ini hanya akan berpengaruh pada multi-line flex container dan properti flex-wrap dilibatkan. Flex container yang hanya memiliki single line tidak akan memiliki efek diterapkannya properti align content.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        align-content: flex-start | flex-end | center | space-between | space-around | space evenly;
+    }
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>normal (default)</td>
+                <td>Flex items akan diposisikan secara default jika tidak menerapkan value pada align content.</td>
+            </tr>
+            <tr>
+                <td>flex-start</td>
+                <td>Flex items ditata pada permulaan flex container.</td>
+            </tr>
+            <tr>
+                <td>flex-end</td>
+                <td>Flex items ditata pada akhir flex container.</td>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Flex items diposisikan di tengah flex container.</td>
+            </tr>
+            <tr>
+                <td>space-between</td>
+                <td>Flex items akan disebar secara merata, item pertama akan diposisikan pada cross-start dan item terakhir akan diposisikan pada cross-end.</td>
+            </tr>
+            <tr>
+                <td>space-around</td>
+                <td>Flex items akan disebar secara merata dengan jarak celah yang vsama juga.</td>
+            </tr>
+            <tr>
+                <td>space-evenly</td>
+                <td>Flex items akan disebar secara merata dengan jarak yang merata juga</td>
+            </tr>
+        </table>
+    </p>
+    <h3>Gap (celah)</h3>
+    <p>
+        Biasanya kita mengandalkan properti  margin untuk memberikan jarak atau celah pada flex items. Namun, ada cara yang lebih efektif, yaitu menggunakan properti gap.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .container{
+        display: flex;
+        gap: 1rem; /*diterapkan secara vertikal dan horizontal dengan nilai yang sama*/
+        gap: 1rem 2rem; /*diterapkan secara vertikal dan horizontal*/
+        row-gap: 1rem; /*diterapkan secara horizontal*/
+        column-gap: 1re; /*diterapkan secara vertikal*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h2>Properti-Properti pada Flex Items</h2>
+    <h3>Order</h3>
+    <p>
+        Secara asalnya, flex items akan diletakkan sesuai dengan urutan penulisan kode. Namun, dengan properti <mark>order</mark>, kita bisa mengatur urutan susunan flex items.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        order: 5; /*nilai default 0*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Grow</h3>
+    <p>
+        Ketika membuat layout dengan flexbox, flex item akan dijajarkan serta memiliki lebar sesuai dengan ukuran kontennya. Bisa saja flex container akan meninggalkan sisa ruang meski ukuran konten dari flex items tidak memenuhi flex container. Properti flex-grow akan melakukan grow pada main axis sehingga tidak akan menyisakan ruang kosong pada flex container. Flex grow akan melakukan pendistribusian sisa ruang dalam container kepada seluruh child element dengan porsi yang sama (adil). Jika salah satu  child element memiliki flex grow dengan nilai dua, child element tersebut akan mendapatkan pembagian porsi dua kali lebih besar dibanding child element yang hanya memiliki sattu porsi. Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-grow: 1; /*Nilai default 0*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Flex Shrink</h3>
+    <p>
+        Properti ini memiliki kemampuan untuk menyusutkan atau menciutkan ukuran child element jika ukurannya tidak mencukupi ruang container. Nilai yang diberikan pada properti ini adalah angka tanpa satuan (unitless).
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-shrink: 0; /*Nilai default 1*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+        Nilai default dari properti ini adalah1. Jika kita tidak memberikan nilai 0, ukuran child element tidak akan menciut.
+    </p>
+    <h3>Flex Basis</h3>
+    <p>
+        Properti ini akan memberikan ukuran default sebelum sisa ruang container didistribusikan kepada flex items. Nilai yang didukung untuk properti ini terkait ukuran dimensi (width dan height), yaitu rem, persentase (%), dan lainnya.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .item{
+        flex-basis: 1rem | 25% | auto; /*Nilai default auto*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+    <h3>Align Self</h3>
+    <p>
+        Properti ini memiliki tingkah laku yang sama dengan properti align items. Properti ini dapat mengatur posisi child element secara cross-axis. Namun, properti ini hanya berlaku untuk child element. Jika ingin mengecualikan child element diantara child element lainnya, gunakanlah properti ini.
+        <table border="2">
+            <tr>
+                <td>
+                    <pre>
+    .items{
+        align-self: auto | self-start | flex-end | center | baseline | stretch; /*Nilai default auto*/
+    }
+                    </pre>
+                </td>
+            </tr>
+        </table>
+    </p>
+        </div>
+    </main>
+
+    <footer>
+        &copy;zafranaqeel62@gmail.com
+    </footer>
+</body>
+</html>

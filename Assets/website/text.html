@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konten berupa teks</title>
+    <link rel="Website Icon" href="../webicon/textico.png">
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <div class="judul">
+            <h1>Elemen dan Atribut Untuk Konten Berupa Teks</h1>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="../../">Kembali</a>
+                </li>
+                <li>
+                    <a href="#heading-subheading">Judul dan Subjudul</a>
+                </li>
+                <li>
+                    <a href="#paragraf">Isi Paragraf dan Format Teks</a>
+                </li>
+                <li>
+                    <a href="#elemen-pendukung">Elemen Pendukung Penulisan Paragraf</a>
+                </li>
+                <li>
+                    <a href="#data-formulir">Cara Membawa Data Formulir</a>
+                </li>
+                <li>
+                    <a href="#speccaracter">Special Characters</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="heading-subheading">
+            <h2>Judul dan Subjudul</h2>
+            <p>
+                &lt;h1&gt; Biasa digunakan untuk judul utama<br>
+                &lt;h2&gt; Biasa digunakan untuk subjudul level 1<br>
+                &lt;h3&gt; Biasa digunakan untuk subjudul level 2<br>
+                &lt;h4&gt; Biasa digunakan untuk subjudul level 3<br>
+                dst.
+            </p>
+            </div>
+
+            <div id="paragraf">
+                <h2>Isi Pargraf dan Format Karakter Teks</h2>
+            <p>
+                <table border="2">
+                    <tr>
+                        <th>Elemen</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;p&gt;</td>
+                        <td>Digunakan untuk menunjukkan suatu paragraf</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;em&gt;</td>
+                        <td>Digunakan untuk menunjukkan bagian kata yang perlu mendapatkan penekanan atau perhatian khusus</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;strong&gt;</td>
+                        <td>Digunakan untuk menunjukkan sebuah kata yang sangat penting atau mendesak</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;q&gt;</td>
+                        <td>Digunakan untuk menandai sebuah kutipan dalam sebuah teks</td>
+                    </tr>
+                </table>
+           <h3>Lists</h3>
+           <ul>
+            <li>Unordered Lists</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Unordered Lists digunakan untuk menampilkan daftar dan menampilkan bullet pada tiap item list nya.</p>
+                    <li>Kode</li>
+                    <p>
+                        &lt;ul&gt; untuk membuat daftar yang berjenis Unordered Lists<br>
+                        &lt;li&gt; untuk menuliskan item dari daftar tersebut
+                    </p>
+                </ul>
+            <li>Ordered Lists</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Ordered Lists digunakan untuk menampilkan daftar dan menampilkan nomor atau karakter lain pada tiap item list nya sebagai penanda urutan.</p>
+                    <li>Kode</li>
+                    <p>
+                        &lt;ol&gt; untuk membuat daftar yang berjenis Ordered Lists<br>
+                        &lt;li&gt; untuk menuliskan item dari daftar tersebut
+                    </p>
+                </ul>
+            <li>Description Lists</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Description Lists digunakan untuk menampilkan daftar dengan penjelasan pada masing-masing itemnya</p>
+                    <li>Kode</li>
+                    <p>
+                        &lt;dl&gt; untuk membuat daftar yang berjenis Description Lists<br>
+                        &lt;dt&gt; untuk mendefinisikan item pada daftar<br>
+                        &lt;dd&gt; untuk mendeskripsikan setiap item
+                    </p>
+                </ul>
+           </ul>
+            </div>
+
+            <div id="elemen-pendukung">
+                <h2>Elemen Pendukung Penulisan Paragraf</h2>
+                <table border="2">
+                    <tr>
+                        <th>Elemen</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;blockquote&gt;</td>
+                        <td>Long Quotations, mengandung konten berupa sebuah kutipan.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&lt;pre&gt;</td>
+                        <td>Preformatted Text, digunakan untuk menampilkan teks sesuai dengan yang ditulis pada text editor. Sangat berguna dalam pengetikan puisi.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;figure&gt;</td>
+                        <td>Figure, menentukan konten mandiri seperti ilustrasi, foto, daftar kode, dll. Elemen ini digunakan untuk mengelompokkan blok konten yang dapat dipindahkan posisinya dari blok utama sebuah dokumen tanpa mempengaruhi arti dari induk dokumen.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;figcaption&gt;</td>
+                        <td>Digunakan untuk menuliskan sebuah caption (judul) atau keterangan.<br>
+                            <a href="#anchor">&lt;a&gt;</a>  Anchor. Digunakan untuk membuat sebuah hyperlink ke halaman atau website lain, file, alamat email, atau URL lainnya. Elemen ini juga memerlukan atribut agar dapat bekerj dengan baik.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;cite&gt;</td>
+                        <td>Citation, merupakan sebuah elemen yang digunakan untuk sebuah rujukan pada sebuah dokumen, contohnya pada sebuah buku, majalah, artikel, dan lainnya.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dfn&gt;</td>
+                        <td>Defining Terms, digunakan untuk mendefinisikan sebuah istilah. Elemen ini harus terletak pada elemen lain seperti &lt;p&gt; atau &lt;section&gt;, teks yang diberi markup &lt;dfn&gt; akan ditampilkan dengan huruf miring.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;sup&gt;</td>
+                        <td>Superscript, elemen yang dapat membuat teks yang ditampilkan tampak kecil dengan posisi di atas teks biasanya.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;sub&gt;</td>
+                        <td>Subscript, elemen yang dapat membuat teks yang ditampilkan tampak kecil dengan posisi di bawah teks biasanya.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark&gt;</td>
+                        <td>Highlighted Text, digunakan untuk menandai atau menyoroti sebuah teks yang memiliki peran penting.</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark&gt;</td>
+                        <td>Line Break, digunakan untuk memberitahu browser untuk memberikan sebuah garis baru pada sebuah teks.</td>
+                    </tr>
+                </table>
+            <h3 id="anchor">Atribut Anchor &lt;a&gt;</h3>
+            <ul>
+                <li>download</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menginstruksikan browser untuk mengunduh pada URL yang ditetapkan daripada mengarahkannya.</p>
+                    <li>Atribut</li>
+                    <p>href="/lokasi/media" download</p>
+                    <li>Contoh</li>
+                    <a href="../image/Pass.jpg" download>Download</a>
+                </ul>
+                <li>href</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan target yang akan diarahkan/unduh ketika pengguna menekan hyperlink.</p>
+                    <li>Atribut</li>
+                    <p>href="URL"</p>
+                    <li>Contoh</li>
+                    <a href="https://www.w3schools.com/tags/att_a_href.asp">GitHub</a>
+                </ul>
+                <li>hreflang</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan bahasa dari dokumen target.</p>
+                    <li>Atribut</li>
+                    <p>href="URL" hreflang="kode_bahasa"</p>
+                    <li>Contoh</li>
+                    <a href="https://www.w3schools.com/TAGs/ref_language_codes.asp" hreflang="en">Kode Bahasa</a>
+                </ul>
+                <li>ping</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan URL yang akan diberitahu dengan mengirimkan post request ping pada body oleh browser (berjalan di belakang layar) ketika target URL pada hyperlink ditekan. Biasanya atribut ini digunakan untuk pelacakan.</p>
+                    <li>Atribut</li>
+                    <p>href="URL" ping="URL"</p>
+                    <li>Contoh</li>
+                    <a href="https://www.w3schools.com/tags/att_a_ping.asp" ping="https://github.com/Zafranaqeel">W3ping</a>
+                </ul>
+                <li>referrerpolicy</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan referensi untuk dikirim pada target.</p>
+                    <li>Atribut</li>
+                    <p>href="URL" referrerpolicy="value"</p>
+                    <li>Attribute Values</li>
+                    <ul>
+                        <li>no-referrer,</li>
+                        <li>no-referrer-when-downgrade</li>
+                        <li>origin</li>
+                        <li>origin-when-cross-origin</li>
+                        <li>unsafe-url</li>
+                    </ul>
+                    <li>Contoh</li>
+                    <a href="https://www.w3schools.com/tags/att_a_referrepolicy.asp" referrerpolicy="origin">W3referrerpolicy</a>
+                </ul>
+                <li>rel</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan hubungan antara halaman yang ditampilkan dengan target.</p>
+                    <li>Atribut</li>
+                    <p>rel="value" href="URL"</p>
+                    <li>Attribute Values</li>
+                    <ul>
+                        <li>alternate</li>
+                        <li>author</li>
+                        <li>bookmark</li>
+                        <li>external</li>
+                        <li>help</li>
+                        <li>license</li>
+                        <li>next</li>
+                        <li>nofollow</li>
+                        <li>noreferrer</li>
+                        <li>noopener</li>
+                        <li>prev</li>
+                        <li>search</li>
+                        <li>tag</li>
+                    </ul>
+                    <li>Contoh</li>
+                    <a rel="nofollow" href="https://www.w3schools.com/tags/att_a_rel.asp">W3 rel attribute</a>
+                </ul>
+                <li>target</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan lokasi ketika membuka target contohnya pada sebuah tab, window, atau tab itu sendiri.</p>
+                    <li>Atribut</li>
+                    <p>href="URL" target="value"</p>
+                    <li>Attribute Values</li>
+                    <ul>
+                        <li>_blank</li>
+                        <li>_parent</li>
+                        <li>_self</li>
+                        <li>_top</li>
+                    </ul>
+                    <li>Contoh</li>
+                    <a href="https://www.w3schools.com/tags/att_a_target.asp" target="_blank">W3 target attribute</a>
+                </ul>
+                <li>media</li>
+                <ul>
+                    <li>Penjelasan</li>
+                    <p>Menetapkan tipe media yang digunakan pada target.</p>
+                    <li>Atribut</li>
+                    <p>href="URL atau file" media="value"</p>
+                    <li>Attribute Values</li>
+                    <li>Contoh</li>
+                    <a href="Pass.jpg" media="print">media</a>
+                </ul>
+            </ul>
+            <h3>Tabel</h3>
+            <p>
+                Elemen &lt;table&gt; merepresentasikan data tabular, yaitu informasi yang disajikan dalam bentuk tabel. Tabel disajikan dalam dua dimensi terdiri dari baris dan kolom (cell) yang berisi data.
+                <img src="table.png" width="600px"><br>
+                <caption>contoh tabel pada HTML</caption>
+            </p>
+            <h4>Struktur Dasar Tabel</h4>
+            <p>
+                Tabel tersusun dari 3 elemen, yaitu &lt;table&gt;, &lt;tr&gt;, dan &lt;td&gt; atau &lt;th&gt;
+                <ul>
+                    <li>&lt;table&gt;</li>
+                    <p>
+                        Elemen &lt;table&gt; digunakan untuk menandakan dimulai dan diakhirinya sebuah konten tabel dan sebagai wadah untuk tabel itu sendiri.
+                    </p>
+                    <li>&lt;tr&gt;</li>
+                    <p>
+                        Elemen &lt;tr&gt; digunakan untuk membuat sebuah baris baru yang didalamnya terdapat elemen &lt;td&gt; atau &lt;th&gt;
+                    </p>
+                    <li>&lt; td&gt; atau &lt;th&gt;</li>
+                    <p>
+                        Elemen &lt;td&gt; berarti <em>table data</em>, selain membuat sel, elemen ini juga berfungsi sebagai tempat menampung data pada tabel.<br>
+                        Elemen &lt;th&gt; berarti <em>table header</em>, digunakan untuk menentukan sebuah headerpada kolom  data.
+                    </p>
+                    <p>Catatan: Gunakan atribut border untuk menampilkan garis pada tepi sel</p>
+                </ul>
+            </p>
+            <h3>Spanning Cell</h3>
+            <p>
+                Spanning Cell digunakan untuk menjangkau atau merentangkan sebuah ukuran sel lebih dari biasanya (dalam microsoft word lebih dikenal sebagai merging cell).
+            </p>
+            <h4>Column Spans</h4>
+            <p>
+                Untuk merentangkan sebuah kolom (column spanning) kita bisa menggunakan atribut colspan pada elemen &lt;td&gt; atau &lt;th&gt;.
+            </p>
+            <h4>Row spanning</h4>
+            <p>
+                Untuk merentangkan sebuah baris (row spanning) kita bisa menggunakan atribut rowspan pada elemen &lt;td&gt; atau &lt;th&gt;.
+            </p>
+            <br>
+            <div class="Tabel">
+            <caption><strong>Elemen dan Atribut Tabel</strong></caption>
+            <table border="1">
+                <tr>
+                    <th>Elemen atau Atribut</th>
+                    <th>Deskripsi</th>
+                    <th>Cara Penggunaan</th>
+                </tr>
+                <tr>
+                    <td>&lt;table&gt;</td>
+                    <td>Menetapkan elemen tabel.</td>
+                    <td>&lt;table&gt; &lt;/table&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;td&gt;</td>
+                    <td>Menetapkan sebuah sel dalam baris tabel.</td>
+                    <td>&lt;td&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>colspan="number"</td>
+                    <td>Jumlah kolom yang dicakup oleh sel.</td>
+                    <td>&lt;td colspan="number"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>rowspan="number"</td>
+                    <td>Jumlah baris yang dicakup oleh sel.</td>
+                    <td>&lt;td rowspan="number"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>headers="nama_header"</td>
+                    <td>Mengasosiasikan data sel dengan header.</td>
+                    <td>&lt;td headers="nama_header"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;th&gt;</td>
+                    <td>Menetapkan header yang terkait dengan baris atau kolom.</td>
+                    <td>&lt;th&gt; &lt;/th&gt;</td>
+                </tr>
+                <tr>
+                    <td>colspan="number"</td>
+                    <td>Jumlah kolom yang dicakup oleh header.</td>
+                    <td>&lt;td colspan="number"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>rowspan="number"</td>
+                    <td>Jumlah baris yang dicakup oleh header.</td>
+                    <td>&lt;td rowspan="number"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>headers="nama_header"</td>
+                    <td>Mengasosiasikan header dengan header lainnya.</td>
+                    <td>&lt;td headers="nama_header"&gt; &lt;/td&gt;</td>
+                </tr>
+                <tr>
+                    <td>scope="row|col|rowgroup|colgroup|</td>
+                    <td>Mengasosiasikan header dengan baris, kelompok baris, kolom, atau kelompok kolom.</td>
+                    <td>&lt;td scope="row"&gt; &lt;/th&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;tr&gt;</td>
+                    <td>Menetapkan sebuah baris pada tabel</td>
+                    <td>&lt;tr&gt; &lt;/tr&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;caption&gt;</td>
+                    <td>Memberikan judul pada sebuah tabel</td>
+                    <td>&lt;caption&gt; &lt;/caption&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;col&gt;</td>
+                    <td>Menetapkan sebuah kolom</td>
+                    <td>&lt;col&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;colgroup&gt;</td>
+                    <td>Menetapkan sebuah kelompok kolom</td>
+                    <td>&lt;colgroup&gt; &lt;/colgroup&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;tbody&gt;</td>
+                    <td>Mengidentifikasi sebuah body dalam tabel</td>
+                    <td>&lt;tbody&gt; &lt;/tbody&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;tfoot&gt;</td>
+                    <td>Mengidentifikasi sebuah footer dalam tabel</td>
+                    <td>&lt;tfoot&gt; &lt;/tfoot&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;thead&gt;</td>
+                    <td>Mengidentifikasi sebuah header dalam tabel</td>
+                    <td>&lt;thead&gt; &lt;/thead&gt;</td>
+                </tr>
+            </table>
+            <br>
+                <table border="3">
+                    <tr>
+                        <th>Elemen Dasar Tabel</th>
+                        <th>Atribut &lt;td&gt;</th>
+                    </tr>
+                    <tr>
+                        <!--Dasar-->
+                        <td>
+                            <pre>
+        &lt;table&gt;
+            &lt;tr&gt;
+              &lt;th&gt;Header&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr&gt;
+              &lt;td&gt;data&lt;/td&gt;
+              &lt;td&gt;yang&lt;/td&gt;
+              &lt;td&gt;dijadikan&lt;/td&gt;
+              &lt;td&gt;tabel&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+                            </pre>
+                        </td>
+                        <!--Table Data attribute-->
+                        <td>
+                            <pre>
+        &lt;table&gt;
+            &lt;tr&gt;
+              &lt;td colspan="number"&gt;colspan&lt;/td&gt;
+              &lt;td rowspan="number"&gt;rowspan&lt;/td&gt;
+              &lt;td headers="nama_header"&gt;header&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+                            </pre>
+                        </td>
+                        <!--Atribut <th>-->
+                    <tr>
+                        <th>Atribut &lt;th&gt;</th>
+                    </tr>
+        
+                    <tr>
+                        <td>
+                            <pre>
+        &lt;table&gt;
+            &lt;tr&gt;
+              &lt;th colspan="number"&gt;colspan&lt;/td&gt;
+              &lt;th rowspan="number"&gt;rowspan&lt;/td&gt;
+              &lt;th headers="nama_header"&gt;header&lt;/td&gt;
+              &lt;th scope="row|col|rowgroup|colgroup"&gt;scope&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+                            </pre>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        
+            <h3>Input User</h3>
+            <h4>Input Element</h4>
+            <p>Elemen &lt;input&gt; merupakan elemen yang sangat sering dipakai untuk mendapatkan data dari user. Elemen input memiliki banyak tipe, selengkapnya bisa dilihat pada tabel berikut:</p>
+            <table border="2">
+                <tr>
+                    <th>Input Type</th>
+                    <th>Deskripsi</th>
+                    <th>Cara Penggunaan</th>
+                </tr>
+                <tr>
+                    <td>&lt;input type="text"&gt;</td>
+                    <td>Input teks yang berisi satu baris. Tipe default dari inpu elemen.</td>
+                    <td>&lt;input type="text"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="number"&gt;</td>
+                    <td>Input teks yang hanya mengizinkan format angka.</td>
+                    <td>&lt;input type="number"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="password"&gt;</td>
+                    <td>Sama seperti input text, namun setiap karakter akan ditampilkan sebagai bintang.</td>
+                    <td>&lt;input type="password"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="email"&gt;</td>
+                    <td>Sama seperti teks biasa, namun dikhususkan untuk format email.</td>
+                    <td>&lt;input type="email"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="search"&gt;</td>
+                    <td>Input untuk melakukan pencarian berdasarkan kata kunci.</td>
+                    <td>&lt;input type="search"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="date"&gt;</td>
+                    <td>Input untuk mengambil data tanggal. Tipe ini akan menyediakan popup penanaggalan untuk memudahkan pengisian.</td>
+                    <td>&lt;input type="date"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="time"&gt;</td>
+                    <td>Menentukan waktu yang ingin user isi. Tipe ini juga akan menampilkan visual dari jam.</td>
+                    <td>&lt;input type="time"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="datetime-local"&gt;</td>
+                    <td>Sama seperti tipe <em>date</em>, tetapi ia menambahkan data waktu.</td>
+                    <td>&lt;input type=""&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="checkbox"&gt;</td>
+                    <td>Sebuah kotak yang dapat dicek untuk active dan non active</td>
+                    <td>&lt;input type="checkbox"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="radio"&gt;</td>
+                    <td>Pada umumnya, tipe ini digunakan untuk melakukan pemilihan dari sekian opsi radio button yang ada. Input ini akan dikelompokkan dalam sebuah radio group.</td>
+                    <td>&lt;input type="radio"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="range"&gt;</td>
+                    <td>Menentukan nilai angka berdasarkan jangkauan nilai yang ditentukan. User tidak akan bisa mengambil nilai diluar yang ditentukan.</td>
+                    <td>&lt;input type="range"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="color"&gt;</td>
+                    <td>User dapat menentukan warna dengan tipe ini baik menggunakan color picker atau memasukkan format nilai warna secara manual.</td>
+                    <td>&lt;input type="color"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="file"&gt;</td>
+                    <td>Melakukan input satu atau lebih berkas dari penyimpanan data perangkatnya.</td>
+                    <td>&lt;input type="file"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="submit"&gt;</td>
+                    <td>Input yang di render sebagai tombol <em>submit</em></td>
+                    <td>&lt;input type="submit"&gt; &lt;/input&gt;</td>
+                </tr>
+                <tr>
+                    <td>&lt;input type="hidden"&gt;</td>
+                    <td>Biasanya, tipe ini tidak terlihat oleh user. Namun, input ini akan sangat berguna bagi developer untuk memasukkan suatu data.</td>
+                    <td>&lt;input type="hidden"&gt; &lt;/input&gt;</td>
+                </tr>
+            </table>
+            <p>
+                <strong>Catatan: <em>Elemen &lt;form&gt; berfungsi sebagai wrapper/pembungkus dari keseluruhan kolom input atau formulir.</em></strong>
+            </p>
+            <h4>Non-Single Line Input Elemen</h4>
+                <p>
+                    Non-Single Line Input Element biasanya dibutuhkan pada beberapa kasus, seperti membuat komentar, catatan, deskripsi, dsb.<br>
+                    Output (hasil) dari input jenis ini hanya akan memberikan teks dalam satu baris saja.<br>
+                    Catatan: <em>Atribut value berfungsi untuk memberikan nilai default pada elemen input.</em><br>
+                    <br>
+                    HTML memiliki elemen khusus yang memungkinkan user menuliskan teks dalam banyak baris. Elemen &lt;textarea&gt; berbeda dengan elemen input sebelumnya. Selain nama elemen yang berbeda, elemen ini memiliki tag penutup agar dapat berfungsi dengan baik.
+                </p>
+            <h4>Label Element</h4>
+            <p>
+                Pembuatan elemen input dan elemen lainnya seperti textarea perlu disandingkan dengan elemen label untuk memberikan keterangan atau caption pada masing-masing elemen input.<br>
+                <h5>Keuntungan penerapan label untuk elemen input sebagai berikut:</h5>
+                <ul>
+                    <li>Elemen input yang berasosiasi dengan elemen label akan memberikan kemampuan bagi screen reader untuk menjelaskan fungsi dari elemen input tersebut yang akan sangat bermanfaat bagi penyandang disabilitas.</li>
+                    <li>Memberikan kemampuan bagi browser untuk mengalihkan langsung pada elemen input saat elemen label yang berasosiasi dengannya ditekan atau klik.</li>
+                </ul>
+                Ada dua langkah untuk menghubungkan elemen label dan input:
+                <ol>
+                    <li>Menambahkan atribut <em>id</em> pada elemen <em>input</em> beserta <em>value</em>-nya.</li>
+                    <li>Menambahkan atribut <em>for</em> pada elemen <em>label</em> dan <em>value</em>-nya.</li>
+                    <p>Lalu kita perlu memberikan <em>value</em> yang sama pada kedua atribut <em>id</em> dan <em>for</em>. Dengan cara ini, elemen <em>label</em> akan berasosiasi dengan elemen input dan kita akan mendapatkan dua keuntungan di  atas.</p>
+                </ol>
+            </p>
+            <h4>Atribut Pada Elemen Input</h4>
+            <p>
+                Atribut yang sering digunakan adalah atribut <em>placeholder</em> untuk memberikan contoh atau referensi data sebagai panduan user saat mengisi data dan atribut <em>required</em> yang menandakan bahwa elemen input tersebut wajib diisi.<br>
+                Catatan: Elemen <em>label</em> tidak dapat digantikan oleh atribut <em>placeholder</em> karena keduanya memiliki peranan sendiri dalam membuat formulir.
+            </p>
+            <table border="1">
+                <tr>
+                    <th>Atribut</th>
+                    <th>Tipe</th>
+                    <th>Deskripsi</th>
+                    <th>Cara Penggunaan</th>
+                    <th>Contoh</th>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>semua</td>
+                    <td>Menamai elemen <em>input</em>. Atribut ini memiliki peran yang sangat penting. Jika tidak menyertakannya,  data input tidak akan dikirim ke server.</td>
+                    <td>&lt;input type="text" name="nama_elemen"&gt;</td>
+                    <td><input type="text" name="teks"></td>
+                </tr>
+                <tr>
+                    <td>placeholder</td>
+                    <td>text, search, url, tel, email, password, number</td>
+                    <td>Teks samar yang muncul pada kolom input, biasanya digunakan sebagai petunjuk atau contoh data yang perlu diisi.</td>
+                    <td>&lt;input type="email" placeholder="email@example.com"&gt;</td>
+                    <td><input type="email" placeholder="email@example.com"></td>
+                </tr>
+                <tr>
+                    <td>required</td>
+                    <td>semua tipe kecuali <em>hidden, range, color,</em> dan <em>button</em></td>
+                    <td>Atribut ini menyebabkan elemen input wajib diisi untuk di submit.</td>
+                    <td>&lt;input type="password" required&gt;</td>
+                    <td><input type="password" required></td>
+                </tr>
+                <tr>
+                    <td>value</td>
+                    <td>semua tipe kecuali <em>image</em></td>
+                    <td>Memberikan data awal atau default pada elemen &lt;input&gt;</td>
+                    <td>&lt;input type="text" value="teks"&gt;</td>
+                    <td><input type="text" value="teks default"></td>
+                </tr>
+                <tr>
+                    <td>autocomplete</td>
+                    <td>semua tipe kecuali <em>checkbox, radio,</em> dan <em>button</em></td>
+                    <td>Melengkapi input secara otomatis. Biasanya terjadi ketika kita pernah meng-input sesuatu dan pada kesempatan berikutnya data tersebut akan ditampilkan lagi oleh browser sebagai <em>autocomplete</em>.</td>
+                    <td>&lt;input type="email" autocomplete="data"&gt;</td>
+                    <td><input type="email" autocomplete="email"></td>
+                </tr>
+                <tr>
+                    <td>maxlength</td>
+                    <td>text, search, url, tel, email, password</td>
+                    <td>Menentukan maximal panjang karakter yang diperbolehkan pada kolom input.</td>
+                    <td>&lt;input type="tel" maxlength="number"&gt;</td>
+                    <td><input type="tel" placeholder="+62 812 3456 7890" maxlength="17"></td>
+                </tr>
+                <tr>
+                    <td>max</td>
+                    <td>date, month, week, time, datetime-local, number, range</td>
+                    <td>Menentukan maksimal nilai yang diperbolehkan.</td>
+                    <td>&lt;input type="date" max="number|date"&gt;</td>
+                    <td><input type="date" max="26"></td>
+                </tr>
+                <tr>
+                    <td>minlength</td>
+                    <td>text, search, url, tel, email, password</td>
+                    <td>Menentukan minimal panjang karakter yang diperbolehkan pada kolom input.</td>
+                    <td>&lt;input type="tel" minlength="number"&gt;</td>
+                    <td><input type="tel" minlength="15"></td>
+                </tr>
+                <tr>
+                    <td>min</td>
+                    <td>date, month, week, time, datetime-local, number, range</td>
+                    <td>Menentukan minimal nilai yang diperbolehkan.</td>
+                    <td>&lt;input type="date" min="number|date"&gt;</td>
+                    <td><input type="date" min="16"></td>
+                </tr>
+                <tr>
+                    <td>checked</td>
+                    <td>checkbox, radio</td>
+                    <td>Mengaktifkan atau mencentangkan input checkbox.</td>
+                    <td>&lt;input type="checkbox" checked&gt;</td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td>accept</td>
+                    <td>file</td>
+                    <td>Panduan atau batasan format berkas apa yang diperbolehkan pada input berkas.</td>
+                    <td>&lt;input type="file" accept="file_extension"&gt;</td>
+                    <td><input type="file" accept=".doc"></td>
+                </tr>
+                <tr>
+                    <td>multiple</td>
+                    <td>email, file</td>
+                    <td>Memungkinkan pemilihan ganda pada elemen input.</td>
+                    <td>&lt;input type="file" multiple&gt;</td>
+                    <td><input type="file" multiple></td>
+                </tr>
+                <tr>
+                    <td>pattern</td>
+                    <td>text, search, url, tel, email,  password</td>
+                    <td>Menenetukan pola yang wajib dipatuhi pada dara yang diisi agar dapat valid.</td>
+                    <td>&lt;input type="password" pattern="&gt;</td>
+                    <td><input type="password" pattern="pola_input_data"></td>
+                </tr>
+                <tr>
+                    <td>readonly</td>
+                    <td>semua tipe kecuali <em>hidden, range. color, checkbox, radio,</em> dan <em>button</em></td>
+                    <td>Tidak memiliki akses edit nilai.</td>
+                    <td>&lt;input type="text" readonly&gt;</td>
+                    <td><input type="text" readonly></td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>semua tipe</td>
+                    <td>Memberikan efek tidak aktif pada elemen input.</td>
+                    <td>&lt;input type="text" disabled&gt;</td>
+                    <td><input type="text" disabled></td>
+                </tr>
+            </table>
+            </div>
+        
+            <div id="data-formulir">
+                <h2>Cara Membawa Data Formulir</h2>
+            <p>
+                <h3>Atribut Action</h3>
+                <p>
+                    Atribut <em>action</em> akan menentukan alamat tujuan dari pengiriman data. Kita bisa memberikan URL yang relatif atau absolut.
+                </p>
+                <h3>Atribut Method</h3>
+                <p>
+                    Atribut Method akan menentukan cara data dikirimkan ke server. Ada dua metode yang bisa digunakan untuk mengirimkan data pada formulir HTML, yaitu GET dan POST.
+                </p>
+                <ul>
+                    <li>
+                        <h4>Metode GET</h4>
+                        <p>
+                            Biasanya metode ini digunakan untuk mendapatkan data dari server.
+                            <form action="Server/email.txt" method="get">
+                                <input type="email" placeholder="email@example.com" name="email" required>
+                                <input type="submit">
+                            </form>
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Metode POST</h4>
+                        <p>
+                            Metode POST merupakan metode untuk mengirimkan data dari browser ke server. 
+                            <form method="post" action="Server/email.txt">
+                                <input type="email" placeholder="email@example.com" name="email" required>
+                                <input type="submit">
+                            </form>
+                        </p>
+                    </li>
+                </ul>
+            </p>
+            </div>
+        
+            <div id="speccaracter">
+                <h2>Special Character</h2>
+            <p>
+                Beberapa karakter seperti copyright (&copy;), lebih kecil (&lt;), lebih besar (&gt;), dan lainnya tidak dapat ditampilkan langsung sebagai konten HTML. Untuk menampilkan karakter terebut diperlukan kode khusus seperti yang tertera di bawah:
+                <table border="1">
+                    <tr>
+                        <th>Karakter</th>
+                        <th>Deskripsi</th>
+                        <th>Named Entity</th>
+                        <th>Numeric Entity</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>non-breaking space</td>
+                        <td>&amp;nbsp;</td>
+                        <td>&amp;#160;</td>
+                    </tr>
+                    <tr>
+                        <td>&amp;</td>
+                        <td>Ampersand</td>
+                        <td>&amp;amp;</td>
+                        <td>&amp;#038;</td>
+                    </tr>
+                    <tr>
+                        <td>&apos;</td>
+                        <td>Apostrophe</td>
+                        <td>&amp;apos;</td>
+                        <td>&amp;#039;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;</td>
+                        <td>Kurang dari</td>
+                        <td>&amp;lt;</td>
+                        <td>&amp;#060;</td>
+                    </tr>
+                    <tr>
+                        <td>&gt;</td>
+                        <td>Lebih dari</td>
+                        <td>&amp;gt;</td>
+                        <td>&amp;#062;</td>
+                    </tr>
+                    <tr>
+                        <td>&copy;</td>
+                        <td>Hak cipta</td>
+                        <td>&amp;copy;</td>
+                        <td>&amp;#169;</td>
+                    </tr>
+                    <tr>
+                        <td>&reg;</td>
+                        <td>Merek dagang terdaftar</td>
+                        <td>&amp;reg;</td>
+                        <td>&amp;#174;</td>
+                    </tr>
+                    <tr>
+                        <td>&trade;</td>
+                        <td>Merek dagang</td>
+                        <td>&amp;trade</td>
+                        <td>&amp;#8482;</td>
+                    </tr>
+                    <tr>
+                        <td>&pound;</td>
+                        <td>Pound</td>
+                        <td>&amp;Pound;</td>
+                        <td>&amp;#163;</td>
+                    </tr>
+                    <tr>
+                        <td>&yen;</td>
+                        <td>Yen</td>
+                        <td>&amp;yen;</td>
+                        <td>&amp;#165;</td>
+                    </tr>
+                    <tr>
+                        <td>&euro;</td>
+                        <td>Euro</td>
+                        <td>&amp;euro;</td>
+                        <td>&amp;#8364;</td>
+                    </tr>
+                    <tr>
+                        <td>&ndash;</td>
+                        <td>En-dash</td>
+                        <td>&amp;ndash;</td>
+                        <td>&amp;#8211;</td>
+                    </tr>
+                    <tr>
+                        <td>&mdash;</td>
+                        <td>Em-dash</td>
+                        <td>&amp;mdash;</td>
+                        <td>&amp;#8212;</td>
+                    </tr><tr>
+                        <td>&lsquo;</td>
+                        <td>Kutip tunggal kiri</td>
+                        <td>&amp;lsquo;</td>
+                        <td>&amp;#8216;</td>
+                    </tr>
+                    <tr>
+                        <td>&rsquo;</td>
+                        <td>Kutip tunggal kanan</td>
+                        <td>&amp;rsquo;</td>
+                        <td>&amp;#8217;</td>
+                    </tr>
+                    <tr>
+                        <td>&ldquo;</td>
+                        <td>Kutip ganda kiri</td>
+                        <td>&amp;ldquo;</td>
+                        <td>&amp;#8220;</td>
+                    </tr>
+                    <tr>
+                        <td>&rdquo;</td>
+                        <td>Kutip ganda kanan</td>
+                        <td>&amp;rdquo;</td>
+                        <td>&amp;#8221;</td>
+                    </tr>
+                    <tr>
+                        <td>&bull;</td>
+                        <td>Bullet</td>
+                        <td>&amp;bull;</td>
+                        <td>&amp;#8226;</td>
+                    </tr>
+                    <tr>
+                        <td>&hellip;</td>
+                        <td>Horizontal ellipsis</td>
+                        <td>&amp;hellip;</td>
+                        <td>&amp;#8230;</td>
+                    </tr>
+                </table>
+            </p>
+            </div>
+    </main>
+    
+    <footer>
+        &copy;zafranaqeel62@gmail.com
+    </footer>
+</body>
+</html>

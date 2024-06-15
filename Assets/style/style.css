@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    display: inline;
+}
+
+nav a{
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    font-weight: bold;
+}
+
+.judul{
+    font-size: 20px;
+    padding: 15px;
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+}
+
+nav li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+nav{
+    background-color: rgb(78, 130, 226);
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+.back{
+    color: rgb(28, 77, 168);
+}
+
+h2{
+    background-color: cornflowerblue;
+    color: white;
+    padding: 5px;
+}
+
+footer{
+    background-color: rgb(78, 130, 226);
+    color: white;
+    text-align: center;
+    width: 100%;
+    padding: 30px;
+    font-size: 20px;
+}
